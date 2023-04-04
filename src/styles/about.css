@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bleuLearnMore {
+    @apply  bg-[url("../../public/assets/img/about/aboutbackground.png")] bg-cover sm:bg-bottom  ;
+    /* background-size: cover; */
+    /* background-position: bottom */
+}
+
+.headerText1 {
+    @apply  font-bold text-[2.8rem] sm:text-7xl leading-[3.6rem] sm:leading-[6rem]
+}
+
+.paragraphText1 {
+    @apply text-base font-normal sm:text-lg tracking-wide leading-7
+}
