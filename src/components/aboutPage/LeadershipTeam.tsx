@@ -12,8 +12,8 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper";
 
 const SingleSlide = () => {
   return (
-    <div className="w-full py-10 bg-transparent sm:w-1/2 z-20">
-      <img src="/assets/img/board/razak.png" className=" border" />
+    <div className="w-full py-10 bg-transparent sm:w-1/2 z-20 ">
+      <img src="/assets/img/board/razak.png" className=" " />
 
       <div className="flex flex-col justify-center border">
         <div className="flex flex-col items-start gap-2 my-2 mx-4">
@@ -43,10 +43,10 @@ const LeadershipTeam = () => {
         <>
           <Swiper
             effect={"coverflow"}
-            spaceBetween={4}
+            spaceBetween={10}
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView={"auto"}
+            slidesPerView={2}
             loop={true}
             mousewheel={true}
             autoplay={{
@@ -63,7 +63,7 @@ const LeadershipTeam = () => {
             pagination={{ clickable: true }}
             modules={[EffectCoverflow, Pagination, Navigation]}
             keyboard={true}
-            className=" border border-red-600 "
+            className="w-full "
           >
             <SwiperSlide>
               <SingleSlide />
