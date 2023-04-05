@@ -31,27 +31,13 @@ const WhyChooseUsComponent = ({
 
 const YouCanCountOnUs = () => {
   return (
-    <section className="youCanCount-section flex flex-col   pt-20 -mt-10 pb-8 relative bg-transparent">
-      <div className="absolute inset-0 flex items-center justify-evenly h-full w-full ">
-        {/* <div className="w-full h-full  circle circle-1"></div> */}
-        <div className="w-full h-full  circle circle-2 "></div>
-        <div className="w-full h-full  circle circle-3"></div>
+    <section className=" flex flex-col   pt-20 -mt-10 pb-8 relative ">
+      <div className="absolute bottom-0 left-0 top-0 right-0 flex flex-col  justify-between  overflow-clip  h-full">
+        <div className=" hidden sm:block border-white h-[40rem] w-[40rem]  circle circle-1 shadow-2xl blur-md"></div>
+        <div className=" border-red-400 h-[25rem] sm:h-[40rem] w-[25rem] sm:w-[40rem] top-[20%] sm:right-[50%] sm:left-[60%] circle circle-2"></div>
+        <div className=" border-green-400 h-[30rem] w-[30rem]   circle circle-3"></div>
       </div>
-      {/* <img
-        src="/assets/img/backgrounds/icons/ball1.png"
-        alt="Image 1"
-        className="bg-image"
-      />
-      <img
-        src="/assets/img/backgrounds/icons/ball2.png"
-        alt="Image 2"
-        className="bg-image"
-      />
-      <img
-        src="/assets/img/backgrounds/icons/ball3.png"
-        alt="Image 3"
-        className="bg-image"
-      /> */}
+
       <div className="z-10">
         <section className="flex w-full flex-col justify-center items-center  container mx-auto px-4 sm:px-0 mt-16 mb-5">
           <div className=" max-w-2xl text-center">
