@@ -98,7 +98,7 @@ const Navbar = ({ pageName }: INavbar) => {
   const [openSubsidiaryMenu, setOpenSubsidiaryMenu] = useState<boolean>(false);
   const [openSiteMenu, setOpenSiteMenu] = useState<boolean>(false);
   return (
-    <div className="  z-20 mt-0 fixed w-full  top-0   sm:backdrop-blur-sm sm:bg-gray-900/70 opacity-1">
+    <div className="  z-20 mt-0 fixed w-full  top-0   sm:backdrop-blur-sm sm:bg-gray-900/90 opacity-1">
       <div className="container mx-auto px-3 ">
         {/* mobile */}
         <div className="sm:hidden flex justify-between  py-2 items-start  ">
@@ -155,24 +155,24 @@ const Navbar = ({ pageName }: INavbar) => {
             />
 
             <NavButton
+              title="Digital Payment"
+              href="/"
+              imgSRC="/assets/icons/bdp-main.svg"
+              active={pageName === "Digital Payment"}
+            />
+
+            <NavButton
               title="BSL Home"
               href="/"
-              imgSRC="/assets/icons/spectrum-gray.svg"
+              imgSRC="/assets/icons/spectrum-main.svg"
               active={pageName === "Spectrum Fibre"}
             />
 
             <NavButton
               title="Infra Services"
               href="/"
-              imgSRC="/assets/icons/isg-gray.svg"
+              imgSRC="/assets/icons/isg-main.svg"
               active={pageName === "Infra Services"}
-            />
-
-            <NavButton
-              title="Digital Payment"
-              href="/"
-              imgSRC="/assets/icons/bdp-gray.svg"
-              active={pageName === "Digital Payment"}
             />
           </div>
 
