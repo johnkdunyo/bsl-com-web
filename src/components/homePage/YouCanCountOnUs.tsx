@@ -48,7 +48,7 @@ const YouCanCountOnUs = () => {
       </section>
       <section className="my-8  h-16 flex items-center">
         <h1
-          className={`text-3xl hover:text-[2.7rem] sm:text-[8rem]  hover:sm:text-[10rem]  w-full text-[#AB2346]  inline-block text-center tracking-wider `}
+          className={`text-3xl hover:text-[2.4rem] sm:text-[8rem]  hover:sm:text-[10rem]  w-full text-[#AB2346]  inline-block text-center tracking-wider `}
         >
           Why <span className="uppercase font-bold">Choose</span> us?
         </h1>
