@@ -20,7 +20,7 @@
 
 
 .custom-button1 {
-    @apply  px-6 py-3 uppercase custom-gradient-bg text-white rounded-[24px] tracking-widest
+    @apply  px-6 py-3 uppercase custom-gradient-bg text-white rounded-[24px] tracking-widest hover:bg-gradient-to-r hover:from-white hover:to-white hover:text-[#1D365A]
 }
 .custom-container {
     @apply container mx-auto px-4 sm:px-16

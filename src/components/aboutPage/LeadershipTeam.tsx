@@ -46,7 +46,7 @@ const LeadershipTeam = () => {
             spaceBetween={4}
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView={2}
+            slidesPerView={"auto"}
             loop={true}
             mousewheel={true}
             autoplay={{
