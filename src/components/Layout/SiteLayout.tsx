@@ -33,7 +33,7 @@ export default function SiteLayout({ children, pageName }: ISiteLayoutProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="relative text-white">
+      <main className="relative text-white bg-[#000A26]">
         <Navbar pageName={pageName} />
         {children}
         <Footer />

@@ -98,7 +98,7 @@ const Navbar = ({ pageName }: INavbar) => {
   const [openSubsidiaryMenu, setOpenSubsidiaryMenu] = useState<boolean>(false);
   const [openSiteMenu, setOpenSiteMenu] = useState<boolean>(false);
   return (
-    <div className="  z-10 mt-0 fixed w-full  top-0   sm:bg-black/80 sm:backdrop-blur-sm opacity-1">
+    <div className="  z-20 mt-0 fixed w-full  top-0   sm:bg-black/80 sm:backdrop-blur-sm opacity-1">
       <div className="container mx-auto px-3 ">
         {/* mobile */}
         <div className="sm:hidden flex justify-between  py-2 items-start  ">

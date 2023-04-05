@@ -41,10 +41,7 @@
 }
 
 
-.youCanCount-section {
-    @apply bg-gradient-to-b from-[#000A26] to-[#010B2A00]
-       
-}
+
 
 .custom-bg-blend1 {
     /* @apply bg-blend-darken custom-gradient-bg opacity-20 z-10  ; */
@@ -63,6 +60,15 @@
     background-position: center;
     @apply bg-[url("../../public/assets/img/backgrounds/iso/iso_mobile.jpg")] h-[50rem] sm:bg-[url("../../public/assets/img/backgrounds/iso/ISO.png")]
 }
+
+
+.youCanCount-section {
+    @apply  border;
+
+}
+
+
+
 
 
 
