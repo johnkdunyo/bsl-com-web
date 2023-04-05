@@ -53,6 +53,10 @@
 
 }
 
+.happyClientSection {
+    @apply bg-[#F8F8F8] bg-[url("../../public/assets/img/backgrounds/Polygons_mobile.svg")] sm:bg-[url("../../public/assets/img/backgrounds/polygons_web.svg")]
+}
+
 .we-are-certified-section {
     /* @apply bg-gradient-to-b from-[#AB2346] to-[#000021] */
     background-size: cover;
@@ -62,9 +66,6 @@
 
 
 
-.happyClientSection {
-    background-image: url('../../public/assets/img/backgrounds/Polygons_mobile.svg');
-    @apply bg-[#F8F8F8] bg-[url("../../public/assets/img/backgrounds/Polygons_mobile.svg")]  sm:bg-[url("../../public/assets/img/backgrounds/polygons_web.svg")]
-}
+
 
 
