@@ -28,10 +28,10 @@ const HeroSection = () => {
         <div className="sm:hidden  w-full    flex  flex-col items-center justify-center text-center   pb-10  ">
           <div className="max-w-3xl flex flex-col gap-6">
             <h2 className="headerText1 ">
-              We are Engineering Africa's Digital Future
+              We are Engineering Africa&apos;s Digital Future
             </h2>
             <p className="flex sm:hidden text-2xl sm:text-3xl  ">
-              We're offering 360 digital <br />
+              We&apos;re offering 360 digital <br />
               solutions Globally from African by Africans.
             </p>
 
@@ -45,10 +45,10 @@ const HeroSection = () => {
         <div className="hidden sm:flex flex-col  h-full w-full custom-container justify-center items-center">
           <div className=" max-w-4xl flex flex-col items-center gap-10 mt-20">
             <h2 className="headerText1 text-center">
-              We are Engineering Africa's Digital Future
+              We are Engineering Africa&apos;s Digital Future
             </h2>
             <p className="flex text-2xl sm:text-3xl text-center   ">
-              We're offering 360 digital solutions <br />
+              We&apos;re offering 360 digital solutions <br />
               Globally from African by Africans.
             </p>
           </div>

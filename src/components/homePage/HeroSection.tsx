@@ -43,15 +43,15 @@ const HeroSection = () => {
                 <CustomLottieLoader status={"inactive"} />
               </div>
               <h2 className="text-4xl sm:text-6xl font-bold   mr-6 leading-10">
-                We are Engineering Africa's Digital Future
+                We are Engineering Africa&apos;s Digital Future
               </h2>
               <p className="flex sm:hidden text-2xl sm:text-3xl  ">
-                We're offering 360 digital <br />
+                We&apos;re offering 360 digital <br />
                 solutions Globally from African by Africans.
               </p>
 
               <p className="hidden sm:flex text-2xl sm:text-3xl  ">
-                We're offering 360 digital solutions <br />
+                We&apos;re offering 360 digital solutions <br />
                 Globally from African by Africans.
               </p>
             </div>
