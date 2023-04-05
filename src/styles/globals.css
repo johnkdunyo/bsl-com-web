@@ -64,7 +64,7 @@
 
 .happyClientSection {
     background-image: url('../../public/assets/img/backgrounds/Polygons_mobile.svg');
-    @apply bg-[#F8F8F8] bg-[url("../../public/assets/img/backgrounds/Polygons_mobile.svg")]  sm:bg-[url("../../public/assets/img/backgrounds/Polygons_web.svg")]
+    @apply bg-[#F8F8F8] bg-[url("../../public/assets/img/backgrounds/Polygons_mobile.svg")]  sm:bg-[url("../../public/assets/img/backgrounds/polygons_web.svg")]
 }
 
 
