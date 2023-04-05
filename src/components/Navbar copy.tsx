@@ -66,7 +66,7 @@ const NavButton = ({ active, title, href, imgSRC }: INavbarNavButtons) => {
   return (
     <button
       className={` ${
-        active ? "bg-transparent" : "bg-transparent"
+        active ? "bg-white" : "bg-transparent"
       }  px-6  py-1.5 rounded-[48px]`}
     >
       <Link href={href}>
@@ -146,7 +146,7 @@ const Navbar = ({ pageName }: INavbar) => {
 
         {/* desktop */}
         <div className="hidden sm:flex justify-between w-full py-2 ">
-          <div className="w-6/12    flex justify-between h-full ">
+          <div className="w-6/12   home-custom-navs flex justify-between h-full ">
             <NavButton
               title="BSL Home"
               href="/"
@@ -195,11 +195,7 @@ const Navbar = ({ pageName }: INavbar) => {
               />
             </div>
             <button>
-              <img
-                src="/assets/icons/home-2.svg"
-                className="h-10"
-                alt="menu icon"
-              />
+              <img src="/assets/icons/home-2.svg" className="h-2/5" />
             </button>
           </div>
         </div>
