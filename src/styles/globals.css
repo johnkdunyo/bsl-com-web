@@ -61,7 +61,7 @@
     /* @apply bg-gradient-to-b from-[#AB2346] to-[#000021] */
     background-size: cover;
     background-position: center;
-    @apply bg-[url("../../public/assets/img/backgrounds/iso/iso_mobile.jpg")] h-[50rem] sm:bg-[url("../../public/assets/img/backgrounds/iso/iso.png")]
+    @apply bg-[url("../../public/assets/img/backgrounds/iso/iso_mobile.jpg")] h-[50rem] sm:bg-[url("../../public/assets/img/backgrounds/iso/ISO.png")]
 }
 
 
