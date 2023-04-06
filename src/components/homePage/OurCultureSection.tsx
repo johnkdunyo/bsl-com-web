@@ -90,7 +90,7 @@ const OurCultureSection = () => {
           <source src="/assets/videos/dots.mp4" type="video/mp4" />
         </video>
       </div>
-      <div className="custom-container pt-10 flex justify-center relative z-20  pb-10">
+      <div className="custom-container pt-10 flex justify-center relative   pb-10">
         <div className="flex flex-col items-center text-center gap-6 max-w-3xl">
           <h1 className="text-[#AB2346] font-medium tracking-widest uppercase">
             Our Culture

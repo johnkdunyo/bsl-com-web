@@ -4,7 +4,7 @@ import CorrectIsoData from "../../../public/assets/lottie/iso.json";
 
 const CertifiedSection = () => {
   const isoLottieOptions = {
-    loop: true,
+    loop: false,
     autoplay: true,
     animationData: CorrectIsoData,
     rendererSettings: {
@@ -30,10 +30,10 @@ const CertifiedSection = () => {
 
         <div className=" flex flex-col sm:flex-row justify-end items-end sm:h-full      ">
           <div className="w-full    h-full flex flex-col items-center justify-end">
-            <div className="sm:hidden ">
+            <div className="sm:hidden  -mr-8 ">
               <Lottie options={isoLottieOptions} height={200} width={200} />
             </div>
-            <div className="hidden sm:block   -mr-20">
+            <div className="hidden sm:block   -mr-28">
               <Lottie options={isoLottieOptions} height={300} width={300} />
             </div>
           </div>
