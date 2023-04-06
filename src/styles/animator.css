@@ -141,3 +141,26 @@
     background-position: center;
     background-size: cover;
 }
+
+.animate-move-linear {
+    display: block;
+
+    /* @apply overflow-clip; */
+
+
+    /* width: 100%; */
+    transform: translateX(100%);
+    /* Animation start out of the screen */
+
+    /* Add the animation */
+    animation: move 30s linear infinite
+        /* infinite make reapeat the animation indefinitely */
+    ;
+}
+
+/* Create the animation */
+@keyframes move {
+    to {
+        transform: translateX(-100%);
+    }
+}
