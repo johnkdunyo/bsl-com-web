@@ -15,9 +15,17 @@ import CustomBackground1 from "../animations/CustomBackground1";
 const SingleSlide = ({
   id,
   currentIndex,
+  name,
+  portfolio,
+  shortDescription,
+  imageURL,
 }: {
   id: number;
   currentIndex: number;
+  name: string;
+  portfolio: string;
+  shortDescription: string;
+  imageURL: string;
 }) => {
   // console.log("swiper", id, currentIndex);
   return (
@@ -26,7 +34,7 @@ const SingleSlide = ({
         currentIndex !== id && ""
       } `}
     >
-      <img src="/assets/img/board/razak.png" className="sm:h-full " />
+      <img src={imageURL} className="sm:h-3/4 " />
 
       <div
         className={` ${currentIndex !== id && "hidden"}
@@ -36,12 +44,9 @@ const SingleSlide = ({
           className="flex flex-col items-start gap-2 my-2 mx-4 sm:w-[24rem] 
        "
         >
-          <h1 className="text-xl sm:text-2xl">Razak</h1>
-          <h1 className="text-[#82AEC9] text-xl sm:text-2xl">Group CEO</h1>
-          <p className="text-base">
-            Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited.
-            He is a Founding…
-          </p>
+          <h1 className="text-xl sm:text-2xl">{name}</h1>
+          <h1 className="text-[#82AEC9] text-xl sm:text-2xl">{portfolio}</h1>
+          <p className="text-base">{shortDescription}</p>
           <button className="custom-button1 my-4 text-sm">Learn More</button>
         </div>
       </div>
@@ -80,7 +85,7 @@ const LeadershipTeam = () => {
             onActiveIndexChange={updateIndex}
             ref={swiperRef}
             effect={"coverflow"}
-            spaceBetween={30}
+            spaceBetween={60}
             grabCursor={true}
             centeredSlides={true}
             slidesPerView={1.5}
@@ -90,7 +95,7 @@ const LeadershipTeam = () => {
               delay: 500,
             }}
             coverflowEffect={{
-              rotate: 20,
+              rotate: 0,
               stretch: 0,
               depth: 100,
               modifier: 1.5,
@@ -99,7 +104,7 @@ const LeadershipTeam = () => {
             // bigger screens
             breakpoints={{
               640: {
-                slidesPerView: 2,
+                slidesPerView: 3,
                 spaceBetween: 180,
                 coverflowEffect: {
                   rotate: 0,
@@ -117,25 +122,88 @@ const LeadershipTeam = () => {
             className="w-full "
           >
             <SwiperSlide>
-              <SingleSlide id={1} currentIndex={currentIndex} />
+              <SingleSlide
+                id={1}
+                currentIndex={currentIndex}
+                name="Razak Awudalai"
+                portfolio={"Group CE0"}
+                shortDescription={
+                  "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
+                }
+                imageURL={"/assets/img/board/razak.png"}
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <SingleSlide id={2} currentIndex={currentIndex} />
+              <SingleSlide
+                id={2}
+                currentIndex={currentIndex}
+                name="Razak Awudalai"
+                portfolio={"Group CE0"}
+                shortDescription={
+                  "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
+                }
+                imageURL={"/assets/img/board/razak.png"}
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <SingleSlide id={3} currentIndex={currentIndex} />
+              <SingleSlide
+                id={3}
+                currentIndex={currentIndex}
+                name="Razak Awudalai"
+                portfolio={"Group CE0"}
+                shortDescription={
+                  "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
+                }
+                imageURL={"/assets/img/board/razak.png"}
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <SingleSlide id={4} currentIndex={currentIndex} />
+              <SingleSlide
+                id={4}
+                currentIndex={currentIndex}
+                name="Razak Awudalai"
+                portfolio={"Group CE0"}
+                shortDescription={
+                  "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
+                }
+                imageURL={"/assets/img/board/razak.png"}
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <SingleSlide id={5} currentIndex={currentIndex} />
+              <SingleSlide
+                id={5}
+                currentIndex={currentIndex}
+                name="Razak Awudalai"
+                portfolio={"Group CE0"}
+                shortDescription={
+                  "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
+                }
+                imageURL={"/assets/img/board/razak.png"}
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <SingleSlide id={6} currentIndex={currentIndex} />
+              <SingleSlide
+                id={6}
+                currentIndex={currentIndex}
+                name="Razak Awudalai"
+                portfolio={"Group CE0"}
+                shortDescription={
+                  "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
+                }
+                imageURL={"/assets/img/board/razak.png"}
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <SingleSlide id={7} currentIndex={currentIndex} />
+              <SingleSlide
+                id={7}
+                currentIndex={currentIndex}
+                name="Razak Awudalai"
+                portfolio={"Group CE0"}
+                shortDescription={
+                  "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
+                }
+                imageURL={"/assets/img/board/razak.png"}
+              />
             </SwiperSlide>
           </Swiper>
         </>
