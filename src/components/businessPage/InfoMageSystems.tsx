@@ -3,7 +3,7 @@ import React from "react";
 const InfoMageSystems = () => {
   return (
     <section className=" bg-white pb-40 ">
-      <div className="custom-container2 h-full flex flex-col sm:flex-row justify-between py-10 gap-16 ">
+      <div className="custom-container2 h-full flex flex-col sm:flex-row justify-between py-32 gap-16  ">
         <div className=" w-full  -mt-20 sm:-mt-[0rem] sm:order-first">
           <img
             src="/assets/img/business/picture1.png"
