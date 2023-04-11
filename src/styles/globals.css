@@ -26,6 +26,10 @@
     @apply container mx-auto px-4 sm:px-16
 }
 
+.custom-container2 {
+    @apply container mx-auto px-4 sm:px-36
+}
+
 .home-custom-navs {
     /* background: #F0F0F0 0% 0% no-repeat padding-box; */
     /* border-radius: 48px;
