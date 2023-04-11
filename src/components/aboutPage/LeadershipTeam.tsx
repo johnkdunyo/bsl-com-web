@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 // import required modules
 import { EffectCoverflow, Pagination, Navigation } from "swiper";
 import CustomBackground1 from "../animations/CustomBackground1";
+import Link from "next/link";
 
 const SingleSlide = ({
   id,
@@ -47,7 +48,9 @@ const SingleSlide = ({
           <h1 className="text-xl sm:text-2xl">{name}</h1>
           <h1 className="text-[#82AEC9] text-xl sm:text-2xl">{portfolio}</h1>
           <p className="text-base">{shortDescription}</p>
-          <button className="custom-button1 my-4 text-sm">Learn More</button>
+          <button className="custom-button1 my-4 text-sm">
+            <Link href="/about/razak">Learn More</Link>
+          </button>
         </div>
       </div>
     </div>
@@ -82,7 +85,9 @@ const LeadershipTeam = () => {
 
         <>
           <Swiper
+            initialSlide={5}
             onActiveIndexChange={updateIndex}
+            // cssMode={true}
             ref={swiperRef}
             effect={"coverflow"}
             spaceBetween={60}
@@ -125,12 +130,12 @@ const LeadershipTeam = () => {
               <SingleSlide
                 id={1}
                 currentIndex={currentIndex}
-                name="Razak Awudalai"
-                portfolio={"Group CE0"}
+                name="Samuel Osew – Kwatia"
+                portfolio={"Executive Member"}
                 shortDescription={
                   "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
                 }
-                imageURL={"/assets/img/board/razak.png"}
+                imageURL={"/assets/img/board/sam.png"}
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -142,31 +147,31 @@ const LeadershipTeam = () => {
                 shortDescription={
                   "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
                 }
-                imageURL={"/assets/img/board/nana.png"}
+                imageURL={"/assets/img/board/razak.png"}
               />
             </SwiperSlide>
             <SwiperSlide>
               <SingleSlide
                 id={3}
                 currentIndex={currentIndex}
-                name="Razak Awudalai"
-                portfolio={"Group CE0"}
+                name="Nana Dwemoh Benneh"
+                portfolio={"Chairman"}
                 shortDescription={
                   "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
                 }
-                imageURL={"/assets/img/board/kris.png"}
+                imageURL={"/assets/img/board/nana.png"}
               />
             </SwiperSlide>
             <SwiperSlide>
               <SingleSlide
                 id={4}
                 currentIndex={currentIndex}
-                name="Razak Awudalai"
-                portfolio={"Group CE0"}
+                name="Kris Senanu"
+                portfolio={"Executive Member"}
                 shortDescription={
                   "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
                 }
-                imageURL={"/assets/img/board/sam.png"}
+                imageURL={"/assets/img/board/kris.png"}
               />
             </SwiperSlide>
             {/* <SwiperSlide>

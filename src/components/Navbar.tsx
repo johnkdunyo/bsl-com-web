@@ -98,7 +98,7 @@ const Navbar = ({ pageName }: INavbar) => {
   const [openSubsidiaryMenu, setOpenSubsidiaryMenu] = useState<boolean>(false);
   const [openSiteMenu, setOpenSiteMenu] = useState<boolean>(false);
   return (
-    <div className="  z-20 mt-0 fixed w-full  top-0   sm:backdrop-blur-sm sm:bg-gray-900/90 opacity-1">
+    <div className="  z-30 mt-0 fixed w-full  top-0   sm:backdrop-blur-sm sm:bg-gray-900/90 opacity-1">
       <div className="container mx-auto px-3 ">
         {/* mobile */}
         <div className="sm:hidden flex justify-between  py-2 items-start  ">
@@ -179,7 +179,7 @@ const Navbar = ({ pageName }: INavbar) => {
           <div className="flex gap-8  w-4/12 items-center justify-end ">
             <div className="flex gap-12">
               <CustomNavButton2
-                href="/"
+                href="/business"
                 title="Business"
                 active={pageName === "Business"}
               />
@@ -255,8 +255,11 @@ const Navbar = ({ pageName }: INavbar) => {
             </div>
 
             <div className="px-6 flex flex-col gap-4">
-              <Link href="/">
-                <h1 className="text-[#1D365A] font-medium text-4xl">
+              <Link href="/business">
+                <h1
+                  className="text-[#1D365A] font-medium text-4xl"
+                  onClick={() => setOpenSiteMenu(false)}
+                >
                   Business
                 </h1>
               </Link>

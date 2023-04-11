@@ -5,7 +5,7 @@ const SocialMediaButtons = ({ name, href }: { name: string; href: string }) => {
   return (
     <button>
       <Link href={href}>
-        <img src={`assets/icons/social-media/${name}.svg`} alt={name} />
+        <img src={`/assets/icons/social-media/${name}.svg`} alt={name} />
       </Link>
     </button>
   );
