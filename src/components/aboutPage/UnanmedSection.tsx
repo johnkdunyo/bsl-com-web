@@ -34,7 +34,7 @@ const UnanmedSection = () => {
   const swiperRef = useRef<SwiperType>();
 
   return (
-    <div className="py-16 bg-white">
+    <div className="py-16 sm:py-24 bg-white">
       <div className="flex flex-col  relative">
         <Swiper
           navigation={{

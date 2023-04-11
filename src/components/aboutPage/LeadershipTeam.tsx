@@ -142,7 +142,7 @@ const LeadershipTeam = () => {
                 shortDescription={
                   "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
                 }
-                imageURL={"/assets/img/board/razak.png"}
+                imageURL={"/assets/img/board/nana.png"}
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -154,7 +154,7 @@ const LeadershipTeam = () => {
                 shortDescription={
                   "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
                 }
-                imageURL={"/assets/img/board/razak.png"}
+                imageURL={"/assets/img/board/kris.png"}
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -166,10 +166,10 @@ const LeadershipTeam = () => {
                 shortDescription={
                   "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
                 }
-                imageURL={"/assets/img/board/razak.png"}
+                imageURL={"/assets/img/board/sam.png"}
               />
             </SwiperSlide>
-            <SwiperSlide>
+            {/* <SwiperSlide>
               <SingleSlide
                 id={5}
                 currentIndex={currentIndex}
@@ -204,7 +204,7 @@ const LeadershipTeam = () => {
                 }
                 imageURL={"/assets/img/board/razak.png"}
               />
-            </SwiperSlide>
+            </SwiperSlide> */}
           </Swiper>
         </>
       </div>
