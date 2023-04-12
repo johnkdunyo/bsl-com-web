@@ -35,7 +35,7 @@ const SingleSlide = ({
         currentIndex !== id && " border-green-500 opacity-40"
       } `}
     >
-      <img src={imageURL} className="sm:h-4/5 " />
+      <img src={imageURL} className="sm:h-4/5  " />
 
       <div
         className={` ${currentIndex !== id && "hidden"}
@@ -76,9 +76,9 @@ const LeadershipTeam = () => {
   return (
     <section className="bg-[#0C233E] relative ">
       <CustomBackground1 />
-      <div className="py-10 z-10">
-        <div className="custom-container ">
-          <h1 className="text-[#82AEC9] font-bold text-[3.8rem] sm:text-[9rem] sm:whitespace-nowrap whitespace-pre-line leading-[3.5rem]  opacity-30 sm:-mb-10">
+      <div className="py-10 z-10 relative">
+        <div className="  custom-container sm:mt-16 sm:-mb-8">
+          <h1 className="text-[#82AEC9] font-bold h-full  text-[3.7rem] sm:text-[10rem] sm:whitespace-nowrap whitespace-pre-line leading-[3.5rem]  opacity-30   ">
             Leadership Team
           </h1>
         </div>
@@ -174,42 +174,6 @@ const LeadershipTeam = () => {
                 imageURL={"/assets/img/board/kris.png"}
               />
             </SwiperSlide>
-            {/* <SwiperSlide>
-              <SingleSlide
-                id={5}
-                currentIndex={currentIndex}
-                name="Razak Awudalai"
-                portfolio={"Group CE0"}
-                shortDescription={
-                  "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
-                }
-                imageURL={"/assets/img/board/razak.png"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <SingleSlide
-                id={6}
-                currentIndex={currentIndex}
-                name="Razak Awudalai"
-                portfolio={"Group CE0"}
-                shortDescription={
-                  "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
-                }
-                imageURL={"/assets/img/board/razak.png"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <SingleSlide
-                id={7}
-                currentIndex={currentIndex}
-                name="Razak Awudalai"
-                portfolio={"Group CE0"}
-                shortDescription={
-                  "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
-                }
-                imageURL={"/assets/img/board/razak.png"}
-              />
-            </SwiperSlide> */}
           </Swiper>
         </>
       </div>
