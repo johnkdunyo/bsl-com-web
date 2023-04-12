@@ -22,23 +22,17 @@ const CustomLottieLoader = ({ status }: { status: "active" | "inactive" }) => {
 
 const HeroSection = () => {
   return (
-    <section className=" home-hero h-[90vh] sm:h-[95vh]   top-0    ">
-      <div className=" container mx-auto text-white flex h-full px-4 sm:px-0  justify-center items-end  pb-10  relative">
+    <section className=" home-hero h-[90vh] sm:h-[95vh]   top-0">
+      <div className=" container mx-auto text-white flex h-full px-4 sm:px-0  justify-center sm:items-end  pb-10  relative">
         {/* mobile */}
-        <div className="sm:hidden  w-full    flex  flex-col items-center justify-center text-center   pb-10  ">
-          <div className="max-w-3xl flex flex-col gap-6">
-            <h2 className="headerText1 ">
-              We are Engineering Africa&apos;s Digital Future
-            </h2>
-            <p className="flex sm:hidden text-2xl sm:text-3xl  ">
-              We&apos;re offering 360 digital <br />
-              solutions Globally from African by Africans.
-            </p>
+        <div className="sm:hidden  w-full    flex  flex-col items-center justify-evenly text-center mt-20 ">
+          <h2 className="headerText1 ">
+            We are committed to connecting Africa&apos;s Digital Future
+          </h2>
 
-            <h1 className="text-[#AB2346] uppercase tracking-widest">
-              Get to know us
-            </h1>
-          </div>
+          <h1 className="text-[#AB2346] uppercase tracking-widest">
+            Get to know us
+          </h1>
         </div>
 
         {/* desktop */}

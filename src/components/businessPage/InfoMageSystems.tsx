@@ -3,15 +3,15 @@ import React from "react";
 const InfoMageSystems = () => {
   return (
     <section className=" bg-white pb-40 ">
-      <div className="custom-container2 h-full flex flex-col sm:flex-row justify-between py-32 gap-16  ">
+      <div className="custom-container2 h-full flex flex-col sm:flex-row justify-between py-10 sm:py-20 gap-10  ">
         <div className=" w-full  -mt-20 sm:-mt-[0rem] sm:order-first">
           <img
-            src="/assets/img/business/picture1.png"
+            src="/assets/img/business/info-mgt.png"
             className="w-full h-full"
           />
         </div>
         <div className="  w-full flex justify-center items-center text-[#1D365A]">
-          <div className="flex flex-col gap-6  sm:-mt-10">
+          <div className="flex flex-col gap-6  ">
             <h1 className="headerText1">Information Management System</h1>
             <p className=" paragraphText1">
               Information management systems are the backbone of any

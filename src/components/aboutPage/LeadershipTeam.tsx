@@ -31,15 +31,15 @@ const SingleSlide = ({
   // console.log("swiper", id, currentIndex);
   return (
     <div
-      className={`w-full flex flex-col sm:flex-row  bg-transparent z-20  h-[40rem] items-center ${
-        currentIndex !== id && ""
+      className={`w-full flex flex-col sm:flex-row  bg-transparent z-20  h-[40rem] items-center  ${
+        currentIndex !== id && " border-green-500 opacity-40"
       } `}
     >
-      <img src={imageURL} className="sm:h-3/4 " />
+      <img src={imageURL} className="sm:h-4/5 " />
 
       <div
         className={` ${currentIndex !== id && "hidden"}
-        } flex flex-col justify-center  border-red-400 w-full `}
+        } flex flex-col justify-center   border-red-400 w-full  `}
       >
         <div
           className="flex flex-col items-start gap-2 my-2 mx-4 sm:w-[24rem] 
@@ -78,7 +78,7 @@ const LeadershipTeam = () => {
       <CustomBackground1 />
       <div className="py-10 z-10">
         <div className="custom-container ">
-          <h1 className="text-[#82AEC9] font-bold text-[3.8rem] sm:text-[9rem] sm:whitespace-nowrap whitespace-pre-line leading-[3.5rem]  opacity-30">
+          <h1 className="text-[#82AEC9] font-bold text-[3.8rem] sm:text-[9rem] sm:whitespace-nowrap whitespace-pre-line leading-[3.5rem]  opacity-30 sm:-mb-10">
             Leadership Team
           </h1>
         </div>
@@ -124,7 +124,7 @@ const LeadershipTeam = () => {
             pagination={{ clickable: true }}
             modules={[EffectCoverflow, Pagination, Navigation]}
             keyboard={true}
-            className="w-full "
+            className="w-full  "
           >
             <SwiperSlide>
               <SingleSlide

@@ -1,4 +1,6 @@
 import SiteLayout from "@/components/Layout/SiteLayout";
+import CloudStorageSection from "@/components/businessPage/CloudStorageSection";
+import ComputingNetworkingSection from "@/components/businessPage/ComputingNetworkingSection";
 import DataCenterSection from "@/components/businessPage/DataCenterSection";
 import HeroSection from "@/components/businessPage/HeroSection";
 import InfoMageSystems from "@/components/businessPage/InfoMageSystems";
@@ -11,6 +13,8 @@ const Business = () => {
         <HeroSection />
         <InfoMageSystems />
         <DataCenterSection />
+        <ComputingNetworkingSection />
+        <CloudStorageSection />
       </>
     </SiteLayout>
   );

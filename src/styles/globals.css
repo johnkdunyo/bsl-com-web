@@ -27,7 +27,7 @@
 }
 
 .custom-container2 {
-    @apply container mx-auto px-4 sm:px-36
+    @apply container mx-auto px-6 sm:px-36
 }
 
 .home-custom-navs {

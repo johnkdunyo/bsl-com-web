@@ -4,7 +4,7 @@ import CorrectIsoData from "../../../public/assets/lottie/iso.json";
 
 const CertifiedSection = () => {
   const isoLottieOptions = {
-    loop: false,
+    loop: true,
     autoplay: true,
     animationData: CorrectIsoData,
     rendererSettings: {
