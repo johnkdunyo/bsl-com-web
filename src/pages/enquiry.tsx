@@ -31,7 +31,11 @@ const enquiry = () => {
     return (
       <div className="w-full relative  h-9">
         <button
-          className="w-full border border-[#1D365A] rounded-[10px] h-full text-[#1D365A] text-xs  flex items-center justify-center"
+          className={`w-full border ${
+            currentEnquiryType.id === enquiry.id
+              ? "border-[#AB2346]"
+              : "border-[#1D365A]"
+          }  rounded-[10px] h-full text-[#1D365A] text-xs  flex items-center justify-center`}
           onClick={() => setCurrentEnquiryType(enquiry)}
         >
           {enquiry.name}
