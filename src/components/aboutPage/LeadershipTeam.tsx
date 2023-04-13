@@ -74,7 +74,7 @@ const LeadershipTeam = () => {
   };
 
   return (
-    <section className="bg-[#0C233E] relative ">
+    <section className="bg-[#0C233E] relative sm:py-16">
       <CustomBackground1 />
       <div className="py-10 z-10 relative">
         <div className="  custom-container sm:mt-16 sm:-mb-8">

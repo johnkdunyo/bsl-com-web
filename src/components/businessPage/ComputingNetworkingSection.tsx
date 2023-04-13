@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const SingleComponent = ({
   title,
   list,
+  imageURL,
 }: {
   title: string;
   list?: string[];
@@ -11,13 +12,16 @@ const SingleComponent = ({
   const [hovered, setHovered] = useState(false);
   return (
     <>
+      {/* desktop */}
       <div
-        className="h-[25rem] w-full hidden sm:block"
+        className="h-[27rem] w-full hidden sm:block"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
         {hovered ? (
-          <div className="border border-[#82AEC9] w-full rounded-[40px] p-10 h-full bg-[url('/assets/img/business/computingSection/image1.png')] border-transparent">
+          <div
+            className={`border border-[#82AEC9] w-full rounded-[40px] p-10 h-full ${imageURL} border-transparent bg-cover`}
+          >
             <div className="flex flex-col   h-full justify-end gap-5">
               <div className="h-full  flex items-end">
                 <h1
@@ -70,8 +74,10 @@ const SingleComponent = ({
           </div>
         )}
       </div>
-
-      <div className="sm:hidden h-[25rem] w-full border border-[#82AEC9] rounded-[45px] bg-[url('/assets/img/business/computingSection/image1.png')] relative">
+      {/* mobilex */}
+      <div
+        className={`sm:hidden h-[25rem] w-full border border-[#82AEC9] rounded-[45px] relative ${imageURL}  bg-cover bg-center`}
+      >
         <div className="flex flex-col justify-end h-full">
           <div className="h-[32%]  bg-[#0C233E]  border-[#82AEC9] rounded-bl-[45px] rounded-br-[45px] p-8">
             <h1
@@ -116,9 +122,16 @@ const ComputingNetworkingSection = () => {
           <SingleComponent
             title="Supply of IT equipment"
             list={["Server", "Routers", "Switches, etc"]}
+            imageURL="bg-[url('/assets/img/business/computingSection/image3.png')]"
           />
-          <SingleComponent title="SD – WAN Design and Deployment" />
-          <SingleComponent title="Network Design and Deployment" />
+          <SingleComponent
+            title="SD – WAN Design and Deployment"
+            imageURL="bg-[url('/assets/img/business/computingSection/image2.png')]"
+          />
+          <SingleComponent
+            title="Network Design and Deployment"
+            imageURL="bg-[url('/assets/img/business/computingSection/image1.png')]"
+          />
         </div>
       </div>
     </div>

@@ -21,7 +21,7 @@ const InfoMageSystems = () => {
               by providing them with insights from their data
             </p>
 
-            <h1 className="text-xl font-medium tracking-wider mt-4">
+            <h1 className="text-lg font-medium tracking-[0.2rem] mt-4">
               WE EXPERTISE IN
             </h1>
 
