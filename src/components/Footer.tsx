@@ -22,7 +22,9 @@ const Footer = () => {
             <span className="font-medium"> business</span> with us with
             <span className="font-medium"> speed</span>?
           </h1>
-          <button className="custom-button1">Get in Touch</button>
+          <button className="custom-button1">
+            <Link href="/enquiry">Get in Touch</Link>
+          </button>
         </div>
 
         <div>
@@ -106,7 +108,9 @@ const Footer = () => {
               <span className="font-medium"> business</span> with us with
               <span className="font-medium"> speed</span>?
             </h1>
-            <button className="custom-button1 text-2xl">Get in Touch</button>
+            <button className="custom-button1 text-2xl">
+              <Link href="/enquiry">Get in Touch</Link>
+            </button>
           </div>
 
           <div className="w-full flex flex-col justify-between items-start  pl-10 gap-16">

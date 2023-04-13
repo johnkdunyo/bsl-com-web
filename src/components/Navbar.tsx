@@ -52,7 +52,8 @@ interface INavbar {
     | "Digital Payment"
     | "Business"
     | "About"
-    | "Career";
+    | "Career"
+    | "Enquiry";
 }
 
 interface INavbarNavButtons {
@@ -302,7 +303,12 @@ const Navbar = ({ pageName }: INavbar) => {
             </div>
 
             <div className="flex justify-center mb-6">
-              <button className="custom-button1">Get in touch</button>
+              <button
+                className="custom-button1"
+                onClick={() => setOpenSiteMenu(false)}
+              >
+                <Link href="/enquiry">Get in Touch</Link>
+              </button>
             </div>
           </div>
         </div>

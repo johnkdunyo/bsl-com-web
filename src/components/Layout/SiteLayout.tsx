@@ -21,7 +21,8 @@ interface ISiteLayoutProps {
     | "Digital Payment"
     | "Business"
     | "About"
-    | "Career";
+    | "Career"
+    | "Enquiry";
 }
 
 export default function SiteLayout({ children, pageName }: ISiteLayoutProps) {
