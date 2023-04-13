@@ -9,7 +9,7 @@ const HeroSection = () => {
           <h2 className="headerText1 ">Careers</h2>
 
           <h1 className="text-xl tracking-widest">
-            We are always looking for new friends
+            We are always looking for new friends and we dony neet you
           </h1>
         </div>
 
