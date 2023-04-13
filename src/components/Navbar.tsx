@@ -189,7 +189,7 @@ const Navbar = ({ pageName }: INavbar) => {
                 active={pageName === "About"}
               />
               <CustomNavButton2
-                href="/"
+                href="/career"
                 title="Career"
                 active={pageName === "Career"}
               />
@@ -271,8 +271,13 @@ const Navbar = ({ pageName }: INavbar) => {
                   About
                 </h1>
               </Link>
-              <Link href="/">
-                <h1 className="text-[#1D365A] font-medium text-4xl">Career</h1>
+              <Link href="/career">
+                <h1
+                  className="text-[#1D365A] font-medium text-4xl"
+                  onClick={() => setOpenSiteMenu(false)}
+                >
+                  Career
+                </h1>
               </Link>
             </div>
 

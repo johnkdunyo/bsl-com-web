@@ -7,7 +7,7 @@ const SingleComponent = ({
 }: {
   title: string;
   list?: string[];
-  imageURL?: string;
+  imageURL: string;
 }) => {
   const [hovered, setHovered] = useState(false);
   return (
