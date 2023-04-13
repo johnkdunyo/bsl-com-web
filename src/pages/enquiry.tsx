@@ -50,12 +50,43 @@ const enquiry = () => {
     <SiteLayout pageName={"Enquiry"}>
       <section className="bg-[#0C233E] h-full   relative">
         <CustomBackground1 />
-        <div className=" custom-container pt-32 pb-24">
+        <div className=" custom-container2 pt-32 pb-24">
           <div className="flex flex-col sm:flex-row  gap-10">
-            <div className="w-full px-4">
-              <h1 className=" text-4xl font-medium">
-                Make an <span>enquiry</span>
+            <div className="w-full px-4 sm:px-0">
+              <h1 className=" text-3xl sm:text-8xl font-medium">
+                <span className="sm:font-extralight"> Make an </span>{" "}
+                <span className="sm:font-bold">enquiry</span>
               </h1>
+
+              <div className="hidden sm:flex flex-col mt-12 gap-10">
+                <div>
+                  <h1 className="text-[#82AEC9] uppercase tracking-widest text-2xl font-medium">
+                    Contact us
+                  </h1>
+                  <h1 className="mt-3 text-[1.5rem]">Broadspectrum Ltd.</h1>
+                  <h1 className="text-[1.5rem] mt-4">
+                    HEAD OFFICE
+                    <br />
+                    No 24 Botwe <br />
+                    Dzorwulu Road, <br />
+                    Dzorwulu-Accra
+                  </h1>
+                </div>
+
+                <div>
+                  <h1 className="text-[#82AEC9] uppercase tracking-widest text-2xl font-medium">
+                    Phone
+                  </h1>
+                  <h1 className="mt-3 text-[1.5rem]">+233(0) 593 808 064</h1>
+                </div>
+
+                <div>
+                  <h1 className="text-[#82AEC9] uppercase tracking-widest text-2xl font-medium">
+                    Email
+                  </h1>
+                  <h1 className="mt-3 text-[1.5rem]">contact@bsl.com</h1>
+                </div>
+              </div>
             </div>
 
             <div className="w-full  bg-white h-full rounded-[30px] p-6 z-10">
@@ -70,7 +101,7 @@ const enquiry = () => {
                   ))}
                 </div>
               </div>
-              <div className="flex flex-col justify-between gap-4 ">
+              <div className="flex flex-col justify-between gap-5 ">
                 <CustomInput placeHolder="Name" />
                 <CustomInput placeHolder="Email" />
                 <CustomInput placeHolder="Phone" />
