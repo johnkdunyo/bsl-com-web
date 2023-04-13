@@ -23,7 +23,7 @@ const enquiryTypeData: IEnquiryTypeData[] = [
   },
 ];
 
-const enquiry = () => {
+const Enquiry = () => {
   const [currentEnquiryType, setCurrentEnquiryType] =
     useState<IEnquiryTypeData>(enquiryTypeData[1]);
 
@@ -133,4 +133,4 @@ const enquiry = () => {
   );
 };
 
-export default enquiry;
+export default Enquiry;
