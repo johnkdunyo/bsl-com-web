@@ -85,13 +85,6 @@ const enquiry = () => {
                     placeholder="Your message here"
                   />
                 </div>
-                <div className=" -mt-3 flex  items-center gap-2 text-sm">
-                  <input
-                    type="checkbox"
-                    className="checkbox checkbox-info checkbox-sm sm:checkbox-md"
-                  />
-                  <p className="text-[#1D365A]">Accept Privacy *</p>
-                </div>
 
                 <div className=" flex flex-col items-center mt-5">
                   <button className="custom-button1 px-6">SEND Enquiry</button>
