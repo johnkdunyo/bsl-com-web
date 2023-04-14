@@ -2,6 +2,7 @@
 
 import React, { useCallback, useRef } from "react";
 import type { Swiper as SwiperType } from "swiper";
+import SwiperCore from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -31,107 +32,102 @@ const SingleComponent = ({
 };
 
 const UnanmedSection = () => {
-  const swiperRef = useRef<SwiperType>();
+  const swiperRef = useRef<SwiperCore>();
+  const swiperNavPrevRef = React.useRef<HTMLButtonElement>(null);
+  const swiperNavNextRef = React.useRef<HTMLButtonElement>(null);
+
+  const onBeforeInit = (Swiper: SwiperCore): void => {
+    swiperRef.current = Swiper;
+  };
 
   return (
     <div className="py-16 sm:py-24 bg-white">
-      <div className="flex flex-col  relative">
-        <Swiper
-          navigation={{
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          }}
-          pagination={{ el: ".swiper-pagination", clickable: true }}
-          spaceBetween={0}
-          cssMode={true}
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={1.1}
-          loop={true}
-          mousewheel={true}
-          autoplay={{
-            delay: 500,
-          }}
-          breakpoints={{
-            640: {
-              slidesPerView: 4,
-              spaceBetween: 0,
-            },
-          }}
-          modules={[Navigation]}
-          keyboard={true}
-          className="w-full"
-        >
-          <SwiperSlide>
-            <SingleComponent
-              imageURL="about2"
-              description="Broadspectrum designed and implemented a Software-Defined Wide Area
+      <div className="flex flex-col  relative ">
+        <div className="flex flex-col justify-between gap-8">
+          <Swiper
+            onBeforeInit={onBeforeInit}
+            spaceBetween={0}
+            cssMode={true}
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerView={1.1}
+            loop={true}
+            mousewheel={true}
+            autoplay={{
+              delay: 500,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 4,
+                spaceBetween: 0,
+              },
+            }}
+            navigation={{
+              prevEl: swiperNavPrevRef?.current,
+              nextEl: swiperNavNextRef?.current,
+            }}
+            modules={[Navigation]}
+            keyboard={true}
+            className="w-full"
+          >
+            <SwiperSlide>
+              <SingleComponent
+                imageURL="about2"
+                description="Broadspectrum designed and implemented a Software-Defined Wide Area
           Network as an overlay network to provide intelligent traffic steering
           over GCB Bank’s MPLS and LTE WAN links."
-            />
-          </SwiperSlide>
+              />
+            </SwiperSlide>
 
-          <SwiperSlide>
-            <SingleComponent
-              imageURL="about3"
-              description="Broadspectrum designed and implemented a Software-Defined Wide Area
+            <SwiperSlide>
+              <SingleComponent
+                imageURL="about3"
+                description="Broadspectrum designed and implemented a Software-Defined Wide Area
           Network as an overlay network to provide intelligent traffic steering
           over GCB Bank’s MPLS and LTE WAN links."
-            />
-          </SwiperSlide>
+              />
+            </SwiperSlide>
 
-          <SwiperSlide>
-            <SingleComponent
-              imageURL="about4"
-              description="Broadspectrum designed and implemented a Software-Defined Wide Area
+            <SwiperSlide>
+              <SingleComponent
+                imageURL="about4"
+                description="Broadspectrum designed and implemented a Software-Defined Wide Area
           Network as an overlay network to provide intelligent traffic steering
           over GCB Bank’s MPLS and LTE WAN links."
-            />
-          </SwiperSlide>
+              />
+            </SwiperSlide>
 
-          <SwiperSlide>
-            <SingleComponent
-              imageURL="about5"
-              description="Broadspectrum designed and implemented a Software-Defined Wide Area
+            <SwiperSlide>
+              <SingleComponent
+                imageURL="about5"
+                description="Broadspectrum designed and implemented a Software-Defined Wide Area
           Network as an overlay network to provide intelligent traffic steering
           over GCB Bank’s MPLS and LTE WAN links."
-            />
-          </SwiperSlide>
+              />
+            </SwiperSlide>
+          </Swiper>
 
-          {/* <div className="border border-red-500  absolute bottom-0">
-            <div className="flex gap-2">
-              <button className="swiper-button-prev border">
-                <img
-                  src="/assets/icons/navs/left-blue.svg"
-                  className="w-[95%] sm:w-full"
-                />
-              </button>
-              <button className="swiper-button-next ">
-                <img
-                  src="/assets/icons/navs/right-blue.svg"
-                  className="w-[95%] sm:w-full"
-                />
-              </button>
-            </div>
-          </div> */}
-        </Swiper>
+          <div className=" custom-container flex justify-start gap-4    w-full sm:order-first sm:justify-end ">
+            <button
+              className=" z-10 w-14 h-14 sm:w-16 sm:h-16"
+              ref={swiperNavPrevRef}
+              onClick={() => swiperRef!.current?.slidePrev()}
+            >
+              <img
+                src="/assets/icons/navs/left-blue.svg"
+                className=" w-full "
+              />
+            </button>
 
-        {/* <div className="slider-controler">
-          ..
-          <div className="swiper-button-prev slider-arrow">
-            <img
-              src="/assets/icons/navs/right-blue.svg"
-              className="w-[95%] sm:w-full"
-            />
+            <button
+              className=" z-10 w-14 h-14 sm:w-16 sm:h-16"
+              ref={swiperNavNextRef}
+              onClick={() => swiperRef!.current?.slideNext()}
+            >
+              <img src="/assets/icons/navs/right-blue.svg" className="w-full" />
+            </button>
           </div>
-          <div className="swiper-button-next slider-arrow">
-            <img
-              src="/assets/icons/navs/right-blue.svg"
-              className="w-[95%] sm:w-full"
-            />
-          </div>
-          <div className="swiper-pagination"></div>
-        </div> */}
+        </div>
       </div>
     </div>
   );
