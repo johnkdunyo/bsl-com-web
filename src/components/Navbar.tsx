@@ -98,6 +98,7 @@ const CustomNavButton2 = ({
 const Navbar = ({ pageName }: INavbar) => {
   const [openSubsidiaryMenu, setOpenSubsidiaryMenu] = useState<boolean>(false);
   const [openSiteMenu, setOpenSiteMenu] = useState<boolean>(false);
+  const [openMediaDropdown, setOpenMediaDropdown] = useState<boolean>(false);
   return (
     <div className="  z-30 mt-0 fixed w-full  top-0   sm:backdrop-blur-sm sm:bg-gray-900/90 opacity-1">
       <div className="container mx-auto px-3 ">
@@ -209,7 +210,7 @@ const Navbar = ({ pageName }: INavbar) => {
         <div
           className={` ${
             openSiteMenu ? "flex" : "hidden"
-          } bg-white w-full h-[90vh] absolute top-0 left-0 sm:hidden flex container mx-auto px-3 py-2 rounded-bl-[110px] z-30`}
+          } bg-white w-full h-[94vh] absolute top-0 left-0 sm:hidden flex container mx-auto px-3 py-2 rounded-bl-[110px] z-30`}
         >
           <div className=" flex w-full justify-between flex-col gap-4 h-full">
             <div className="flex justify-between  items-start  w-full">
@@ -280,6 +281,31 @@ const Navbar = ({ pageName }: INavbar) => {
                   Career
                 </h1>
               </Link>
+
+              <div className="text-[#1D365A]  h-20">
+                <button
+                  className=" font-medium text-4xl  text-left flex items-center gap-2"
+                  onClick={() => setOpenMediaDropdown((prev) => !prev)}
+                >
+                  Media
+                  <img src="/assets/icons/navs/down-blue.svg" className=" " />
+                </button>
+                <div
+                  className={`${
+                    openMediaDropdown ? "flex" : "hidden"
+                  }  justify-between mt-3`}
+                >
+                  <Link href="/">
+                    <h1>Newsletters</h1>
+                  </Link>
+                  <Link href="/">
+                    <h1>Publications</h1>
+                  </Link>
+                  <Link href="/">
+                    <h1>Gallery</h1>
+                  </Link>
+                </div>
+              </div>
             </div>
 
             <div className="px-6 flex  flex-col gap-6">

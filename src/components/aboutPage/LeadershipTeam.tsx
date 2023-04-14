@@ -1,5 +1,8 @@
 import React, { useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
+import SwiperCore from "swiper";
+// import { NavigationOptions } from "swiper/types/components/navigation";
+// import { PaginationOptions } from "swiper/types/components/pagination";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -58,14 +61,22 @@ const SingleSlide = ({
 };
 
 const LeadershipTeam = () => {
-  const swiperRef = useRef(null);
+  const swiperRef = useRef<SwiperCore>();
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  const swiperNavPrevRef = React.useRef<HTMLButtonElement>(null);
+  const swiperNavNextRef = React.useRef<HTMLButtonElement>(null);
+  const paginationLabel = React.useRef<HTMLHeadingElement>(null);
+
+  const onBeforeInit = (Swiper: SwiperCore): void => {
+    swiperRef.current = Swiper;
+  };
 
   const updateIndex = (swiperInstance: SwiperType) => {
     if (swiperInstance === null) return;
     const currentSlide = swiperInstance?.activeIndex;
     console.log(
-      "swiper acti, real",
+      "swiper activeInd, realInd",
       swiperInstance.activeIndex,
       swiperInstance.realIndex
     );
@@ -85,10 +96,10 @@ const LeadershipTeam = () => {
 
         <>
           <Swiper
+            onBeforeInit={onBeforeInit}
             initialSlide={5}
             onActiveIndexChange={updateIndex}
             // cssMode={true}
-            ref={swiperRef}
             effect={"coverflow"}
             spaceBetween={60}
             grabCursor={true}
@@ -120,11 +131,14 @@ const LeadershipTeam = () => {
                 },
               },
             }}
-            navigation
+            navigation={{
+              prevEl: swiperNavPrevRef?.current,
+              nextEl: swiperNavNextRef?.current,
+            }}
             pagination={{ clickable: true }}
             modules={[EffectCoverflow, Pagination, Navigation]}
             keyboard={true}
-            className="w-full  "
+            className="w-full   relative"
           >
             <SwiperSlide>
               <SingleSlide
@@ -174,6 +188,23 @@ const LeadershipTeam = () => {
                 imageURL={"/assets/img/board/kris.png"}
               />
             </SwiperSlide>
+            <div className=" flex justify-between   absolute top-[50%] bottom-[50%] w-full ">
+              <button
+                className=" z-10 w-16 h-16 sm:w-20 sm:h-full"
+                ref={swiperNavPrevRef}
+                onClick={() => swiperRef!.current?.slidePrev()}
+              >
+                <img src="/assets/icons/nav-left.svg" className=" w-full " />
+              </button>
+
+              <button
+                className=" z-10 w-16 h-16 sm:w-20 sm:h-full"
+                ref={swiperNavNextRef}
+                onClick={() => swiperRef!.current?.slideNext()}
+              >
+                <img src="/assets/icons/nav-right.svg" className="w-full" />
+              </button>
+            </div>
           </Swiper>
         </>
       </div>
