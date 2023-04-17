@@ -51,7 +51,7 @@ const UnanmedSection = () => {
             grabCursor={true}
             centeredSlides={true}
             slidesPerView={1.1}
-            loop={true}
+            loop={false}
             mousewheel={true}
             autoplay={{
               delay: 500,

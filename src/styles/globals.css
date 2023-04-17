@@ -36,7 +36,7 @@
     opacity: 1;*/
     backdrop-filter: blur(30px); 
     -webkit-backdrop-filter: blur(40px); 
-    @apply bg-gray-300/20  rounded-[48px]
+    @apply bg-gray-900/80  rounded-[48px] backdrop-blur-sm ;
 }
 
 

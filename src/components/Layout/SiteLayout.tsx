@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import Footer from "@/components/Footer";
 import HappyClients from "@/components/homePage/HappyClients";
 import TrustedBy from "@/components/homePage/TrustedBy";
@@ -22,10 +22,30 @@ interface ISiteLayoutProps {
     | "Business"
     | "About"
     | "Career"
-    | "Enquiry";
+    | "Enquiry"
+    | "Galley";
 }
 
 export default function SiteLayout({ children, pageName }: ISiteLayoutProps) {
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        // setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      window.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [dropdownRef]);
+
   return (
     <>
       <Head>
@@ -34,7 +54,7 @@ export default function SiteLayout({ children, pageName }: ISiteLayoutProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="relative text-white bg-[#000A26]">
+      <main className="relative text-white bg-[#000A26]" ref={dropdownRef}>
         <Navbar pageName={pageName} />
         {children}
         <Footer />

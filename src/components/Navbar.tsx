@@ -1,5 +1,12 @@
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import {
+  HiChevronDown,
+  HiChevronLeft,
+  HiChevronRight,
+  HiChevronUp,
+} from "react-icons/hi";
 
 interface INavs {
   id: number;
@@ -53,7 +60,8 @@ interface INavbar {
     | "Business"
     | "About"
     | "Career"
-    | "Enquiry";
+    | "Enquiry"
+    | "Galley";
 }
 
 interface INavbarNavButtons {
@@ -68,10 +76,10 @@ const NavButton = ({ active, title, href, imgSRC }: INavbarNavButtons) => {
     <button
       className={` ${
         active ? "bg-transparent" : "bg-transparent"
-      }  px-6  py-1.5 rounded-[48px]`}
+      }  px-6 w-full   h-10 relative`}
     >
       <Link href={href}>
-        <img src={imgSRC} alt={title} />
+        <Image src={imgSRC} alt={title} className="  " fill />
       </Link>
     </button>
   );
@@ -99,83 +107,128 @@ const Navbar = ({ pageName }: INavbar) => {
   const [openSubsidiaryMenu, setOpenSubsidiaryMenu] = useState<boolean>(false);
   const [openSiteMenu, setOpenSiteMenu] = useState<boolean>(false);
   const [openMediaDropdown, setOpenMediaDropdown] = useState<boolean>(false);
+  const [openDesktopSubsidiaryMenu, setOpenDesktopSubsidiaryMenu] =
+    useState<boolean>(false);
   return (
-    <div className="  z-30 mt-0 fixed w-full  top-0   sm:backdrop-blur-sm sm:bg-gray-900/90 opacity-1">
+    <div className="  z-30 pt-2 fixed w-full  top-0   sm:backdrop-blur-sm sm:bg-gray-900/90 opacity-1">
       <div className="container mx-auto px-3 ">
         {/* mobile */}
         <div className="sm:hidden flex justify-between  py-2 items-start  ">
           <div className="flex  gap-1  justify-between">
-            {/* <button className="  h-12 w-12 bg-gray-300/20 rounded-full flex justify-center items-center">
-              <img src="/assets/icons/home-alt.svg" className="h-3/5 w-3/5 " />
-            </button> */}
-
             <div
               className={` ${
-                openSubsidiaryMenu ? "bg-white" : "bg-transparent"
-              }  rounded-[28px]  flex flex-col gap-2 `}
+                openSubsidiaryMenu ? "bg-whitel" : "bg-transparent"
+              }  rounded-[28px]  flex flex-col gap-0.5 `}
             >
               <button
-                className="flex home-custom-navs  backdrop-blur-md  items-center justify-center    py-2   "
+                className="flex home-custom-navs   items-center justify-center    py-2 gap-1  "
                 onClick={() => setOpenSubsidiaryMenu((prev) => !prev)}
               >
                 <img
                   src="/assets/icons/bsl-main.svg"
-                  className=" w-[85%]   py-0.5 "
+                  className=" w-[75%]   py-0.5 "
                 />
+                {openSubsidiaryMenu ? (
+                  <HiChevronUp size={24} />
+                ) : (
+                  <HiChevronDown size={24} />
+                )}
               </button>
 
               <div
                 className={`${
                   openSubsidiaryMenu ? "flex" : "hidden"
-                }  flex-col gap-2  pb-2`}
+                }  flex-col gap-3  pb-2 border bg-white rounded-[28px] p-4 w-full`}
               >
-                <button className="flex justify-start px-4  w-full items-start ">
-                  <img src="/assets/icons/bdp-main.svg" alt="bdp" />
+                <button className="flex justify-start   w-full items-start ">
+                  <img src="/assets/icons/bdp.svg" alt="bdp" />
+                </button>
+                <button className="flex justify-start px-4  w-full items-start  ">
+                  <img
+                    src="/assets/icons/spectrum.svg"
+                    alt="spectrum"
+                    className="-mx-4"
+                  />
                 </button>
                 <button className="flex justify-start px-4  w-full items-start ">
-                  <img src="/assets/icons/spectrum-main.svg" alt="spectrum" />
-                </button>
-                <button className="flex justify-start px-4  w-full items-start ">
-                  <img src="/assets/icons/isg-main.svg" alt="isg" />
+                  <img
+                    src="/assets/icons/isg.svg"
+                    alt="isg"
+                    className="h-full  -mx-4"
+                  />
                 </button>
               </div>
             </div>
           </div>
-          <button onClick={() => setOpenSiteMenu((prev) => !prev)}>
+          <button
+            onClick={() => {
+              setOpenSiteMenu((prev) => !prev);
+              setOpenSubsidiaryMenu(false);
+            }}
+          >
             <img src="/assets/icons/home-2.svg" className="h-4/5" />
           </button>
         </div>
 
         {/* desktop */}
         <div className="hidden sm:flex justify-between w-full py-2 ">
-          <div className="w-6/12    flex justify-between h-full ">
-            <NavButton
-              title="BSL Home"
-              href="/"
-              imgSRC="/assets/icons/bsl-main.svg"
-              active={pageName === "BSL Home"}
-            />
+          <div className="w-6/12    flex justify-between   items-center my-1  ">
+            <div
+              className="w-1/4 flex items-center gap-1"
+              onMouseEnter={() => setOpenDesktopSubsidiaryMenu(true)}
+              onMouseLeave={() => setOpenDesktopSubsidiaryMenu(false)}
+            >
+              <button className={`px-6 w-full   h-10 relative `}>
+                <Link href={"/"}>
+                  <Image
+                    src={"/assets/icons/bsl-main.svg"}
+                    alt={"img"}
+                    className="w-full  "
+                    fill
+                  />
+                </Link>
+                {/* <div className="right-0 absolute ">
+                  
+                </div> */}
+              </button>
+              {openDesktopSubsidiaryMenu ? (
+                <HiChevronLeft size={24} />
+              ) : (
+                <HiChevronRight size={24} />
+              )}
+            </div>
 
-            <NavButton
-              title="Digital Payment"
-              href="/"
-              imgSRC="/assets/icons/bdp-main.svg"
-              active={pageName === "Digital Payment"}
-            />
+            {openDesktopSubsidiaryMenu && (
+              <div
+                className="flex justify-between w-3/4 h-10 pl-3 gap-4"
+                onMouseEnter={() =>
+                  openDesktopSubsidiaryMenu &&
+                  setOpenDesktopSubsidiaryMenu(true)
+                }
+                onMouseLeave={() => setOpenDesktopSubsidiaryMenu(false)}
+              >
+                <NavButton
+                  title="Digital Payment"
+                  href="/"
+                  imgSRC="/assets/icons/bdp-main.svg"
+                  active={pageName === "Digital Payment"}
+                />
 
-            <NavButton
-              title="BSL Home"
-              href="/"
-              imgSRC="/assets/icons/spectrum-main.svg"
-              active={pageName === "Spectrum Fibre"}
-            />
+                <NavButton
+                  title="BSL Home"
+                  href="/"
+                  imgSRC="/assets/icons/spectrum-main.svg"
+                  active={pageName === "Spectrum Fibre"}
+                />
 
-            <NavButton
-              title="Infra Services"
-              href="/"
-              imgSRC="/assets/icons/isg-main.svg"
-              active={pageName === "Infra Services"}
-            />
+                <NavButton
+                  title="Infra Services"
+                  href="/"
+                  imgSRC="/assets/icons/isg-main.svg"
+                  active={pageName === "Infra Services"}
+                />
+              </div>
+            )}
           </div>
 
           <div className="flex gap-8  w-4/12 items-center justify-end ">
@@ -206,52 +259,67 @@ const Navbar = ({ pageName }: INavbar) => {
           </div>
         </div>
 
-        {/* nav mobile */}
+        {/* mobile screen menu nav */}
         <div
           className={` ${
             openSiteMenu ? "flex" : "hidden"
-          } bg-white w-full h-[94vh] absolute top-0 left-0 sm:hidden flex container mx-auto px-3 py-2 rounded-bl-[110px] z-30`}
+          } bg-white w-full h-[94vh] absolute top-0 left-0 sm:hidden flex container mx-auto px-3 py-2 rounded-bl-[110px] z-30 `}
         >
-          <div className=" flex w-full justify-between flex-col gap-4 h-full">
+          <div className=" flex w-full justify-between flex-col gap-4 h-full border pt-2">
             <div className="flex justify-between  items-start  w-full">
               <div className="flex  gap-1  justify-between ">
                 <div
                   className={` ${
-                    openSubsidiaryMenu ? "bg-white" : "bg-transparent"
+                    openSubsidiaryMenu ? "bg-whitel" : "bg-transparent"
                   }  rounded-[28px]  flex flex-col gap-2 border relative `}
                 >
                   <button
-                    className="flex home-custom-navs  backdrop-blur-md  items-center justify-center    py-2  z-10 "
+                    className="flex home-custom-navs  items-center justify-center    py-2  z-10 gap-1"
                     onClick={() => setOpenSubsidiaryMenu((prev) => !prev)}
                   >
                     <img
                       src="/assets/icons/bsl-main.svg"
-                      className=" w-[85%]   py-0.5 "
+                      className=" w-[75%]   py-0.5 "
                     />
+                    {openSubsidiaryMenu ? (
+                      <HiChevronUp size={24} />
+                    ) : (
+                      <HiChevronDown size={24} />
+                    )}
                   </button>
 
                   <div
                     className={`${
                       openSubsidiaryMenu ? "flex" : "hidden"
-                    }  flex-col gap-2  pb-2 absolute top-8 border-2 bg-white w-full pt-8 rounded-b-[22px] -z-2`}
+                    }   absolute top-[3.3rem]  rounded-b-[22px] -z-2  flex-col gap-3  pb-2 border bg-white rounded-[28px] p-4 w-full`}
                   >
-                    <button className="flex justify-start px-4  w-full items-start ">
-                      <img src="/assets/icons/bdp-main.svg" alt="bdp" />
+                    <button className="flex justify-start   w-full items-start ">
+                      <img src="/assets/icons/bdp.svg" alt="bdp" />
                     </button>
-                    <button className="flex justify-start px-4  w-full items-start ">
+                    <button className="flex justify-start px-4  w-full items-start  ">
                       <img
-                        src="/assets/icons/spectrum-main.svg"
+                        src="/assets/icons/spectrum.svg"
                         alt="spectrum"
+                        className="-mx-4"
                       />
                     </button>
                     <button className="flex justify-start px-4  w-full items-start ">
-                      <img src="/assets/icons/isg-main.svg" alt="isg" />
+                      <img
+                        src="/assets/icons/isg.svg"
+                        alt="isg"
+                        className="h-full  -mx-4"
+                      />
                     </button>
                   </div>
                 </div>
               </div>
 
-              <button onClick={() => setOpenSiteMenu((prev) => !prev)}>
+              <button
+                onClick={() => {
+                  setOpenSiteMenu((prev) => !prev);
+                  setOpenSubsidiaryMenu(false);
+                }}
+              >
                 <img src="/assets/icons/home-2-close.svg" className="h-4/5" />
               </button>
             </div>
@@ -301,7 +369,7 @@ const Navbar = ({ pageName }: INavbar) => {
                   <Link href="/">
                     <h1>Publications</h1>
                   </Link>
-                  <Link href="/">
+                  <Link href="/gallery">
                     <h1>Gallery</h1>
                   </Link>
                 </div>

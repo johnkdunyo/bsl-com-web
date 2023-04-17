@@ -1,9 +1,6 @@
 import React, { useRef, useState } from "react";
-import type { Swiper as SwiperType } from "swiper";
+import { Autoplay, Swiper as SwiperType } from "swiper";
 import SwiperCore from "swiper";
-// import { NavigationOptions } from "swiper/types/components/navigation";
-// import { PaginationOptions } from "swiper/types/components/pagination";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -31,7 +28,6 @@ const SingleSlide = ({
   shortDescription: string;
   imageURL: string;
 }) => {
-  // console.log("swiper", id, currentIndex);
   return (
     <div
       className={`w-full flex flex-col sm:flex-row  bg-transparent z-20  h-[40rem] items-center  ${
@@ -75,12 +71,6 @@ const LeadershipTeam = () => {
   const updateIndex = (swiperInstance: SwiperType) => {
     if (swiperInstance === null) return;
     const currentSlide = swiperInstance?.activeIndex;
-    console.log(
-      "swiper activeInd, realInd",
-      swiperInstance.activeIndex,
-      swiperInstance.realIndex
-    );
-    console.log("swiper -----");
     setCurrentIndex(swiperInstance.realIndex + 1);
   };
 
@@ -108,7 +98,7 @@ const LeadershipTeam = () => {
             loop={true}
             mousewheel={true}
             autoplay={{
-              delay: 500,
+              delay: 5000,
             }}
             coverflowEffect={{
               rotate: 0,
@@ -136,7 +126,7 @@ const LeadershipTeam = () => {
               nextEl: swiperNavNextRef?.current,
             }}
             pagination={{ clickable: true }}
-            modules={[EffectCoverflow, Pagination, Navigation]}
+            modules={[EffectCoverflow, Autoplay, Pagination, Navigation]}
             keyboard={true}
             className="w-full   relative"
           >
