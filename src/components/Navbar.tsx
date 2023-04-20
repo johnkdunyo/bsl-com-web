@@ -89,23 +89,80 @@ const CustomNavButton2 = ({
   href,
   title,
   active,
+  textColorWhite = true,
 }: {
   href: string;
   title: string;
   active: boolean;
+  textColorWhite?: boolean;
 }) => {
   return (
     <button
-      className={`hover:bg-gray-800/40 px-2 py-3  ${
+      className={`${
+        textColorWhite
+          ? "hover:bg-gray-800/40"
+          : "hover:bg-gray-100 border-transparent"
+      } px-2 py-3  ${
         active
           ? "border-[#AB2346] border-b-[4px]"
           : "border-b-[4px] border-transparent"
       } `}
     >
       <Link href={href}>
-        <h1 className="text-white font-medium text-md ">{title}</h1>
+        <h1
+          className={`${
+            textColorWhite ? "text-white" : "text-primary"
+          } font-medium text-md `}
+        >
+          {title}
+        </h1>
       </Link>
     </button>
+  );
+};
+
+const CustomNavList = ({ title, href }: { title: string; href: string }) => {
+  const [showArrow, setShowArrow] = useState(false);
+  return (
+    <div className=" w-full">
+      <div
+        className="flex items-center gap-4"
+        onMouseEnter={() => setShowArrow(true)}
+        onMouseLeave={() => setShowArrow(false)}
+      >
+        {showArrow && (
+          <img
+            alt="arrow left"
+            src="/assets/icons/navs/right-red.svg"
+            className="-ml-6 pr-10"
+          />
+        )}
+        <button>
+          <Link
+            href={href}
+            className={`text-primary font-medium text-6xl ${
+              showArrow && "text-secondary font-bold"
+            }`}
+          >
+            {title}
+          </Link>
+        </button>
+
+        {title === "Media" && showArrow && (
+          <div className="text-primary flex gap-5 items-end h-12 ">
+            <Link href="/">
+              <h1 className="hover:font-medium">Newsletters</h1>
+            </Link>
+            <Link href="/">
+              <h1 className="hover:font-medium">Publications</h1>
+            </Link>
+            <Link href="/gallery">
+              <h1 className="hover:font-medium">Gallery</h1>
+            </Link>
+          </div>
+        )}
+      </div>
+    </div>
   );
 };
 
@@ -115,6 +172,7 @@ const Navbar = ({ pageName }: INavbar) => {
   const [openMediaDropdown, setOpenMediaDropdown] = useState<boolean>(false);
   const [openDesktopSubsidiaryMenu, setOpenDesktopSubsidiaryMenu] =
     useState<boolean>(false);
+
   return (
     <div className="  z-30 pt-2 fixed w-full  top-0   sm:backdrop-blur-sm sm:bg-gray-900/90 opacity-1">
       <div className="container mx-auto px-3 ">
@@ -255,10 +313,10 @@ const Navbar = ({ pageName }: INavbar) => {
                 active={pageName === "Career"}
               />
             </div>
-            <button>
+            <button onClick={() => setOpenSiteMenu((prev) => !prev)}>
               <img
                 src="/assets/icons/home-2.svg"
-                className="h-10 "
+                className="h-10  fill-primary"
                 alt="menu icon"
               />
             </button>
@@ -269,9 +327,10 @@ const Navbar = ({ pageName }: INavbar) => {
         <div
           className={` ${
             openSiteMenu ? "flex" : "hidden"
-          } bg-white w-full h-[94vh] absolute top-0 left-0 sm:hidden flex container mx-auto px-3 py-2 rounded-bl-[110px] z-30 `}
+          } bg-white w-full h-[94vh] sm:h-[90vh] absolute top-0 left-0 flex  px-3 py-2 rounded-bl-[110px] sm:rounded-bl-[200px] z-30 `}
         >
-          <div className=" flex w-full justify-between flex-col gap-4 h-full border pt-2">
+          {/* mobile */}
+          <div className="sm:hidden container mx-auto flex w-full justify-between flex-col gap-4 h-full  pt-2">
             <div className="flex justify-between  items-start  w-full">
               <div className="flex  gap-1  justify-between ">
                 <div
@@ -409,6 +468,153 @@ const Navbar = ({ pageName }: INavbar) => {
               >
                 <Link href="/enquiry">Get in Touch</Link>
               </button>
+            </div>
+          </div>
+
+          {/* desktop */}
+          <div className="hidden sm:flex w-full flex-col justify-between h-full  container mx-auto px-3">
+            <div className=" w-full flex justify-between ">
+              <div className="w-6/12    flex justify-between   items-center  ">
+                <div
+                  className="w-1/4 flex items-center gap-1"
+                  onMouseEnter={() => setOpenDesktopSubsidiaryMenu(true)}
+                  onMouseLeave={() => setOpenDesktopSubsidiaryMenu(false)}
+                >
+                  <button className={`px-6 w-full   h-10 relative `}>
+                    <Link href={"/"}>
+                      <Image
+                        src={"/assets/icons/bsl-main.svg"}
+                        alt={"img"}
+                        className="w-full  "
+                        fill
+                      />
+                    </Link>
+                    {/* <div className="right-0 absolute ">
+                  
+                </div> */}
+                  </button>
+                  {openDesktopSubsidiaryMenu ? (
+                    <HiChevronLeft size={24} color={"black"} />
+                  ) : (
+                    <HiChevronRight size={24} color={"black"} />
+                  )}
+                </div>
+
+                {openDesktopSubsidiaryMenu && (
+                  <div
+                    className="flex justify-between w-3/4 h-10 pl-3 gap-4"
+                    onMouseEnter={() =>
+                      openDesktopSubsidiaryMenu &&
+                      setOpenDesktopSubsidiaryMenu(true)
+                    }
+                    onMouseLeave={() => setOpenDesktopSubsidiaryMenu(false)}
+                  >
+                    <NavButton
+                      title="Digital Payment"
+                      href="/"
+                      imgSRC="/assets/icons/bdp.svg"
+                      active={pageName === "Digital Payment"}
+                    />
+
+                    <NavButton
+                      title="BSL Home"
+                      href="/"
+                      imgSRC="/assets/icons/spectrum.svg"
+                      active={pageName === "Spectrum Fibre"}
+                    />
+
+                    <NavButton
+                      title="Infra Services"
+                      href="/"
+                      imgSRC="/assets/icons/isg.svg"
+                      active={pageName === "Infra Services"}
+                    />
+                  </div>
+                )}
+              </div>
+
+              <div className="flex gap-8  w-4/12 items-center justify-end   text-primary">
+                <div className="flex gap-12  ">
+                  <CustomNavButton2
+                    href="/business"
+                    title="Business"
+                    active={pageName === "Business"}
+                    textColorWhite={false}
+                  />
+                  <CustomNavButton2
+                    href="/about"
+                    title="About"
+                    active={pageName === "About"}
+                    textColorWhite={false}
+                  />
+                  <CustomNavButton2
+                    href="/career"
+                    title="Career"
+                    active={pageName === "Career"}
+                    textColorWhite={false}
+                  />
+                </div>
+                <button onClick={() => setOpenSiteMenu((prev) => !prev)}>
+                  <img
+                    src="/assets/icons/close-red.svg"
+                    className="h-10 "
+                    alt="menu icon"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <div className=" w-full h-full flex flex-col justify-center ">
+              <div className=" mx-[10rem] flex justify-between ">
+                <div className="flex flex-col gap-6 ml-14">
+                  <CustomNavList title="Solutions" href="/business" />
+                  <CustomNavList title="Business" href="business" />
+                  <CustomNavList title="Green Business" href="business" />
+                  <CustomNavList title="Media" href="/" />
+                  <CustomNavList title="About" href="about" />
+                </div>
+
+                <div className="text-primary  w-1/4 flex flex-col justify-end -mb-[10%]  tracking-wide">
+                  <div className="w-full flex gap-6 flex-col text-2xl">
+                    <div className="flex items-center gap-2">
+                      <img
+                        src="/assets/icons/arrow-right-blue.svg"
+                        alt="get directions"
+                        className="-ml-10"
+                      />
+                      <h1 className="uppercase  text-xl font-medium tracking-widest">
+                        Contact Us
+                      </h1>
+                    </div>
+                    <h1 className="text-lg">Broadspectrum Ltd.</h1>
+
+                    <div className="flex gap-1 flex-col  ">
+                      <h1 className="uppercase  text-lg font-medium">
+                        HEAD OFFICE
+                      </h1>
+                      <h1 className="text-lg">
+                        No 24 Botwe <br /> Dzorwulu Road, <br />
+                        Dzorwulu-Accra
+                      </h1>
+                    </div>
+
+                    <div className="flex gap-2 flex-col text-lg  h-full">
+                      <h1>+233(0) 593 808 064</h1>
+                      <h1>contact@bsl.com.gh</h1>
+                    </div>
+
+                    <div className="flex gap-4 items-center">
+                      <img
+                        src="/assets/icons/arrow-right-blue.svg"
+                        alt="get directions"
+                      />
+                      <h1 className="uppercase tracking-widest text-xl ">
+                        GET DIRECTIONS{" "}
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

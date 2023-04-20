@@ -4,7 +4,7 @@ const ProudlyGhanaian = () => {
   return (
     <section className=" bg-white ">
       <div className="custom-container h-full flex flex-col sm:flex-row justify-between py-10 gap-16 ">
-        <div className=" w-full  -mt-24 sm:-mt-[9rem] sm:order-last">
+        <div className=" w-full  -mt-24 sm:-mt-[9rem] sm:order-last z-10">
           <img src="/assets/img/about/about1.png" className="w-full h-full" />
         </div>
         <div className="  w-full flex justify-center items-center ">

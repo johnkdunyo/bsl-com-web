@@ -22,39 +22,51 @@ const CustomLottieLoader = ({ status }: { status: "active" | "inactive" }) => {
 
 const HeroSection = () => {
   return (
-    <section className=" home-hero h-[90vh] sm:h-[95vh]   top-0">
-      <div className=" container mx-auto text-white flex h-full px-4 sm:px-0  justify-center sm:items-end  pb-10  relative">
-        {/* mobile */}
-        <div className="sm:hidden  w-full    flex  flex-col items-center justify-evenly text-center mt-20 ">
-          <h2 className="headerText1 ">
-            We are committed to connecting Africa&apos;s Digital Future
-          </h2>
+    <section className="  h-[90vh] sm:h-[95vh]  relative  top-0">
+      <div className="absolute inset-0   bg-video   ">
+        <video
+          autoPlay
+          loop
+          muted
+          className="w-full h-full object-cover"
+          playsInline
+        >
+          <source src="/assets/videos/homepage.webm" type="video/webm" />
+        </video>
+      </div>
 
-          <h1 className="text-[#AB2346] uppercase tracking-widest">
-            Get to know us
-          </h1>
-        </div>
-
-        {/* desktop */}
-        <div className="hidden sm:flex flex-col  h-full w-full custom-container justify-center items-center">
-          <div className=" max-w-4xl flex flex-col items-center gap-10 mt-20">
-            <h2 className="headerText1 text-center">
-              We are Engineering Africa&apos;s Digital Future
+      <div className="relative  h-full  flex flex-col   justify-end gap-8 sm:gap-20">
+        <div className=" container mx-auto text-white flex h-full px-4 sm:px-0  justify-center sm:items-end  pb-10  relative ">
+          {/* mobile */}
+          <div className="sm:hidden  w-full    flex  flex-col items-center justify-evenly text-center mt-20 ">
+            <h2 className=" font-extralight text-center text-[2.8rem] sm:text-7xl leading-[3.6rem] sm:leading-[6rem]">
+              We are <span className="font-bold">committed</span> to connecting
+              Africa&apos;s Digital Future
             </h2>
-            <p className="flex text-2xl sm:text-3xl text-center   ">
-              We&apos;re offering 360 digital solutions <br />
-              Globally from African by Africans.
-            </p>
-          </div>
-        </div>
 
-        <div className="hidden sm:flex absolute  w-full  justify-between">
-          <div className="w-full flex justify-center items-center">
-            <h1 className="text-[#AB2346] font-medium text-xl uppercase tracking-widest">
+            <h1 className="text-[#AB2346] uppercase tracking-widest">
               Get to know us
             </h1>
           </div>
-          <div className="w-full">{""}</div>
+
+          {/* desktop */}
+          <div className="hidden sm:flex flex-col  h-full w-full custom-container justify-center items-center">
+            <div className=" max-w-4xl flex flex-col items-center gap-10 mt-20">
+              <h2 className=" font-extralight text-center text-[2.8rem] sm:text-7xl leading-[3.6rem] sm:leading-[6rem]">
+                We are <span className="font-bold">committed</span> to
+                connecting Africa&apos;s Digital Future
+              </h2>
+            </div>
+          </div>
+
+          <div className="hidden sm:flex absolute  w-full  justify-between">
+            <div className="w-full flex justify-center items-center">
+              <h1 className="text-[#AB2346] font-medium text-xl uppercase tracking-widest">
+                Get to know us
+              </h1>
+            </div>
+            <div className="w-full">{""}</div>
+          </div>
         </div>
       </div>
     </section>

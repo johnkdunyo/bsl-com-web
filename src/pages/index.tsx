@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 import HappyClients from "@/components/homePage/HappyClients";
 import TrustedBy from "@/components/homePage/TrustedBy";
@@ -17,6 +17,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [textSize, setTextSize] = useState("8rem");
+
   return (
     <SiteLayout pageName={"BSL Home"}>
       <>

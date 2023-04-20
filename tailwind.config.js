@@ -14,12 +14,20 @@ module.exports = {
       fontFamily: {
         sans: ['Poppins']
       }
+
+      
     },
+    
     extend: {
+      colors: {
+        primary: "#1D365A",
+        secondary: "#AB2346"
+      },
       fontFamily: {
         sans: ["Poppins", ...defaultTheme.fontFamily.sans],
       },
     },
   },
   plugins: [require("daisyui")],
+  
 }

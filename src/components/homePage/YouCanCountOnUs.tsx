@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const WhyChooseUsComponent = ({
   imageURL,
@@ -12,7 +12,7 @@ const WhyChooseUsComponent = ({
   orderText: "first" | "last";
 }) => {
   return (
-    <div className="flex flex-col sm:flex-row justify-center gap-10 sm:gap-24 ">
+    <div className="flex flex-col sm:flex-row justify-center gap-10 sm:gap-24  ">
       <div className="w-full  flex justify-center">
         <img src={imageURL} className="w-full sm:p-3 md:p-6" />
       </div>
