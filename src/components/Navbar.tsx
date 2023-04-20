@@ -95,7 +95,13 @@ const CustomNavButton2 = ({
   active: boolean;
 }) => {
   return (
-    <button className="hover:bg-gray-800/60 px-2 py-0.5 rounded-[20px]">
+    <button
+      className={`hover:bg-gray-800/40 px-2 py-3  ${
+        active
+          ? "border-[#AB2346] border-b-[4px]"
+          : "border-b-[4px] border-transparent"
+      } `}
+    >
       <Link href={href}>
         <h1 className="text-white font-medium text-md ">{title}</h1>
       </Link>
@@ -171,8 +177,8 @@ const Navbar = ({ pageName }: INavbar) => {
         </div>
 
         {/* desktop */}
-        <div className="hidden sm:flex justify-between w-full py-2 ">
-          <div className="w-6/12    flex justify-between   items-center my-1  ">
+        <div className="hidden sm:flex justify-between w-full   ">
+          <div className="w-6/12    flex justify-between   items-center   ">
             <div
               className="w-1/4 flex items-center gap-1"
               onMouseEnter={() => setOpenDesktopSubsidiaryMenu(true)}
@@ -231,8 +237,8 @@ const Navbar = ({ pageName }: INavbar) => {
             )}
           </div>
 
-          <div className="flex gap-8  w-4/12 items-center justify-end ">
-            <div className="flex gap-12">
+          <div className="flex gap-8  w-4/12 items-center justify-end  ">
+            <div className="flex gap-12  ">
               <CustomNavButton2
                 href="/business"
                 title="Business"
@@ -252,7 +258,7 @@ const Navbar = ({ pageName }: INavbar) => {
             <button>
               <img
                 src="/assets/icons/home-2.svg"
-                className="h-10"
+                className="h-10 "
                 alt="menu icon"
               />
             </button>

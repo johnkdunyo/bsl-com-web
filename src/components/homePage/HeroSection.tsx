@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Lottie from "react-lottie";
 import ActiveLottieLoader from "../../../public/assets/lottie/loader/active-loader.json";
 import InactiveLottieLoader from "../../../public/assets/lottie/loader/inactive-loader.json";
+import ScrollDownLottieData from "../../../public/assets/lottie/scrolldown.json";
 
 const CustomLottieLoader = ({ status }: { status: "active" | "inactive" }) => {
   const defaultLottieOptions = {
@@ -21,6 +22,11 @@ const CustomLottieLoader = ({ status }: { status: "active" | "inactive" }) => {
 };
 
 const HeroSection = () => {
+  const lottieDefaultOptions = {
+    loop: true,
+    autoPlay: true,
+    animationData: ScrollDownLottieData,
+  };
   return (
     <section className="  h-[88vh] sm:h-[100vh] relative ">
       <div className="absolute inset-0   bg-video   ">
@@ -69,7 +75,7 @@ const HeroSection = () => {
         </div>
         <div className="flex justify-center mb-6 pb-0 sm:pb-10">
           <button>
-            <img src="/assets/icons/nav-down.svg" className="w-2/3" />
+            <Lottie options={lottieDefaultOptions} height={160} width={160} />
           </button>
         </div>
       </div>
