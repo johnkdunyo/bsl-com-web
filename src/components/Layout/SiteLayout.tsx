@@ -3,14 +3,11 @@ import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import Footer from "@/components/Footer";
-import HappyClients from "@/components/homePage/HappyClients";
-import TrustedBy from "@/components/homePage/TrustedBy";
-import OurCultureSection from "@/components/homePage/OurCultureSection";
-import CertifiedSection from "@/components/homePage/CertifiedSection2";
-import HeroSection from "@/components/homePage/HeroSection";
-import { IPageName } from "@/types/indext";
 
 const inter = Inter({ subsets: ["latin"] });
+
+import { Cursor } from "react-creative-cursor";
+import "react-creative-cursor/dist/styles.css";
 
 interface ISiteLayoutProps {
   children: ReactNode;
@@ -29,22 +26,22 @@ interface ISiteLayoutProps {
 export default function SiteLayout({ children, pageName }: ISiteLayoutProps) {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleOutsideClick = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        // setIsOpen(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleOutsideClick = (event: MouseEvent) => {
+  //     if (
+  //       dropdownRef.current &&
+  //       !dropdownRef.current.contains(event.target as Node)
+  //     ) {
+  //       // setIsOpen(false);
+  //     }
+  //   };
 
-    window.addEventListener("mousedown", handleOutsideClick);
+  //   window.addEventListener("mousedown", handleOutsideClick);
 
-    return () => {
-      window.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, [dropdownRef]);
+  //   return () => {
+  //     window.removeEventListener("mousedown", handleOutsideClick);
+  //   };
+  // }, [dropdownRef]);
 
   return (
     <>
@@ -55,6 +52,8 @@ export default function SiteLayout({ children, pageName }: ISiteLayoutProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="relative text-white bg-[#000A26]" ref={dropdownRef}>
+        <Cursor isGelly={true} cursorBackgrounColor="#C0392B" cursorSize={30} />
+        <div className="cursor"></div>
         <Navbar pageName={pageName} />
         {children}
         <Footer />

@@ -4,6 +4,7 @@ import ActiveLottieLoader from "../../../public/assets/lottie/loader/active-load
 import InactiveLottieLoader from "../../../public/assets/lottie/loader/inactive-loader.json";
 import ScrollDownLottieData from "../../../public/assets/lottie/scrolldown.json";
 import SwiperCore, { Autoplay } from "swiper";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -45,9 +46,15 @@ const HeroSection = () => {
   const onBeforeInit = (Swiper: SwiperCore): void => {
     swiperRef.current = Swiper;
   };
+
+  const { scrollYProgress } = useScroll();
+  let y = useTransform(scrollYProgress, [0, 1], ["0%", "300%"]);
   return (
     <section className="  h-[90vh] sm:h-[100vh] relative top-0">
-      <div className="absolute inset-0   bg-video   ">
+      <motion.div
+        style={{ y }}
+        className="absolute inset-0 bg-fixed  bg-video   "
+      >
         <video
           autoPlay
           loop
@@ -57,7 +64,7 @@ const HeroSection = () => {
         >
           <source src="/assets/videos/homepage.webm" type="video/webm" />
         </video>
-      </div>
+      </motion.div>
       <div className="relative  h-full  flex flex-col   justify-end gap-0 sm:gap-20  ">
         <div className=" container mx-auto text-white flex h-full px-4 sm:px-0  ">
           <div className="  w-full   flex  flex-col justify-end ml-0 sm:ml-12 gap-8 sm:gap-16 ">

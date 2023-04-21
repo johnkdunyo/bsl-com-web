@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { motion, stagger } from "framer-motion";
+
 import {
   HiChevronDown,
   HiChevronLeft,
@@ -166,6 +168,8 @@ const CustomNavList = ({ title, href }: { title: string; href: string }) => {
   );
 };
 
+const staggerMenuItems = stagger(0.1, { startDelay: 0.15 });
+
 const Navbar = ({ pageName }: INavbar) => {
   const [openSubsidiaryMenu, setOpenSubsidiaryMenu] = useState<boolean>(false);
   const [openSiteMenu, setOpenSiteMenu] = useState<boolean>(false);
@@ -263,7 +267,10 @@ const Navbar = ({ pageName }: INavbar) => {
             </div>
 
             {openDesktopSubsidiaryMenu && (
-              <div
+              <motion.div
+                animate={{ type: "spring", opacity: 1 }}
+                initial={{ opacity: 0 }}
+                transition={{ duration: 0.9 }}
                 className="flex justify-between w-3/4 h-10 pl-3 gap-4"
                 onMouseEnter={() =>
                   openDesktopSubsidiaryMenu &&
@@ -291,7 +298,7 @@ const Navbar = ({ pageName }: INavbar) => {
                   imgSRC="/assets/icons/isg-main.svg"
                   active={pageName === "Infra Services"}
                 />
-              </div>
+              </motion.div>
             )}
           </div>
 
@@ -472,7 +479,12 @@ const Navbar = ({ pageName }: INavbar) => {
           </div>
 
           {/* desktop */}
-          <div className="hidden sm:flex w-full flex-col justify-between h-full  container mx-auto px-3">
+          <motion.div
+            animate={{ type: "spring", opacity: 1 }}
+            initial={{ opacity: 0.1 }}
+            transition={{ duration: 0.9 }}
+            className="hidden sm:flex w-full flex-col justify-between h-full  container mx-auto px-3"
+          >
             <div className=" w-full flex justify-between ">
               <div className="w-6/12    flex justify-between   items-center  ">
                 <div
@@ -616,7 +628,7 @@ const Navbar = ({ pageName }: INavbar) => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

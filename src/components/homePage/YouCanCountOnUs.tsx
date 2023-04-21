@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const WhyChooseUsComponent = ({
   imageURL,
@@ -14,7 +15,16 @@ const WhyChooseUsComponent = ({
   return (
     <div className="flex flex-col sm:flex-row justify-center gap-10 sm:gap-24  ">
       <div className="w-full  flex justify-center">
-        <img src={imageURL} className="w-full sm:p-3 md:p-6" />
+        {/* <img src={imageURL} className="w-full sm:p-3 md:p-6" /> */}
+        <motion.img
+          src={imageURL}
+          className="w-full sm:p-3 md:p-6"
+          whileHover={{ scale: 1.1, rotate: 5 }}
+          whileTap={{ scale: 0.9 }}
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        />
       </div>
 
       <div
@@ -30,6 +40,9 @@ const WhyChooseUsComponent = ({
 };
 
 const YouCanCountOnUs = () => {
+  const { scrollYProgress } = useScroll();
+  let y = useTransform(scrollYProgress, [0, 1], ["0%", "300%"]);
+
   return (
     <section className=" flex flex-col   pt-20 -mt-10 pb-8 relative ">
       <div className="absolute  left-0 top-0 right-0 flex flex-col  justify-between  overflow-clip  h-full ">
