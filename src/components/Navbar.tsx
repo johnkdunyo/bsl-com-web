@@ -48,7 +48,7 @@ const WebSubsidiaryNavs: ISubsidiaryNavs[] = [
   {
     id: 4,
     title: "Digital Payment",
-    href: "/",
+    href: "/bdp",
     logo: "/assets/icons/bdp-gray.svg",
   },
 ];
@@ -209,7 +209,9 @@ const Navbar = ({ pageName }: INavbar) => {
                 }  flex-col gap-3  pb-2 border bg-white rounded-[28px] p-4 w-full`}
               >
                 <button className="flex justify-start   w-full items-start ">
-                  <img src="/assets/icons/bdp.svg" alt="bdp" />
+                  <Link href="/bdp">
+                    <img src="/assets/icons/bdp.svg" alt="bdp" />
+                  </Link>
                 </button>
                 <button className="flex justify-start px-4  w-full items-start  ">
                   <img
@@ -280,7 +282,7 @@ const Navbar = ({ pageName }: INavbar) => {
               >
                 <NavButton
                   title="Digital Payment"
-                  href="/"
+                  href="/bdp"
                   imgSRC="/assets/icons/bdp-main.svg"
                   active={pageName === "Digital Payment"}
                 />
@@ -523,7 +525,7 @@ const Navbar = ({ pageName }: INavbar) => {
                   >
                     <NavButton
                       title="Digital Payment"
-                      href="/"
+                      href="/bdp"
                       imgSRC="/assets/icons/bdp.svg"
                       active={pageName === "Digital Payment"}
                     />
