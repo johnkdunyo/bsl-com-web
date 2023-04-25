@@ -4,6 +4,7 @@ import FolderLottieData from "../../../public/assets/lottie/folder.json";
 import ProductLottieData from "../../../public/assets/lottie/product.json";
 import SmileLottieData from "../../../public/assets/lottie/smile.json";
 import StaffLottieData from "../../../public/assets/lottie/staff.json";
+import Counter from "../uiComponents/Counter";
 
 const SingleMobileCustomCard = ({
   title,
@@ -38,11 +39,9 @@ const SingleMobileCustomCard = ({
         <Lottie options={lottieDefaultOptions} height={160} width={160} />
       </div>
       <h1 className="text-[#AB2346] font-light text-2xl sm:text-7xl">
-        {value}+
+        <Counter end={value} decimals={undefined} />+
       </h1>
-      <p className="text-[#1D365A] font-medium text-sm sm:text-xl mt-1 sm:mt-3">
-        {title}
-      </p>
+      <p className="text-[#1D365A]  text-sm sm:text-xl mt-1 sm:mt-3">{title}</p>
     </div>
   );
 };
@@ -74,7 +73,7 @@ const HappyClients = () => {
         />
       </div>
 
-      <div className="hidden sm:flex custom-container h-[35rem]">
+      <div className="hidden sm:flex custom-container h-[40rem]">
         <div className=" flex justify-center w-full h-full">
           <SingleMobileCustomCard
             title="Happy Clients"

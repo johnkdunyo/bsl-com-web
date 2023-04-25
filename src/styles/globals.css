@@ -3,36 +3,36 @@
 @tailwind utilities;
 
 /* cirso */
-html {
+/* html {
     cursor: url("data:image/svg+xml,%3Csvg height='10' width='10' viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' fill='%23eee' r='4'/%3E%3C/svg%3E") 3 3, auto;
-}
+} */
 
-.cursor {
+/* .cursor {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: var(--width);
     height: var(--height);
-    transform: translate(calc(var(--x) - var(--width) / 2), calc(var(--y) - var(--height) / 2));
+    transform: translate(calc(var(--x) - var(--width) / 2), calc(var(--y) - var(--height) / 2)); */
     /* transition-duration: 125ms;
   transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
   transition-property: width, height, transform; */
-    transition: 150ms width cubic-bezier(0.39, 0.575, 0.565, 1),
+    /* transition: 150ms width cubic-bezier(0.39, 0.575, 0.565, 1),
         150ms height cubic-bezier(0.39, 0.575, 0.565, 1),
         150ms transform cubic-bezier(0.39, 0.575, 0.565, 1);
     z-index: 1;
     pointer-events: none;
     will-change: transform;
-}
+} */
 
-@media (pointer: fine) {
+/* @media (pointer: fine) {
     .cursor {
         display: block;
     }
-}
+} */
 
-.cursor::after {
+/* .cursor::after {
     content: '';
     position: absolute;
     top: 0;
@@ -47,7 +47,7 @@ html {
     transition: 300ms opacity cubic-bezier(0.39, 0.575, 0.565, 1),
         300ms transform cubic-bezier(0.39, 0.575, 0.565, 1),
         150ms border-radius cubic-bezier(0.39, 0.575, 0.565, 1);
-}
+} */
 
 
 /* curso */
@@ -104,7 +104,7 @@ html {
 }
 
 .happyClientSection {
-    @apply bg-[#F8F8F8] bg-[url("../../public/assets/img/backgrounds/Polygons_mobile.svg")] sm:bg-[url("../../public/assets/img/backgrounds/polygons_web.svg")]
+    @apply bg-[#F8F8F8] bg-[url("../../public/assets/img/backgrounds/Polygons_mobile.svg")] sm:bg-[url("../../public/assets/img/backgrounds/polygons_web.svg")] bg-cover
 }
 
 .we-are-certified-section {
@@ -120,6 +120,87 @@ html {
 
 }
 
+
+/*---------------------------------------------------*/
+/*	18) DEVMAN MAGIC CURSOR
+/*---------------------------------------------------*/
+
+.mouse-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    visibility: hidden;
+}
+
+.cursor-inner {
+    margin-left: -3px;
+    margin-top: -3px;
+    width: 6px;
+    height: 6px;
+    z-index: 100;
+    background-color: var(--main-color);
+    -webkit-transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
+        margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
+        margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.cursor-inner.cursor-hover {
+    margin-left: -40px;
+    margin-top: -40px;
+    width: 80px;
+    height: 80px;
+    background-color: var(--main-color);
+    opacity: 0.3;
+}
+
+.cursor-outer {
+    margin-left: -15px;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--main-color);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 100;
+    opacity: 0.5;
+    -webkit-transition: all 0.08s ease-out;
+    transition: all 0.08s ease-out;
+}
+
+.cursor-outer.cursor-hover {
+    opacity: 0;
+}
+
+.site_all_wrap[data-magic-cursor="hide"] .mouse-cursor {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: -1111;
+}
+
+.site_all_wrap {
+    width: 100%;
+    height: auto;
+    clear: both;
+    float: left;
+    position: relative;
+}
+
+.site_all_wrap,
+.site_all_wrap * {
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+}
 
 
 

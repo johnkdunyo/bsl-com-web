@@ -3,7 +3,7 @@ import React from "react";
 
 const SocialMediaButtons = ({ name, href }: { name: string; href: string }) => {
   return (
-    <button>
+    <button className="hover:opacity-60">
       <Link href={href}>
         <img src={`/assets/icons/social-media/${name}.svg`} alt={name} />
       </Link>
