@@ -66,8 +66,8 @@ const HeroSection = () => {
         </video>
       </motion.div>
       <div className="relative  h-full  flex flex-col   justify-end gap-0 sm:gap-20  ">
-        <div className=" container mx-auto text-white flex h-full px-4 sm:px-0  ">
-          <div className="  w-full   flex  flex-col justify-end ml-0 sm:ml-12 gap-8 sm:gap-16 ">
+        <div className="  text-white flex h-full   ">
+          <div className="  w-full   flex  flex-col justify-end  gap-8 sm:gap-16 ">
             <Swiper
               onBeforeInit={onBeforeInit}
               spaceBetween={0}
@@ -86,57 +86,47 @@ const HeroSection = () => {
               }}
               modules={[Navigation, Autoplay]}
               keyboard={true}
-              className="w-full"
+              className="w-full "
             >
               <SwiperSlide>
-                <div className=" flex flex-col gap-8 sm:gap-10 pt-0 ">
+                <div className="custom-container2 flex flex-col gap-8 sm:gap-10 pt-0  w-full ">
                   <div className="flex justify-start  items-start -gap-1 -mb-12">
                     <CustomLottieLoader status={"active"} />
                     <CustomLottieLoader status={"inactive"} />
                   </div>
-                  <h2 className="text-4xl sm:text-6xl mr-6 leading-[3rem]  font-bold sm:font-extralight">
-                    We are Engineering <br />
-                    <span className="font-bold">
+                  <div className="text-4xl sm:text-6xl mr-6 leading-[3rem]  font-extralight ">
+                    <h2 className="">We are Engineering </h2>
+                    <h2 className="font-bold sm:mt-4">
                       Africa&apos;s Digital Future
-                    </span>
-                  </h2>
-                  <p className="flex sm:hidden text-2xl sm:text-3xl  ">
+                    </h2>
+                  </div>
+                  <p className="flex  text-2xl sm:text-3xl  ">
                     We&apos;re offering 360 digital <br />
                     solutions Globally from African by Africans.
-                  </p>
-
-                  <p className="hidden sm:flex text-2xl sm:text-3xl  ">
-                    We&apos;re offering 360 digital solutions <br />
-                    Globally from African by Africans.
                   </p>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className=" flex flex-col gap-8 sm:gap-10 pt-0 ">
+                <div className="custom-container2 flex flex-col gap-8 sm:gap-10 pt-0 ">
                   <div className="flex justify-start  items-start -gap-1 -mb-12">
                     <CustomLottieLoader status={"active"} />
                     <CustomLottieLoader status={"inactive"} />
                   </div>
-                  <h2 className="text-4xl sm:text-6xl mr-6 leading-[3rem]  font-bold sm:font-extralight">
-                    We are Engineering <br />
-                    <span className="font-bold">
+                  <div className="text-4xl sm:text-6xl mr-6 leading-[3rem]   font-extralight ">
+                    <h2 className="">We are Engineering </h2>
+                    <h2 className="font-bold sm:mt-4">
                       Africa&apos;s Digital Future
-                    </span>
-                  </h2>
-                  <p className="flex sm:hidden text-2xl sm:text-3xl  ">
+                    </h2>
+                  </div>
+                  <p className="flex  text-2xl sm:text-3xl  ">
                     We&apos;re offering 360 digital <br />
                     solutions Globally from African by Africans.
-                  </p>
-
-                  <p className="hidden sm:flex text-2xl sm:text-3xl  ">
-                    We&apos;re offering 360 digital solutions <br />
-                    Globally from African by Africans.
                   </p>
                 </div>
               </SwiperSlide>
             </Swiper>
 
-            <div className=" flex justify-end sm:justify-start ">
+            <div className=" flex justify-end sm:justify-start  custom-container2">
               <button
                 ref={swiperNavPrevRef}
                 onClick={() => swiperRef!.current?.slidePrev()}

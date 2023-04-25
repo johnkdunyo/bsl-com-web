@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/styles/texts.css";
 import "@/styles/about.css";
 import "@/styles/animator.css";
 import type { AppProps } from "next/app";
