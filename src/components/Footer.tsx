@@ -1,13 +1,18 @@
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 
 const SocialMediaButtons = ({ name, href }: { name: string; href: string }) => {
   return (
-    <button className="hover:opacity-60">
+    <motion.button
+      whileHover={{ scale: 1.2 }}
+      onHoverStart={(e) => {}}
+      onHoverEnd={(e) => {}}
+    >
       <Link href={href}>
         <img src={`/assets/icons/social-media/${name}.svg`} alt={name} />
       </Link>
-    </button>
+    </motion.button>
   );
 };
 
@@ -148,7 +153,12 @@ const Footer = () => {
             {/* row two */}
             <div className="flex justify-between  w-full gap-4 ">
               <div className="w-full ">
-                <div className="flex gap-4 items-center">
+                <motion.div
+                  className="flex gap-4 items-center"
+                  whileHover={{ scale: 1.2 }}
+                  onHoverStart={(e) => {}}
+                  onHoverEnd={(e) => {}}
+                >
                   <img
                     src="/assets/icons/directions-right.svg"
                     alt="get directions"
@@ -156,7 +166,7 @@ const Footer = () => {
                   <h1 className="uppercase tracking-widest text-lg">
                     GET DIRECTIONS{" "}
                   </h1>
-                </div>
+                </motion.div>
                 <div className="mt-4  flex flex-col gap-6">
                   <div className="flex gap-2 flex-col  h-full">
                     <h1 className="uppercase text-[#82AEC9] text-lg font-medium tracking-widest">

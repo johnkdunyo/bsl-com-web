@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Lottie from "react-lottie";
+import { motion } from "framer-motion";
 
 import ScrollDownLottieData from "../../../public/assets/lottie/scrolldown.json";
 
@@ -9,15 +10,36 @@ const HeroSection = () => {
     autoPlay: true,
     animationData: ScrollDownLottieData,
   };
+
+  const texts = ["Simple", "Accessible", "Secure"];
+  const [currentTextIndex, setCurrentTextIndexs] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTextIndexs(currentTextIndex < 2 ? currentTextIndex + 1 : 0);
+    }, 3000);
+    return () => clearInterval(interval);
+  });
+
+  const hoverHandler = () => {
+    setCurrentTextIndexs(currentTextIndex < 2 ? currentTextIndex + 1 : 0);
+  };
   return (
     <section className=" bg-[url('/assets/img/bdp/mobile.jpg')] sm:bg-[url('/assets/img/bdp/main.jpg')] h-[98vh] sm:h-[85vh] md:h-[95vh] bg-cover  bg-center top-0">
-      <div className="h-full w-full custom-container2 flex flex-col border justify-start pt-[5rem] sm:justify-center  ">
-        <div className="  border  border-green-500 mt-[4.8rem] sm:mt-0">
-          <div className=" w-full  flex flex-col justify-center items-center sm:items-start  border">
-            <h2 className="font-bold  leading-[1.4] sm:leading-[1.2] text-[3rem] sm:text-[8rem] tracking-wide">
-              Simple
-            </h2>
-            <h1 className="text-xl tracking-widest sm:text-2xl sm:mt-3">
+      <div className="h-full w-full custom-container2 flex flex-col justify-start pt-[5rem] sm:justify-center  ">
+        <div className="    mt-[4.8rem] sm:-mt-10">
+          <div className=" w-full  flex flex-col justify-center items-center sm:items-start  ">
+            <motion.h2
+              className="font-bold  leading-[1.4] sm:leading-[1.2] text-[3rem] sm:text-[8rem] tracking-wide"
+              onMouseEnter={hoverHandler}
+              animate={{ type: "spring", opacity: 1 }}
+              initial={{ opacity: 0.1 }}
+              transition={{ duration: 0.2 }}
+              layout
+            >
+              {texts[currentTextIndex]}
+            </motion.h2>
+            <h1 className="text-xl tracking-widest sm:text-3xl sm:mt-3">
               payments for everyone.
             </h1>
           </div>
