@@ -41,8 +41,8 @@ export default function SiteLayout({ children, pageName }: ISiteLayoutProps) {
         className="relative text-white bg-[#000A26] site_all_wrap"
         data-aos="fade-in"
       >
-        <Cursor isGelly={true} cursorBackgrounColor="#C0392B" cursorSize={30} />
-        <div className="cursor"></div>
+        {/* <Cursor isGelly={true} cursorBackgrounColor="#C0392B" cursorSize={30} /> */}
+        {/* <div className="cursor"></div> */}
         <Navbar pageName={pageName} />
         {children}
         {/* <Mouse /> */}
