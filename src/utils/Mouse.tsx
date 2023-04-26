@@ -1,9 +1,9 @@
 import { Fragment, useEffect } from "react";
-import { customCursor } from "./utils";
+// import { customCursor } from "./utils";
 const Mouse = () => {
-  useEffect(() => {
-    customCursor();
-  }, []);
+  //   useEffect(() => {
+  //     customCursor();
+  //   }, []);
 
   return (
     <Fragment>

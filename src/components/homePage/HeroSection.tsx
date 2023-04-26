@@ -89,7 +89,7 @@ const HeroSection = () => {
               className="w-full "
             >
               <SwiperSlide>
-                <div className="custom-container2 flex flex-col gap-8 sm:gap-10 pt-0  w-full ">
+                <div className="custom-container flex flex-col gap-8 sm:gap-10 pt-0  w-full ">
                   <div className="flex justify-start  items-start -gap-1 -mb-12">
                     <CustomLottieLoader status={"active"} />
                     <CustomLottieLoader status={"inactive"} />
@@ -107,7 +107,7 @@ const HeroSection = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="custom-container2 flex flex-col gap-8 sm:gap-10 pt-0 ">
+                <div className="custom-container flex flex-col gap-8 sm:gap-10 pt-0 ">
                   <div className="flex justify-start  items-start -gap-1 -mb-12">
                     <CustomLottieLoader status={"active"} />
                     <CustomLottieLoader status={"inactive"} />
@@ -126,7 +126,7 @@ const HeroSection = () => {
               </SwiperSlide>
             </Swiper>
 
-            <div className=" flex justify-end sm:justify-start  custom-container2">
+            <div className=" flex justify-end sm:justify-start  custom-container">
               <button
                 ref={swiperNavPrevRef}
                 onClick={() => swiperRef!.current?.slidePrev()}

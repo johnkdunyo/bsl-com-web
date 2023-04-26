@@ -178,10 +178,10 @@ const Navbar = ({ pageName }: INavbar) => {
     useState<boolean>(false);
 
   return (
-    <div className="  z-30 pt-2 fixed w-full  top-0   sm:backdrop-blur-sm sm:bg-gray-900/90 opacity-1">
+    <div className="  z-30 pt-2 fixed w-full  top-0   md:backdrop-blur-sm md:bg-gray-900/90 opacity-1">
       <div className="container mx-auto px-3 ">
         {/* mobile */}
-        <div className="sm:hidden flex justify-between  py-2 items-start  ">
+        <div className="md:hidden flex justify-between  py-2 items-start  ">
           <div className="flex  gap-1  justify-between">
             <div
               className={` ${
@@ -241,7 +241,7 @@ const Navbar = ({ pageName }: INavbar) => {
         </div>
 
         {/* desktop */}
-        <div className="hidden sm:flex justify-between w-full   ">
+        <div className="hidden md:flex justify-between w-full   ">
           <div className="w-6/12    flex justify-between   items-center   ">
             <div
               className="w-1/4 flex items-center gap-1"
@@ -336,10 +336,10 @@ const Navbar = ({ pageName }: INavbar) => {
         <div
           className={` ${
             openSiteMenu ? "flex" : "hidden"
-          } bg-white w-full h-[94vh] sm:h-[90vh] absolute top-0 left-0 flex  px-3 py-2 rounded-bl-[110px] sm:rounded-bl-[200px] z-30 `}
+          } bg-white w-full h-[94vh] md:h-[90vh] absolute top-0 left-0 flex  px-3 py-2 rounded-bl-[110px] md:rounded-bl-[200px] z-30 `}
         >
           {/* mobile */}
-          <div className="sm:hidden container mx-auto flex w-full justify-between flex-col gap-4 h-full  pt-2">
+          <div className="md:hidden container mx-auto flex w-full justify-between flex-col gap-4 h-full  pt-2">
             <div className="flex justify-between  items-start  w-full">
               <div className="flex  gap-1  justify-between ">
                 <div
@@ -485,7 +485,7 @@ const Navbar = ({ pageName }: INavbar) => {
             animate={{ type: "spring", opacity: 1 }}
             initial={{ opacity: 0.1 }}
             transition={{ duration: 0.9 }}
-            className="hidden sm:flex w-full flex-col justify-between h-full  container mx-auto px-3"
+            className="hidden md:flex w-full flex-col justify-between h-full  container mx-auto px-3"
           >
             <div className=" w-full flex justify-between ">
               <div className="w-6/12    flex justify-between   items-center  ">
@@ -617,7 +617,12 @@ const Navbar = ({ pageName }: INavbar) => {
                       <h1>contact@bsl.com.gh</h1>
                     </div>
 
-                    <div className="flex gap-4 items-center">
+                    <motion.div
+                      className="flex gap-4 items-center"
+                      whileHover={{ scale: 1.2 }}
+                      onHoverStart={(e) => {}}
+                      onHoverEnd={(e) => {}}
+                    >
                       <img
                         src="/assets/icons/arrow-right-blue.svg"
                         alt="get directions"
@@ -625,7 +630,7 @@ const Navbar = ({ pageName }: INavbar) => {
                       <h1 className="uppercase tracking-widest text-xl ">
                         GET DIRECTIONS{" "}
                       </h1>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>

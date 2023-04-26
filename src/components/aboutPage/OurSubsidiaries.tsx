@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 
 const SingleSubsidiaryCard = ({
   imageURL,
@@ -14,20 +15,25 @@ const SingleSubsidiaryCard = ({
   return (
     <div className="bg-[#FFFFFF] w-full  justify-between p-8 rounded-[50px] flex flex-col gap-6">
       <div>
-        <div className="h-20  flex items-start justify-start  ">
-          <img
-            src={imageURL}
-            alt="spectrum"
-            className="h-full w-2/3 sm:w-3/5  "
-          />
+        <div className="h-20  flex items-start justify-start">
+          <img src={imageURL} alt="spectrum" className="h-full  " />
         </div>
         <p className="text-[#1D365A] paragraphText1 ">{description}</p>
       </div>
 
       <div>
-        <button className="custom-button1">
+        <motion.button
+          className="custom-button1"
+          initial={{ opacity: 0.6 }}
+          whileHover={{
+            scale: 1.2,
+            transition: { duration: 1 },
+          }}
+          whileTap={{ scale: 0.9 }}
+          whileInView={{ opacity: 1 }}
+        >
           <Link href={href}>Learn More</Link>
-        </button>
+        </motion.button>
       </div>
     </div>
   );
@@ -54,20 +60,20 @@ const OurSubsidiaries = () => {
         Corridors of Ghana. Formed as a Public Private Partnership between
         Broadspectrum Limited and the government of Ghana through the Ghana
         Infrastructure Investment Fund (GIIF) in the year 2017."
-          imageURL="/assets/icons/spectrum-main.svg"
+          imageURL="/assets/icons/spectrum.svg"
           href="/"
         />
 
         <div className="flex flex-col  gap-10 sm:flex-row">
           <SingleSubsidiaryCard
             description="Payment Service Provider (PSP) Licensed Business providing services for payment gateway and bill Payment – E.G. Northern Electricity Distribution Company (NedCo), Marketplace (E-Agric)"
-            imageURL="/assets/icons/bdp-main.svg"
+            imageURL="/assets/icons/bdp.svg"
             href="/"
           />
 
           <SingleSubsidiaryCard
             description="Fibre Maintenance and Logistics Company"
-            imageURL="/assets/icons/isg-main.svg"
+            imageURL="/assets/icons/isg.svg"
             href="/"
           />
         </div>

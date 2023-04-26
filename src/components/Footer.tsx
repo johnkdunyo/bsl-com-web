@@ -10,7 +10,11 @@ const SocialMediaButtons = ({ name, href }: { name: string; href: string }) => {
       onHoverEnd={(e) => {}}
     >
       <Link href={href}>
-        <img src={`/assets/icons/social-media/${name}.svg`} alt={name} />
+        <img
+          src={`/assets/icons/social-media/${name}.svg`}
+          alt={name}
+          className="h-[90%]"
+        />
       </Link>
     </motion.button>
   );
@@ -20,9 +24,9 @@ const Footer = () => {
   return (
     <section className=" bg-[#11233C]">
       {/* mobile */}
-      <div className=" sm:hidden custom-container pt-20 flex flex-col gap-16">
+      <div className=" md:hidden custom-container pt-20 flex flex-col gap-16 text-sm">
         <div className="flex flex-col justify-center items-center gap-14">
-          <h1 className="text-4xl text-center font-extralight leading-10">
+          <h1 className="text-4xl text-center font-extralight leading-[3rem]">
             Ready to <span className="font-medium">transform</span> your
             <span className="font-medium"> business</span> with us with
             <span className="font-medium"> speed</span>?
@@ -33,7 +37,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h1 className="uppercase text-[#82AEC9] text-lg font-medium tracking-widest">
+          <h1 className="uppercase text-[#82AEC9] text-sm font-medium tracking-widest">
             Business
           </h1>
           <ul className="uppercase flex flex-col gap-2.5 text-lg mt-3">
@@ -47,7 +51,7 @@ const Footer = () => {
         <div className="w-full flex justify-betweenh-full  items-start text-lg ">
           <div className="flex flex-col items-start w-full justify-between gap-4">
             <div className="flex gap-2 flex-col  h-full">
-              <h1 className="uppercase text-[#82AEC9] text-lg font-medium tracking-widest">
+              <h1 className="uppercase text-[#82AEC9] text-sm font-medium tracking-widest">
                 Contact Us
               </h1>
               <h1 className="text-lg">Broadspectrum Ltd.</h1>
@@ -60,13 +64,13 @@ const Footer = () => {
 
           <div className="flex flex-col items-start w-full justify-between gap-4">
             <div className="flex gap-2 flex-col  h-full">
-              <h1 className="uppercase text-[#82AEC9] text-lg font-medium tracking-widest">
+              <h1 className="uppercase text-[#82AEC9] text-sm font-medium tracking-widest">
                 Phone
               </h1>
-              <h1>+233(0) 593 808 064</h1>
+              <h1 className="whitespace-nowrap">+233(0) 593 808 064</h1>
             </div>
             <div className="flex gap-2 flex-col  h-full">
-              <h1 className="uppercase text-[#82AEC9] text-lg font-medium tracking-widest">
+              <h1 className="uppercase text-[#82AEC9] text-sm font-medium tracking-widest">
                 Email
               </h1>
               <h1>contact@bsl.com.gh</h1>
@@ -74,13 +78,18 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex gap-4 items-center">
+        <motion.div
+          className="flex gap-4 items-center"
+          whileHover={{ scale: 1.2 }}
+          onHoverStart={(e) => {}}
+          onHoverEnd={(e) => {}}
+        >
           <img src="/assets/icons/directions-right.svg" alt="get directions" />
           <h1 className="uppercase tracking-widest text-lg">GET DIRECTIONS </h1>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col justify-center items-center gap-4">
-          <h1 className="text-[#82AEC9] text-lg uppercase tracking-widest font-medium">
+        <div className="flex flex-col justify-center items-center gap-3">
+          <h1 className="text-[#82AEC9] text-sm uppercase tracking-widest font-medium">
             Follow Us
           </h1>
           <div className="flex gap-3">
@@ -93,8 +102,8 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col ">
-          <hr className="-mx-4 border border-gray-400 " />
-          <div className=" justify-center items-center flex flex-col text-center text-sm gap-4 my-10">
+          <hr className="-mx-4 border-[0.1px] border-gray-400 " />
+          <div className=" justify-center items-center flex flex-col text-center text-xs gap-4 my-4 mb-8">
             <p>No 24 Botwe Dzorwulu Road, Dzorwulu-Accra</p>
             <p>
               © Copyright 2023 Broadspectrum Ltd. <br />
@@ -105,32 +114,36 @@ const Footer = () => {
       </div>
 
       {/* desktop */}
-      <div className="hidden sm:flex flex-col custom-container pt-20 pb-10 gap-20">
-        <div className="flex">
-          <div className="w-full flex flex-col items-start gap-12 h-full ">
-            <h1 className="text-6xl font-extralight">
+      <div className="hidden md:flex flex-col custom-container pt-20 pb-10 gap-20 text-lg">
+        <div className="flex justify-between  gap-[10%]">
+          <div className="w-[55%] flex flex-col items-start gap-12 h-full ">
+            <h1 className="text-5xl font-extralight leading-[4.5rem]">
               Ready to <span className="font-medium">transform</span> your
               <span className="font-medium"> business</span> with us with
-              <span className="font-medium"> speed</span>?
+              <span className="font-medium " style={{ whiteSpace: "pre-line" }}>
+                {" "}
+                speed
+              </span>
+              ?
             </h1>
             <button className="custom-button1 text-2xl">
               <Link href="/enquiry">Get in Touch</Link>
             </button>
           </div>
 
-          <div className="w-full flex flex-col justify-between items-start  pl-10 gap-16">
+          <div className="w-[43%] flex flex-col justify-between items-end  gap-16 ">
             {/* row one */}
-            <div className="flex justify-between  w-full gap-4 ">
+            <div className="flex justify-between  w-full gap-6  ">
               <div className="w-full flex gap-6 flex-col">
                 <div className="flex gap-2 flex-col ">
-                  <h1 className="uppercase text-[#82AEC9] text-lg font-medium tracking-widest">
+                  <h1 className="uppercase text-[#82AEC9] text-sm font-medium tracking-widest">
                     Contact Us
                   </h1>
-                  <h1 className="text-lg">Broadspectrum Ltd.</h1>
+                  <h1 className="">Broadspectrum Ltd.</h1>
                 </div>
                 <div className="flex gap-1 flex-col  ">
-                  <h1 className="uppercase text-lg font-medium">HEAD OFFICE</h1>
-                  <h1 className="text-lg">
+                  <h1 className="uppercase  font-medium">HEAD OFFICE</h1>
+                  <h1 className="">
                     No 24 Botwe <br /> Dzorwulu Road, <br />
                     Dzorwulu-Accra
                   </h1>
@@ -138,10 +151,10 @@ const Footer = () => {
               </div>
 
               <div className="w-full ">
-                <h1 className="uppercase text-[#82AEC9] text-lg font-medium tracking-widest">
+                <h1 className="uppercase text-[#82AEC9] text-sm font-medium tracking-widest">
                   Business
                 </h1>
-                <ul className="uppercase flex flex-col gap-2.5 text-lg mt-3">
+                <ul className="uppercase flex flex-col gap-2.5  mt-3">
                   <li>About</li>
                   <li>CAREERS</li>
                   <li>PARTNERS</li>
@@ -151,7 +164,7 @@ const Footer = () => {
             </div>
 
             {/* row two */}
-            <div className="flex justify-between  w-full gap-4 ">
+            <div className="flex justify-between  w-full gap-6 ">
               <div className="w-full ">
                 <motion.div
                   className="flex gap-4 items-center"
@@ -169,13 +182,13 @@ const Footer = () => {
                 </motion.div>
                 <div className="mt-4  flex flex-col gap-6">
                   <div className="flex gap-2 flex-col  h-full">
-                    <h1 className="uppercase text-[#82AEC9] text-lg font-medium tracking-widest">
+                    <h1 className="uppercase text-[#82AEC9] text-sm font-medium tracking-widest">
                       Phone
                     </h1>
                     <h1>+233(0) 593 808 064</h1>
                   </div>
                   <div className="flex gap-2 flex-col  h-full">
-                    <h1 className="uppercase text-[#82AEC9] text-lg font-medium tracking-widest">
+                    <h1 className="uppercase text-[#82AEC9] text-sm font-medium tracking-widest">
                       Email
                     </h1>
                     <h1>contact@bsl.com.gh</h1>
@@ -183,7 +196,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="w-full ">
-                <h1 className="text-[#82AEC9] text-lg uppercase tracking-widest font-medium">
+                <h1 className="text-[#82AEC9] text-sm uppercase tracking-widest font-medium">
                   Follow Us
                 </h1>
                 <div className="flex gap-3 mt-3">
@@ -199,8 +212,8 @@ const Footer = () => {
         </div>
 
         <div className="">
-          <hr className="border border-gray-400 " />
-          <div className="flex justify-between mt-4">
+          <hr className="  border-[0.1px] border-gray-500 " />
+          <div className="flex justify-between mt-3 text-xs tracking-wide">
             <p>No 24 Botwe Dzorwulu Road, Dzorwulu-Accra</p>
             <p>© Copyright 2023 Broadspectrum Ltd. All Rights Reserved.</p>
           </div>

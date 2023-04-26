@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Lottie from "react-lottie";
 import { motion } from "framer-motion";
 
-import ScrollDownLottieData from "../../../public/assets/lottie/scrolldown.json";
+import ScrollDownLottieData from "../../../public/assets/lottie/bdp-purple-scrolldown.json";
 
 const HeroSection = () => {
   const lottieDefaultOptions = {
@@ -25,16 +25,17 @@ const HeroSection = () => {
     setCurrentTextIndexs(currentTextIndex < 2 ? currentTextIndex + 1 : 0);
   };
   return (
-    <section className=" bg-[url('/assets/img/bdp/mobile.jpg')] sm:bg-[url('/assets/img/bdp/main.jpg')] h-[98vh] sm:h-[85vh] md:h-[95vh] bg-cover  bg-center top-0">
-      <div className="h-full w-full custom-container2 flex flex-col justify-start pt-[5rem] sm:justify-center  ">
-        <div className="    mt-[4.8rem] sm:-mt-10">
+    <section className=" bg-[url('/assets/img/bdp/mobile.jpg')] sm:bg-[url('/assets/img/bdp/main.jpg')] h-[98vh] sm:h-[85vh] md:h-[95vh] bg-cover  bg-center top-0 relative">
+      <div className="h-full w-full custom-container2 flex flex-col justify-start pt-[5rem] sm:justify-center   ">
+        <div className="    mt-[4.8rem] sm:-mt-10 ">
           <div className=" w-full  flex flex-col justify-center items-center sm:items-start  ">
             <motion.h2
               className="font-bold  leading-[1.4] sm:leading-[1.2] text-[3rem] sm:text-[8rem] tracking-wide"
               onMouseEnter={hoverHandler}
               animate={{ type: "spring", opacity: 1 }}
-              initial={{ opacity: 0.1 }}
+              initial={{ opacity: 0.1, y: "-10%" }}
               transition={{ duration: 0.2 }}
+              exit={{ y: "10%" }}
               layout
             >
               {texts[currentTextIndex]}
@@ -44,6 +45,12 @@ const HeroSection = () => {
             </h1>
           </div>
         </div>
+      </div>
+
+      <div className="flex justify-center h-[12%] bottom-[5px] left-0 right-0  absolute">
+        <button>
+          <Lottie options={lottieDefaultOptions} height={160} width={160} />
+        </button>
       </div>
     </section>
   );
