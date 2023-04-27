@@ -50,7 +50,7 @@ const DiscoverBusinessSection = () => {
   return (
     <section className="bg-white ">
       <section className="bg-[url('/assets/img/bdp/mobile-purple-bg.svg')] md:bg-[url('/assets/img/bdp/purple-bg.svg')] h-[80rem] bg-cover  bg-no-repeat sm:-mt-[12rem] -mt-[2rem] w-full  pt-32 sm:py-[27rem] z-20  ">
-        <div className=" w-full text-white  custom-container flex flex-col gap-10  z-20 ">
+        <div className=" w-full text-white  custom-container flex flex-col gap-14  z-20 ">
           <h1 className="headerText3 text-center">
             Discover solutions for every business need
           </h1>
@@ -75,7 +75,7 @@ const DiscoverBusinessSection = () => {
         </div>
       </section>
       <section className=" bg-white h-[50rem]  z-2 ">
-        <div className="flex flex-col md:flex-row justify-between custom-container w-full items-center sm:gap-4 border">
+        <div className="flex flex-col md:flex-row justify-between custom-container w-full items-center sm:gap-4 ">
           <div className="w-full   md:w-[60%] z-10">
             <Lottie
               options={lottieDefaultOptions}

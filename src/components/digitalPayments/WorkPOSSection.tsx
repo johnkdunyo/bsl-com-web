@@ -3,16 +3,18 @@ import React from "react";
 
 const WorkPOSSection = () => {
   return (
-    <section className="bg-[url('/assets/img/bdp/mobile-pos-bg.svg')] sm:bg-[url('/assets/img/bdp/pos-bg.svg')] h-[30rem]  sm:h-[80rem] bg-cover  bg-no-repeat   w-full pt-[8rem]  sm:pt-[25rem] bg-white sm:-mt-40 -mt-[7rem]   z-10  ">
-      <div className="custom-container ">
-        <div className="flex flex-col items-center  h-full">
-          <h1 className="text-purple font-bold text-[1.9rem] text-center sm:text-[2.3rem]">
-            Work with POS, mobile and web
-          </h1>
-          <div className=" -mt-20  sm:-mt-[20rem] ">
-            <img src="/assets/img/bdp/pos.png" className="" alt="pos image" />
-          </div>
-        </div>
+    <section className="bg-[url('/assets/img/bdp/mobile-pos-bg.svg')] sm:bg-[url('/assets/img/bdp/pos-bg.svg')] h-[30rem] md:h-[85rem] bg-cover  bg-no-repeat   w-full pt-[30%] pb-[20%]  md:pt-[30%] bg-white sm:-mt-40 -mt-[7rem]   z-10 relative ">
+      <div className="w-full custom-container absolute top-28 sm:top-[30%] left-0 right-0">
+        <h1 className="text-purple font-bold text-[1.9rem] text-center sm:text-[2.1rem]">
+          Works with POS, mobile and web
+        </h1>
+      </div>
+      <div className="bottom-[10%] sm:top-[8%] md:top-[10%] lg:top-[15%] left-0 right-0  absolute ">
+        <img
+          src="/assets/img/bdp/pos.png"
+          className="w-full h-full"
+          alt="pos image"
+        />
       </div>
     </section>
   );
