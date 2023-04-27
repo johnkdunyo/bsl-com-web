@@ -3,7 +3,7 @@ import React from "react";
 
 const WorkPOSSection = () => {
   return (
-    <section className="bg-[url('/assets/img/bdp/mobile-pos-bg.svg')] sm:bg-[url('/assets/img/bdp/pos-bg.svg')] h-[30rem] md:h-[85rem] bg-cover  bg-no-repeat   w-full pt-[30%] pb-[20%]  md:pt-[30%] bg-white sm:-mt-40 -mt-[7rem]   z-10 relative ">
+    <section className="bg-[url('/assets/img/bdp/mobile-pos-bg.svg')] sm:bg-[url('/assets/img/bdp/pos-bg.svg')] h-[30rem] md:h-[85rem] bg-cover  bg-no-repeat   w-full pt-[30%] pb-[20%]  md:pt-[30%] bg-white sm:-mt-[10rem] -mt-[7rem]   z-10 relative ">
       <div className="w-full custom-container absolute top-28 sm:top-[30%] left-0 right-0">
         <h1 className="text-purple font-bold text-[1.9rem] text-center sm:text-[2.1rem]">
           Works with POS, mobile and web

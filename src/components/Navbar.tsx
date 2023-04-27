@@ -42,7 +42,7 @@ const WebSubsidiaryNavs: ISubsidiaryNavs[] = [
   {
     id: 3,
     title: "Infra Services",
-    href: "/",
+    href: "/isg",
     logo: "/assets/icons/isg-gray.svg",
   },
   {
@@ -221,11 +221,13 @@ const Navbar = ({ pageName }: INavbar) => {
                   />
                 </button>
                 <button className="flex justify-start px-4  w-full items-start ">
-                  <img
-                    src="/assets/icons/isg.svg"
-                    alt="isg"
-                    className="h-full  -mx-4"
-                  />
+                  <Link href="/isg">
+                    <img
+                      src="/assets/icons/isg.svg"
+                      alt="isg"
+                      className="h-full  -mx-4"
+                    />
+                  </Link>
                 </button>
               </div>
             </div>
@@ -257,9 +259,6 @@ const Navbar = ({ pageName }: INavbar) => {
                     fill
                   />
                 </Link>
-                {/* <div className="right-0 absolute ">
-                  
-                </div> */}
               </button>
               {openDesktopSubsidiaryMenu ? (
                 <HiChevronLeft size={24} />
@@ -296,7 +295,7 @@ const Navbar = ({ pageName }: INavbar) => {
 
                 <NavButton
                   title="Infra Services"
-                  href="/"
+                  href="/isg"
                   imgSRC="/assets/icons/isg-main.svg"
                   active={pageName === "Infra Services"}
                 />

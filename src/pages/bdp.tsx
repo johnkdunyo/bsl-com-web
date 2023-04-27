@@ -9,7 +9,7 @@ import OurExpetiseSection from "@/components/digitalPayments/OurExpetiseSection"
 import WorkPOSSection from "@/components/digitalPayments/WorkPOSSection";
 import React from "react";
 
-const bdp = () => {
+const Bdp = () => {
   return (
     <SiteLayout pageName={"Digital Payment"}>
       <>
@@ -26,4 +26,4 @@ const bdp = () => {
   );
 };
 
-export default bdp;
+export default Bdp;

@@ -74,7 +74,7 @@ const DiscoverBusinessSection = () => {
           </div>
         </div>
       </section>
-      <section className=" bg-white h-[50rem]  z-2 ">
+      <section className=" bg-white h-[50rem]  z-2  ">
         <div className="flex flex-col md:flex-row justify-between custom-container w-full items-center sm:gap-4 ">
           <div className="w-full   md:w-[60%] z-10">
             <Lottie

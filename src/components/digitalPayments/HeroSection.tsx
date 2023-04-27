@@ -47,7 +47,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="flex justify-center h-[12%] bottom-[5px] left-0 right-0  absolute">
+      <div className="flex justify-center h-[12%] bottom-[30px] left-0 right-0  absolute ">
         <button>
           <Lottie options={lottieDefaultOptions} height={160} width={160} />
         </button>
