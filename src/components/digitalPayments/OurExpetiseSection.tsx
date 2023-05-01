@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const SingleMobileCustomCard = ({
   title,
@@ -11,7 +12,8 @@ const SingleMobileCustomCard = ({
     <div className="w-full h-full  ">
       <div className="flex items-center  justify-center  gap-6 md:gap-8 md:text-center px-10 md:px-0">
         <div className="flex items-center justify-center   h-16 w-20 md:h-20 md:w-24 flex-col ">
-          <img
+          <motion.img
+            whileHover={{ scale: 1.2 }}
             src={`/assets/img/bdp/expertise/${icon}`}
             alt={icon}
             className=" "

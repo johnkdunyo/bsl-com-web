@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, stagger } from "framer-motion";
 
 import {
@@ -17,7 +17,8 @@ interface INavs {
 }
 
 interface ISubsidiaryNavs extends INavs {
-  logo: string;
+  imgSRC: string;
+  imgSRC2: string;
 }
 
 const WebsiteNavs: INavs[] = [
@@ -29,27 +30,31 @@ const WebsiteNavs: INavs[] = [
 const WebSubsidiaryNavs: ISubsidiaryNavs[] = [
   {
     id: 1,
-    title: "BSL Group",
+    title: "BSL Home",
     href: "/",
-    logo: "/assets/icons/bsl-main.svg",
+    imgSRC: "/assets/icons/bsl-main.svg",
+    imgSRC2: "/assets/icons/bsl-main.svg",
   },
   {
     id: 2,
     title: "Spectrum Fibre",
-    href: "/",
-    logo: "/assets/icons/spectrum-gray.svg",
+    href: "/spectrumfibre",
+    imgSRC: "/assets/icons/spectrum-main.svg",
+    imgSRC2: "/assets/icons/spectrum.svg",
   },
   {
     id: 3,
     title: "Infra Services",
     href: "/isg",
-    logo: "/assets/icons/isg-gray.svg",
+    imgSRC: "/assets/icons/isg-main.svg",
+    imgSRC2: "/assets/icons/isg.svg",
   },
   {
     id: 4,
     title: "Digital Payment",
     href: "/bdp",
-    logo: "/assets/icons/bdp-gray.svg",
+    imgSRC: "/assets/icons/bdp-main.svg",
+    imgSRC2: "/assets/icons/bdp.svg",
   },
 ];
 
@@ -70,7 +75,7 @@ interface INavbarNavButtons {
   title: string;
   href: string;
   imgSRC: string;
-  active: boolean;
+  active?: boolean;
 }
 
 const NavButton = ({ active, title, href, imgSRC }: INavbarNavButtons) => {
@@ -126,9 +131,9 @@ const CustomNavButton2 = ({
 const CustomNavList = ({ title, href }: { title: string; href: string }) => {
   const [showArrow, setShowArrow] = useState(false);
   return (
-    <div className=" w-full">
+    <div className=" w-full ">
       <div
-        className="flex items-center gap-4"
+        className="flex items-center gap-4 "
         onMouseEnter={() => setShowArrow(true)}
         onMouseLeave={() => setShowArrow(false)}
       >
@@ -177,6 +182,58 @@ const Navbar = ({ pageName }: INavbar) => {
   const [openDesktopSubsidiaryMenu, setOpenDesktopSubsidiaryMenu] =
     useState<boolean>(false);
 
+  const [restOfNavs, setRestOfNavs] = useState(
+    WebSubsidiaryNavs.filter((nav) => nav.title !== "BSL Home")
+  );
+  const [currentNav, setCurrentNav] = useState<ISubsidiaryNavs>({
+    id: 1,
+    title: "BSL Home",
+    href: "/",
+    imgSRC: "/assets/icons/bsl-main.svg",
+    imgSRC2: "/assets/icons/bsl.svg",
+  });
+
+  useEffect(() => {
+    if (pageName === "Digital Payment") {
+      setCurrentNav({
+        id: 4,
+        title: "Digital Payment",
+        href: "/bdp",
+        imgSRC: "/assets/icons/bdp-main.svg",
+        imgSRC2: "/assets/icons/bdp.svg",
+      });
+      setRestOfNavs(
+        WebSubsidiaryNavs.filter((nav) => nav.title !== "Digital Payment")
+      );
+    }
+
+    if (pageName === "Infra Services") {
+      setCurrentNav({
+        id: 3,
+        title: "Infra Services",
+        href: "/isg",
+        imgSRC: "/assets/icons/isg-main.svg",
+        imgSRC2: "/assets/icons/isg.svg",
+      });
+      setRestOfNavs(
+        WebSubsidiaryNavs.filter((nav) => nav.title !== "Infra Services")
+      );
+    }
+
+    if (pageName === "Spectrum Fibre") {
+      setCurrentNav({
+        id: 2,
+        title: "Spectrum Fibre",
+        href: "/spectrumfibre",
+        imgSRC: "/assets/icons/spectrum-main.svg",
+        imgSRC2: "/assets/icons/spectrum.svg",
+      });
+      setRestOfNavs(
+        WebSubsidiaryNavs.filter((nav) => nav.title !== "Spectrum Fibre")
+      );
+    }
+  }, [pageName]);
+
   return (
     <div className="  z-30 pt-2 fixed w-full  top-0   md:backdrop-blur-sm md:bg-gray-900/90 opacity-1">
       <div className="container mx-auto px-3 ">
@@ -186,15 +243,15 @@ const Navbar = ({ pageName }: INavbar) => {
             <div
               className={` ${
                 openSubsidiaryMenu ? "bg-whitel" : "bg-transparent"
-              }  rounded-[28px]  flex flex-col gap-0.5 `}
+              }  rounded-[28px]  flex flex-col gap-0.5 w-52`}
             >
               <button
                 className="flex home-custom-navs   items-center justify-center    py-2 gap-1  "
                 onClick={() => setOpenSubsidiaryMenu((prev) => !prev)}
               >
                 <img
-                  src="/assets/icons/bsl-main.svg"
-                  className=" w-[75%]   py-0.5 "
+                  src={currentNav.imgSRC}
+                  className=" w-[75%]   py-0.5  h-9  text-left"
                 />
                 {openSubsidiaryMenu ? (
                   <HiChevronUp size={24} />
@@ -206,29 +263,15 @@ const Navbar = ({ pageName }: INavbar) => {
               <div
                 className={`${
                   openSubsidiaryMenu ? "flex" : "hidden"
-                }  flex-col gap-3  pb-2 border bg-white rounded-[28px] p-4 w-full`}
+                }  flex-col gap-1  pb-2  bg-white rounded-[28px] p-4 w-full`}
               >
-                <button className="flex justify-start   w-full items-start ">
-                  <Link href="/bdp">
-                    <img src="/assets/icons/bdp.svg" alt="bdp" />
-                  </Link>
-                </button>
-                <button className="flex justify-start px-4  w-full items-start  ">
-                  <img
-                    src="/assets/icons/spectrum.svg"
-                    alt="spectrum"
-                    className="-mx-4"
-                  />
-                </button>
-                <button className="flex justify-start px-4  w-full items-start ">
-                  <Link href="/isg">
-                    <img
-                      src="/assets/icons/isg.svg"
-                      alt="isg"
-                      className="h-full  -mx-4"
-                    />
-                  </Link>
-                </button>
+                {restOfNavs.map((nav) => (
+                  <button className="flex px-4  w-full py-1 " key={nav.id}>
+                    <Link href={nav.href}>
+                      <img src={nav.imgSRC2} className="-ml-3   h-8 w-full" />
+                    </Link>
+                  </button>
+                ))}
               </div>
             </div>
           </div>
@@ -243,7 +286,7 @@ const Navbar = ({ pageName }: INavbar) => {
         </div>
 
         {/* desktop */}
-        <div className="hidden md:flex justify-between w-full   ">
+        <div className="hidden md:flex justify-between w-full    ">
           <div className="w-6/12    flex justify-between   items-center   ">
             <div
               className="w-1/4 flex items-center gap-1"
@@ -251,9 +294,9 @@ const Navbar = ({ pageName }: INavbar) => {
               onMouseLeave={() => setOpenDesktopSubsidiaryMenu(false)}
             >
               <button className={`px-6 w-full   h-10 relative `}>
-                <Link href={"/"}>
+                <Link href={currentNav.href}>
                   <Image
-                    src={"/assets/icons/bsl-main.svg"}
+                    src={currentNav.imgSRC}
                     alt={"img"}
                     className="w-full  "
                     fill
@@ -279,26 +322,14 @@ const Navbar = ({ pageName }: INavbar) => {
                 }
                 onMouseLeave={() => setOpenDesktopSubsidiaryMenu(false)}
               >
-                <NavButton
-                  title="Digital Payment"
-                  href="/bdp"
-                  imgSRC="/assets/icons/bdp-main.svg"
-                  active={pageName === "Digital Payment"}
-                />
-
-                <NavButton
-                  title="BSL Home"
-                  href="/"
-                  imgSRC="/assets/icons/spectrum-main.svg"
-                  active={pageName === "Spectrum Fibre"}
-                />
-
-                <NavButton
-                  title="Infra Services"
-                  href="/isg"
-                  imgSRC="/assets/icons/isg-main.svg"
-                  active={pageName === "Infra Services"}
-                />
+                {restOfNavs.map((nav) => (
+                  <NavButton
+                    key={nav.id}
+                    href={nav.href}
+                    title={nav.title}
+                    imgSRC={nav.imgSRC}
+                  />
+                ))}
               </motion.div>
             )}
           </div>
@@ -344,15 +375,15 @@ const Navbar = ({ pageName }: INavbar) => {
                 <div
                   className={` ${
                     openSubsidiaryMenu ? "bg-whitel" : "bg-transparent"
-                  }  rounded-[28px]  flex flex-col gap-2 border relative `}
+                  }  rounded-[28px]  flex flex-col gap-2 border relative w-52`}
                 >
                   <button
                     className="flex home-custom-navs  items-center justify-center    py-2  z-10 gap-1"
                     onClick={() => setOpenSubsidiaryMenu((prev) => !prev)}
                   >
                     <img
-                      src="/assets/icons/bsl-main.svg"
-                      className=" w-[75%]   py-0.5 "
+                      src={currentNav.imgSRC}
+                      className=" w-[75%]   py-0 h-9 "
                     />
                     {openSubsidiaryMenu ? (
                       <HiChevronUp size={24} />
@@ -366,7 +397,17 @@ const Navbar = ({ pageName }: INavbar) => {
                       openSubsidiaryMenu ? "flex" : "hidden"
                     }   absolute top-[3.3rem]  rounded-b-[22px] -z-2  flex-col gap-3  pb-2 border bg-white rounded-[28px] p-4 w-full`}
                   >
-                    <button className="flex justify-start   w-full items-start ">
+                    {restOfNavs.map((nav) => (
+                      <button className="flex px-4  w-full py-1 " key={nav.id}>
+                        <Link href={nav.href}>
+                          <img
+                            src={nav.imgSRC2}
+                            className="-ml-3   h-8 w-full"
+                          />
+                        </Link>
+                      </button>
+                    ))}
+                    {/* <button className="flex justify-start   w-full items-start ">
                       <img src="/assets/icons/bdp.svg" alt="bdp" />
                     </button>
                     <button className="flex justify-start px-4  w-full items-start  ">
@@ -382,7 +423,7 @@ const Navbar = ({ pageName }: INavbar) => {
                         alt="isg"
                         className="h-full  -mx-4"
                       />
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
@@ -494,9 +535,9 @@ const Navbar = ({ pageName }: INavbar) => {
                   onMouseLeave={() => setOpenDesktopSubsidiaryMenu(false)}
                 >
                   <button className={`px-6 w-full   h-10 relative `}>
-                    <Link href={"/"}>
+                    <Link href={currentNav.href}>
                       <Image
-                        src={"/assets/icons/bsl-main.svg"}
+                        src={currentNav.imgSRC2}
                         alt={"img"}
                         className="w-full  "
                         fill
@@ -522,26 +563,14 @@ const Navbar = ({ pageName }: INavbar) => {
                     }
                     onMouseLeave={() => setOpenDesktopSubsidiaryMenu(false)}
                   >
-                    <NavButton
-                      title="Digital Payment"
-                      href="/bdp"
-                      imgSRC="/assets/icons/bdp.svg"
-                      active={pageName === "Digital Payment"}
-                    />
-
-                    <NavButton
-                      title="BSL Home"
-                      href="/"
-                      imgSRC="/assets/icons/spectrum.svg"
-                      active={pageName === "Spectrum Fibre"}
-                    />
-
-                    <NavButton
-                      title="Infra Services"
-                      href="/"
-                      imgSRC="/assets/icons/isg.svg"
-                      active={pageName === "Infra Services"}
-                    />
+                    {restOfNavs.map((nav) => (
+                      <NavButton
+                        key={nav.id}
+                        href={nav.href}
+                        title={nav.title}
+                        imgSRC={nav.imgSRC2}
+                      />
+                    ))}
                   </div>
                 )}
               </div>
