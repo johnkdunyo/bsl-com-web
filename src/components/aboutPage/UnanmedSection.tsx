@@ -23,8 +23,12 @@ const SingleComponent = ({
 }) => {
   return (
     <div className=" border-l-2 border-[#82AEC9]  w-full px-7">
-      <div className="flex flex-col  gap-2 ">
-        <img src={`/assets/img/about/${imageURL}.png`} alt={imageURL} />
+      <div className="flex flex-col  gap-6 ">
+        <img
+          src={`/assets/img/about/${imageURL}`}
+          alt={imageURL}
+          className="rounded-[20px] object-cover h-[18rem] md:h-[20rem]"
+        />
         <p className="text-[#1D365A] paragraphText1 ">{description}</p>
       </div>
     </div>
@@ -72,7 +76,7 @@ const UnanmedSection = () => {
           >
             <SwiperSlide>
               <SingleComponent
-                imageURL="about2"
+                imageURL="gcb1.jpeg"
                 description="Broadspectrum designed and implemented a Software-Defined Wide Area
           Network as an overlay network to provide intelligent traffic steering
           over GCB Bank’s MPLS and LTE WAN links."
@@ -81,28 +85,22 @@ const UnanmedSection = () => {
 
             <SwiperSlide>
               <SingleComponent
-                imageURL="about3"
-                description="Broadspectrum designed and implemented a Software-Defined Wide Area
-          Network as an overlay network to provide intelligent traffic steering
-          over GCB Bank’s MPLS and LTE WAN links."
+                imageURL="gcb2.jpeg"
+                description="Broadspectrum designed and implemented a Network Access Control (NAC) solution to enhance the security of GCB Bank’s network."
               />
             </SwiperSlide>
 
             <SwiperSlide>
               <SingleComponent
-                imageURL="about4"
-                description="Broadspectrum designed and implemented a Software-Defined Wide Area
-          Network as an overlay network to provide intelligent traffic steering
-          over GCB Bank’s MPLS and LTE WAN links."
+                imageURL="eagric.jpeg"
+                description="Broadspectrum designed, built and operates an Agriculture Marketplace Platform (E-Agric) for the ministry of Food and Agriculture (MOFA). This has led to the registration of over 1 million farmers and agricultural value chain actors ."
               />
             </SwiperSlide>
 
             <SwiperSlide>
               <SingleComponent
-                imageURL="about5"
-                description="Broadspectrum designed and implemented a Software-Defined Wide Area
-          Network as an overlay network to provide intelligent traffic steering
-          over GCB Bank’s MPLS and LTE WAN links."
+                imageURL="nedco.jpeg"
+                description="Broadspectrum designed, built and operates the electronic power payment system for the Nothern Electricty Distribution Company Limited (NEDCo) for the purchase of power by its customers "
               />
             </SwiperSlide>
           </Swiper>

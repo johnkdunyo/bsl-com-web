@@ -4,7 +4,7 @@
 
 
 .bleuLearnMore {
-    @apply  bg-[url("../../public/assets/img/about/aboutbackground.png")] bg-cover sm:bg-bottom  ;
+    @apply  bg-[url("../../public/assets/img/about/aboutbackground2.jpeg")] bg-cover sm:bg-bottom  ;
     /* background-size: cover; */
     /* background-position: bottom */
 }
