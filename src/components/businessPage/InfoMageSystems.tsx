@@ -3,11 +3,11 @@ import React from "react";
 const InfoMageSystems = () => {
   return (
     <section className=" bg-white pb-40 ">
-      <div className="custom-container2 h-full flex flex-col sm:flex-row justify-between py-10 sm:py-20 gap-10  ">
-        <div className=" w-full  -mt-20 sm:-mt-[0rem] sm:order-first">
+      <div className="custom-container2 h-full flex flex-col md:flex-row justify-between py-10 md:py-20 gap-10  ">
+        <div className=" w-full  -mt-20 md:-mt-[0rem] md:order-first">
           <img
-            src="/assets/img/business/info-mgt.png"
-            className="w-full h-full"
+            src="/assets/img/business/info-mgt.jpeg"
+            className="w-full md:h-full object-cover h-[30rem]"
           />
         </div>
         <div className="  w-full flex justify-center items-center text-[#1D365A]">
@@ -26,13 +26,13 @@ const InfoMageSystems = () => {
             </h1>
 
             <div className="flex flex-col border-[#1D365A] border-t ">
-              <div className="text-3xl sm:text-5xl font-medium py-5 border-b border-[#1D365A]">
+              <div className="text-3xl md:text-5xl font-medium py-5 border-b border-[#1D365A]">
                 <p>Enterprise Resource Planning</p>
               </div>
-              <div className="text-3xl sm:text-5xl  font-medium py-5 border-b border-[#1D365A]">
+              <div className="text-3xl md:text-5xl  font-medium py-5 border-b border-[#1D365A]">
                 <p>Learning Management System</p>
               </div>
-              <div className="text-3xl sm:text-5xl  font-medium py-5 border-b  border-[#1D365A]">
+              <div className="text-3xl md:text-5xl  font-medium py-5 border-b  border-[#1D365A]">
                 <p>School Resource Planning</p>
               </div>
             </div>
