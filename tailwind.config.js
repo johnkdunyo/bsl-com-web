@@ -23,7 +23,8 @@ module.exports = {
         primary: "#1D365A",
         secondary: "#AB2346",
         purple: "#6600CC",
-        ruby: "#CC0066"
+        ruby: "#CC0066",
+        spectrumGreen: "#35BC56"
       },
       fontFamily: {
         sans: ["Poppins", ...defaultTheme.fontFamily.sans],
