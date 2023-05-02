@@ -13,7 +13,7 @@ const HeroSection = () => {
 
   return (
     <section className=" bg-[url('/assets/img/spectrum/hero-main.jpeg')] h-[100vh] sm:h-[90vh] md:h-[100vh] bg-cover   bg-[center_left_37rem]   md:bg-center top-0 relative">
-      <div className="h-full w-full custom-container flex flex-col justify-between   pb-10 md:pb-15    ">
+      <div className="h-full w-full custom-container flex flex-col justify-between   pb-10 md:pb-8    ">
         <div className="h-[10rem] md:h-[1rem]"></div>
         <div className=" w-full  flex flex-col justify-center items-center md:items-start  gap-10   max-w-4xl">
           <h1 className="font-extralight text-[1.9rem] md:text-7xl md:leading-[5rem] md:tracking-wider ">
