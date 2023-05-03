@@ -1,4 +1,5 @@
 import SiteLayout from "@/components/Layout/SiteLayout";
+import AreaOfExpertiseSection from "@/components/spectrumFibrePage/AreaOfExpertiseSection";
 import HeroSection from "@/components/spectrumFibrePage/HeroSection";
 import OurRolloutSection from "@/components/spectrumFibrePage/OurRolloutSection";
 import PartnerShipSection from "@/components/spectrumFibrePage/PartnerShipSection";
@@ -13,6 +14,7 @@ const Spectrumfibre = () => {
         <RollingTextSection />
         <OurRolloutSection />
         <PartnerShipSection />
+        <AreaOfExpertiseSection />
       </>
     </SiteLayout>
   );
