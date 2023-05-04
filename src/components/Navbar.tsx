@@ -263,14 +263,14 @@ const Navbar = ({ pageName }: INavbar) => {
               <div
                 className={`${
                   openSubsidiaryMenu ? "flex" : "hidden"
-                }  flex-col gap-1  pb-2  bg-white rounded-[28px] p-4 w-full`}
+                }  flex-col gap-1  pb-3  bg-white rounded-[28px] p-4 w-full -mt-0.5`}
               >
                 {restOfNavs.map((nav) => (
-                  <button className="flex px-4  w-full py-1 " key={nav.id}>
-                    <Link href={nav.href}>
-                      <img src={nav.imgSRC2} className="-ml-3   h-8 w-full" />
-                    </Link>
-                  </button>
+                  <Link href={nav.href} className=" flex   w-full py-1.5">
+                    <button className=" " key={nav.id}>
+                      <img src={nav.imgSRC2} className="   h-8 w-full" />
+                    </button>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -395,35 +395,15 @@ const Navbar = ({ pageName }: INavbar) => {
                   <div
                     className={`${
                       openSubsidiaryMenu ? "flex" : "hidden"
-                    }   absolute top-[3.3rem]  rounded-b-[22px] -z-2  flex-col gap-3  pb-2 border bg-white rounded-[28px] p-4 w-full`}
+                    }   absolute top-[3.3rem]  rounded-b-[22px] -z-2  flex-col gap-2  pb-2 border bg-white rounded-[28px] p-3 w-full`}
                   >
                     {restOfNavs.map((nav) => (
-                      <button className="flex px-4  w-full py-1 " key={nav.id}>
-                        <Link href={nav.href}>
-                          <img
-                            src={nav.imgSRC2}
-                            className="-ml-3   h-8 w-full"
-                          />
-                        </Link>
-                      </button>
+                      <Link href={nav.href} className=" flex   w-full py-1.5 ">
+                        <button className=" " key={nav.id}>
+                          <img src={nav.imgSRC2} className="  h-8 w-full" />
+                        </button>
+                      </Link>
                     ))}
-                    {/* <button className="flex justify-start   w-full items-start ">
-                      <img src="/assets/icons/bdp.svg" alt="bdp" />
-                    </button>
-                    <button className="flex justify-start px-4  w-full items-start  ">
-                      <img
-                        src="/assets/icons/spectrum.svg"
-                        alt="spectrum"
-                        className="-mx-4"
-                      />
-                    </button>
-                    <button className="flex justify-start px-4  w-full items-start ">
-                      <img
-                        src="/assets/icons/isg.svg"
-                        alt="isg"
-                        className="h-full  -mx-4"
-                      />
-                    </button> */}
                   </div>
                 </div>
               </div>

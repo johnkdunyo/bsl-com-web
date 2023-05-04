@@ -37,7 +37,7 @@ const SingleSection = ({
             </h1>
             <div className="text-xl leading-normal ">
               {description.map((item, _x) => (
-                <div className="flex items-start  gap-3 my-1">
+                <div className="flex items-start  gap-3 my-1" key={_x}>
                   <div className="mt-1">
                     <HiOutlineArrowNarrowRight size={24} />{" "}
                   </div>
@@ -61,7 +61,7 @@ const SingleSection = ({
             </h1>
             <div className="text-xl leading-normal">
               {description.map((item, _x) => (
-                <div className="flex   gap-3 items-start my-2">
+                <div className="flex   gap-3 items-start my-2" key={_x}>
                   <div className="mt-1">
                     <HiOutlineArrowNarrowRight size={24} />
                   </div>

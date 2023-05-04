@@ -4,6 +4,7 @@ import HeroSection from "@/components/spectrumFibrePage/HeroSection";
 import OurRolloutSection from "@/components/spectrumFibrePage/OurRolloutSection";
 import PartnerShipSection from "@/components/spectrumFibrePage/PartnerShipSection";
 import RollingTextSection from "@/components/spectrumFibrePage/RollingTextSection";
+import WeInnovateSection from "@/components/spectrumFibrePage/WeInnovateSection";
 import React from "react";
 
 const Spectrumfibre = () => {
@@ -14,6 +15,7 @@ const Spectrumfibre = () => {
         <RollingTextSection />
         <OurRolloutSection />
         <PartnerShipSection />
+        <WeInnovateSection />
         <AreaOfExpertiseSection />
       </>
     </SiteLayout>
