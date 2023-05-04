@@ -265,8 +265,12 @@ const Navbar = ({ pageName }: INavbar) => {
                   openSubsidiaryMenu ? "flex" : "hidden"
                 }  flex-col gap-1  pb-3  bg-white rounded-[28px] p-4 w-full -mt-0.5`}
               >
-                {restOfNavs.map((nav) => (
-                  <Link href={nav.href} className=" flex   w-full py-1.5">
+                {restOfNavs.map((nav, _x) => (
+                  <Link
+                    href={nav.href}
+                    className=" flex   w-full py-1.5"
+                    key={_x}
+                  >
                     <button className=" " key={nav.id}>
                       <img src={nav.imgSRC2} className="   h-8 w-full" />
                     </button>
@@ -322,7 +326,7 @@ const Navbar = ({ pageName }: INavbar) => {
                 }
                 onMouseLeave={() => setOpenDesktopSubsidiaryMenu(false)}
               >
-                {restOfNavs.map((nav) => (
+                {restOfNavs.map((nav, _x) => (
                   <NavButton
                     key={nav.id}
                     href={nav.href}
@@ -397,8 +401,12 @@ const Navbar = ({ pageName }: INavbar) => {
                       openSubsidiaryMenu ? "flex" : "hidden"
                     }   absolute top-[3.3rem]  rounded-b-[22px] -z-2  flex-col gap-2  pb-2 border bg-white rounded-[28px] p-3 w-full`}
                   >
-                    {restOfNavs.map((nav) => (
-                      <Link href={nav.href} className=" flex   w-full py-1.5 ">
+                    {restOfNavs.map((nav, _x) => (
+                      <Link
+                        href={nav.href}
+                        className=" flex   w-full py-1.5 "
+                        key={_x}
+                      >
                         <button className=" " key={nav.id}>
                           <img src={nav.imgSRC2} className="  h-8 w-full" />
                         </button>
