@@ -61,20 +61,20 @@ const OurSubsidiaries = () => {
         Broadspectrum Limited and the government of Ghana through the Ghana
         Infrastructure Investment Fund (GIIF) in the year 2017."
           imageURL="/assets/icons/spectrum.svg"
-          href="/"
+          href="/spectrumfibre"
         />
 
         <div className="flex flex-col  gap-10 sm:flex-row">
           <SingleSubsidiaryCard
             description="Payment Service Provider (PSP) Licensed Business providing services for payment gateway and bill Payment – E.G. Northern Electricity Distribution Company (NedCo), Marketplace (E-Agric)"
             imageURL="/assets/icons/bdp.svg"
-            href="/"
+            href="/bdp"
           />
 
           <SingleSubsidiaryCard
             description="Fibre Maintenance and Logistics Company"
             imageURL="/assets/icons/isg.svg"
-            href="/"
+            href="/isg"
           />
         </div>
       </div>

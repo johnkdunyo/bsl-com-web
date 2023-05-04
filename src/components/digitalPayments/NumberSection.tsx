@@ -1,10 +1,6 @@
 import React from "react";
 
 import Lottie from "react-lottie";
-import FolderLottieData from "../../../public/assets/lottie/folder.json";
-import ProductLottieData from "../../../public/assets/lottie/product.json";
-import SmileLottieData from "../../../public/assets/lottie/smile.json";
-import StaffLottieData from "../../../public/assets/lottie/staff.json";
 import Counter from "../uiComponents/Counter";
 import PartnersLottieData from "../../../public/assets/lottie/bdp/partners.json";
 import ContactsLottieData from "../../../public/assets/lottie/bdp/contacts.json";

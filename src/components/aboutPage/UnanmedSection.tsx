@@ -22,12 +22,12 @@ const SingleComponent = ({
   description: string;
 }) => {
   return (
-    <div className=" border-l-2 border-[#82AEC9]  w-full px-7">
+    <div className=" border-l border-[#82AEC9]  w-full px-6  h-[35rem] md:h-[36rem] ">
       <div className="flex flex-col  gap-6 ">
         <img
           src={`/assets/img/about/${imageURL}`}
           alt={imageURL}
-          className="rounded-[20px] object-cover h-[18rem] md:h-[20rem]"
+          className="rounded-[20px] object-cover h-[19rem] md:h-[20rem]"
         />
         <p className="text-[#1D365A] paragraphText1 ">{description}</p>
       </div>
@@ -47,7 +47,7 @@ const UnanmedSection = () => {
   return (
     <div className="py-16 sm:py-24 bg-white">
       <div className="flex flex-col  relative ">
-        <div className="flex flex-col justify-between gap-8">
+        <div className="flex flex-col justify-between gap-8 h-full">
           <Swiper
             onBeforeInit={onBeforeInit}
             spaceBetween={0}

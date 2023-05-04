@@ -173,6 +173,7 @@
     transform: translateX(100%);
     animation: move 30s linear infinite;
     white-space: nowrap;
+    overflow-x: hidden;
 }
     
     @keyframes move {
