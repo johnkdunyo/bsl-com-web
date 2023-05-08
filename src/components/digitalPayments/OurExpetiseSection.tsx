@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Animate } from "../animations/ScrollAnimator";
 
 const SingleMobileCustomCard = ({
   title,
@@ -9,7 +10,7 @@ const SingleMobileCustomCard = ({
   icon: string;
 }) => {
   return (
-    <div className="w-full h-full  ">
+    <Animate.ScaleIn className="w-full h-full  ">
       <div className="flex items-center  justify-center  gap-6 md:gap-8 md:text-center px-10 md:px-0">
         <div className="flex items-center justify-center   h-16 w-20 md:h-20 md:w-24 flex-col ">
           <motion.img
@@ -25,7 +26,7 @@ const SingleMobileCustomCard = ({
           </h1>
         </div>
       </div>
-    </div>
+    </Animate.ScaleIn>
   );
 };
 
@@ -34,9 +35,9 @@ const OurExpetiseSection = () => {
     <section className="bg-white  py-24">
       <div className="custom-container">
         <div className="text-center w-full">
-          <h1 className="text-[2.8rem] sm:text-5xl leading-10 sm:leading-tight text-transparent bg-clip-text font-bold bg-gradient-to-r from-[#6600CC] to-[#CC0166] ">
+          <Animate.FadeUp className="text-[2.8rem] sm:text-5xl leading-10 sm:leading-tight text-transparent bg-clip-text font-bold bg-gradient-to-r from-[#6600CC] to-[#CC0166] ">
             Our Expertise
-          </h1>
+          </Animate.FadeUp>
 
           <div className="md:hidden flex flex-col justify-between gap-10 mt-10 ">
             <SingleMobileCustomCard

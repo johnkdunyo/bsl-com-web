@@ -21,13 +21,16 @@ const CertifiedSection = () => {
             <h1 className="font-bold text-4xl sm:text-6xl mb-5 ">
               <Animate.FadeUp>We are Certified</Animate.FadeUp>
             </h1>
-            <p className="text-base sm:text-lg">
+
+            <div>
               <Animate.FadeUp>
-                Our certifications reveal our commitment to providing quality
-                products and services to all our existing and prospective
-                customers.
+                <p className="text-base sm:text-lg">
+                  Our certifications reveal our commitment to providing quality
+                  products and services to all our existing and prospective
+                  customers.
+                </p>
               </Animate.FadeUp>
-            </p>
+            </div>
           </div>
         </div>
 
@@ -40,26 +43,22 @@ const CertifiedSection = () => {
               <Lottie options={isoLottieOptions} height={300} width={300} />
             </div>
           </div>
-          <div className="flex flex-col items-center justify-center text-center  gap-2 sm:h-full sm:text-left sm:items-start w-full px-3 sm:px-0  ">
-            <h1 className="text-2xl sm:text-3xl font-bold">
-              <Animate.FadeUp>ISO/IEC 27001:2013</Animate.FadeUp>
-            </h1>
-            <p className="text-lg  sm:text-xl font-bold max-w-xs ">
-              <Animate.FadeUp>
+          <Animate.FadeUp className="w-full h-full">
+            <div className="flex flex-col items-center justify-center text-center  gap-2 sm:h-full sm:text-left sm:items-start w-full px-3 sm:px-0  ">
+              <h1 className="text-2xl sm:text-3xl font-bold">
+                ISO/IEC 27001:2013
+              </h1>
+              <p className="text-lg  sm:text-xl font-bold max-w-xs ">
                 Information Security management System (ISMS)
-              </Animate.FadeUp>
-            </p>
-            <p className="text-base font-normal max-w-sm">
-              <Animate.FadeUp>
+              </p>
+              <p className="text-base font-normal max-w-sm">
                 We adhere to data protection standards both Internally and
                 Externally so your data is secured
-              </Animate.FadeUp>
-            </p>
-          </div>
+              </p>
+            </div>
+          </Animate.FadeUp>
         </div>
       </div>
-
-      {/* carousel */}
     </div>
   );
 };

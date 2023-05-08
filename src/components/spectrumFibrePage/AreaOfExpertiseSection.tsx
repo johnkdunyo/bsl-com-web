@@ -1,6 +1,7 @@
 import React from "react";
 import useMeasure from "react-use-measure";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+import { Animate } from "../animations/ScrollAnimator";
 
 const SingleSection = ({
   title,
@@ -18,7 +19,7 @@ const SingleSection = ({
   const [container, { height }] = useMeasure();
   console.log("debug", height);
   return (
-    <>
+    <Animate.FadeUp>
       <div
         className={`relative  border-yellow-500 mb-8 md:hidden  ${className}`}
         style={{ minHeight: `${height + 225}px` }}
@@ -48,6 +49,7 @@ const SingleSection = ({
           </div>
         </div>
       </div>
+
       {/* desktop */}
       <div className="hidden md:flex h-full w-full justify-between  bg-[#EDEDED]  rounded-[80px] p-5  ">
         <div
@@ -78,7 +80,7 @@ const SingleSection = ({
           />
         </div>
       </div>
-    </>
+    </Animate.FadeUp>
   );
 };
 
@@ -87,9 +89,9 @@ const AreaOfExpertiseSection = () => {
     <section className="py-20  bg-white">
       <div className="custom-container">
         <div>
-          <h1 className="text-[2.9rem] md:text-8xl leading-[4rem] md:leading-[7rem] text-transparent bg-clip-text font-bold bg-gradient-to-l from-[#306FB7] to-[#2A4125] px-6 sm:px-0 ">
+          <Animate.FadeUp className="text-[2.9rem] md:text-8xl leading-[4rem] md:leading-[7rem] text-transparent bg-clip-text font-bold bg-gradient-to-l from-[#306FB7] to-[#2A4125] px-6 sm:px-0 ">
             Our Area of Expertise
-          </h1>
+          </Animate.FadeUp>
         </div>
 
         <div className="mt-20 flex flex-col justify-between gap-12 md:gap-20 ">

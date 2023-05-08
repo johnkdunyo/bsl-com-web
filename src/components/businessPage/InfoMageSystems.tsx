@@ -31,13 +31,19 @@ const InfoMageSystems = () => {
 
             <div className="flex flex-col border-[#1D365A] border-t ">
               <div className="text-3xl md:text-5xl font-medium py-5 border-b border-[#1D365A]">
-                <p>Enterprise Resource Planning</p>
+                <Animate.ScaleIn>
+                  <p>Enterprise Resource Planning</p>
+                </Animate.ScaleIn>
               </div>
               <div className="text-3xl md:text-5xl  font-medium py-5 border-b border-[#1D365A]">
-                <p>Learning Management System</p>
+                <Animate.ScaleIn>
+                  <p>Learning Management System</p>
+                </Animate.ScaleIn>
               </div>
               <div className="text-3xl md:text-5xl  font-medium py-5 border-b  border-[#1D365A]">
-                <p>School Resource Planning</p>
+                <Animate.ScaleIn>
+                  <p>School Resource Planning</p>
+                </Animate.ScaleIn>
               </div>
             </div>
           </div>

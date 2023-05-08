@@ -14,31 +14,31 @@ const SingleSubsidiaryCard = ({
   href: string;
 }) => {
   return (
-    // <Animate.ScaleIn>
-    <div className="bg-[#FFFFFF] w-full  justify-between p-8 rounded-[50px] flex flex-col gap-6 ">
-      <div>
-        <div className="h-20  flex items-start justify-start">
-          <img src={imageURL} alt="spectrum" className="h-full  " />
+    <Animate.ScaleIn className="w-full">
+      <div className="bg-[#FFFFFF] w-full  justify-between p-8 rounded-[50px] flex flex-col gap-6 sm:h-[23rem] ">
+        <div>
+          <div className="h-20  flex items-start justify-start">
+            <img src={imageURL} alt="spectrum" className="h-full  " />
+          </div>
+          <p className="text-[#1D365A] paragraphText1 ">{description}</p>
         </div>
-        <p className="text-[#1D365A] paragraphText1 ">{description}</p>
-      </div>
 
-      <div>
-        <motion.button
-          className="custom-button1"
-          initial={{ opacity: 0.6 }}
-          whileHover={{
-            scale: 1.2,
-            transition: { duration: 1 },
-          }}
-          whileTap={{ scale: 0.9 }}
-          whileInView={{ opacity: 1 }}
-        >
-          <Link href={href}>Learn More</Link>
-        </motion.button>
+        <div>
+          <motion.button
+            className="custom-button1"
+            initial={{ opacity: 0.6 }}
+            whileHover={{
+              scale: 1.2,
+              transition: { duration: 1 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            whileInView={{ opacity: 1 }}
+          >
+            <Link href={href}>Learn More</Link>
+          </motion.button>
+        </div>
       </div>
-    </div>
-    // </Animate.ScaleIn>
+    </Animate.ScaleIn>
   );
 };
 

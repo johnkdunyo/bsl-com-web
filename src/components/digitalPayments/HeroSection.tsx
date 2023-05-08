@@ -32,10 +32,16 @@ const HeroSection = () => {
             <motion.h2
               className="font-bold  leading-[1.4] sm:leading-[1.2] text-[3rem] sm:text-[8rem] tracking-wide"
               onMouseEnter={hoverHandler}
-              animate={{ type: "spring", opacity: 1 }}
-              initial={{ opacity: 0.1, y: "-10%" }}
-              transition={{ duration: 0.2 }}
-              exit={{ y: "10%" }}
+              initial={{ opacity: 0, y: "100%" }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.5, ease: "easeOut" },
+              }}
+              exit={{
+                y: "-100%",
+                transition: { duration: 0.5, ease: "easeOut" },
+              }}
               layout
             >
               {texts[currentTextIndex]}

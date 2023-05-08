@@ -96,15 +96,16 @@ const OurCultureSection = () => {
           <h1 className="text-[#AB2346] font-medium tracking-widest uppercase">
             <Animate.FadeUp>Our Culture</Animate.FadeUp>
           </h1>
-          <p className="text-base tracking-wide leading-7">
-            <Animate.FadeUp>
+
+          <Animate.FadeUp>
+            <p className="text-base tracking-wide leading-7">
               From our diverse selection of services to our corporate culture
               and relationships, our goal is for all our services to live up to
               the tenets of our Core Values. Because we know that what we do
               everyday determines our reputation, the level of success we
               achieve, and the positive impact we can make in Africa and beyond.
-            </Animate.FadeUp>
-          </p>
+            </p>
+          </Animate.FadeUp>
         </div>
       </div>
       <Carousel />

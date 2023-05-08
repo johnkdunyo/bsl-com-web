@@ -1,4 +1,5 @@
 import React from "react";
+import { Animate } from "../animations/ScrollAnimator";
 
 const ReliableSection = () => {
   return (
@@ -10,7 +11,7 @@ const ReliableSection = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="w-full h-full flex flex-col  justify-center gap-8  mb-16 custom-container  md:px-16  py-10">
+        <Animate.FadeUp className="w-full h-full flex flex-col  justify-center gap-8  mb-16 custom-container  md:px-16  py-10">
           <h1 className="text-[#82AEC9] text-4xl md:text-[3.6rem] leading-normal md:leading-[1.2] font-bold">
             Reliable and efficient communication networks our priority
           </h1>
@@ -19,7 +20,7 @@ const ReliableSection = () => {
             committed to delivering outstanding services to our clients,
             ensuring that their networks are always operating at optimal levels.
           </div>
-        </div>
+        </Animate.FadeUp>
       </div>
     </section>
   );

@@ -3,6 +3,7 @@ import Lottie from "react-lottie";
 import { motion } from "framer-motion";
 
 import ScrollDownLottieData from "../../../public/assets/lottie/scrolldown.json";
+import { Animate } from "../animations/ScrollAnimator";
 
 const HeroSection = () => {
   const lottieDefaultOptions = {
@@ -15,7 +16,7 @@ const HeroSection = () => {
     <section className=" bg-[url('/assets/img/spectrum/hero-main.jpeg')] h-[100vh] sm:h-[90vh] md:h-[100vh] bg-cover   bg-[center_left_37rem]   md:bg-center top-0 relative">
       <div className="h-full w-full custom-container flex flex-col justify-between   pb-10 md:pb-8    ">
         <div className="h-[10rem] md:h-[1rem]"></div>
-        <div className=" w-full  flex flex-col justify-center items-center md:items-start  gap-10   max-w-4xl">
+        <Animate.FadeUp className=" w-full  flex flex-col justify-center items-center md:items-start  gap-10   max-w-4xl">
           <h1 className="font-extralight text-[1.9rem] md:text-7xl md:leading-[5rem] md:tracking-wider ">
             A Telecommunication company with the{" "}
             <span className="font-bold text-[#35BC56]">Speed of light</span>
@@ -23,12 +24,12 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl tracking-wider   md:mt-8 font-normal">
             We are committed to meet your business needs at the speed of light.
           </p>
-        </div>
+        </Animate.FadeUp>
 
         <div className="w-full ">
-          <h1 className="text-spectrumGreen font-medium text-xl   text-center tracking-widest w-full">
+          <Animate.FadeUp className="text-spectrumGreen font-medium text-xl   text-center tracking-widest w-full">
             A SUBSEDIARY OF BROADSPECTRUM
-          </h1>
+          </Animate.FadeUp>
         </div>
       </div>
 

@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import Footer from "@/components/Footer";
-import AOS from "aos";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,9 +25,6 @@ interface ISiteLayoutProps {
 }
 
 export default function SiteLayout({ children, pageName }: ISiteLayoutProps) {
-  useEffect(() => {
-    AOS.init({ duration: 2000 });
-  }, []);
   return (
     <>
       <Head>
@@ -37,10 +33,7 @@ export default function SiteLayout({ children, pageName }: ISiteLayoutProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main
-        className="relative text-white bg-[#000A26] site_all_wrap"
-        data-aos="fade-in"
-      >
+      <main className="relative text-white bg-[#000A26] site_all_wrap">
         {/* <Cursor isGelly={true} cursorBackgrounColor="#C0392B" cursorSize={30} /> */}
         {/* <div className="cursor"></div> */}
         <Navbar pageName={pageName} />

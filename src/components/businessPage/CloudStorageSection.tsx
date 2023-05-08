@@ -1,4 +1,5 @@
 import React from "react";
+import { Animate } from "../animations/ScrollAnimator";
 
 const CloudStorageSection = () => {
   return (
@@ -12,7 +13,9 @@ const CloudStorageSection = () => {
         </div>
         <div className="  w-full flex justify-center items-center text-[#1D365A] ">
           <div className="flex flex-col gap-6  ">
-            <h1 className="headerText1">Cloud and Storage Solutions</h1>
+            <Animate.FadeUp>
+              <h1 className="headerText1">Cloud and Storage Solutions</h1>
+            </Animate.FadeUp>
 
             <h1 className="text-xl font-medium tracking-wider mt-4 uppercase">
               STORAGE SOLUTIONS FOR
@@ -20,16 +23,24 @@ const CloudStorageSection = () => {
 
             <div className="flex flex-col border-[#1D365A] border-t ">
               <div className="text-3xl md:text-5xl font-medium py-5 border-b border-[#1D365A]">
-                <p>Datacenter</p>
+                <Animate.ScaleIn>
+                  <p>Datacenter</p>
+                </Animate.ScaleIn>
               </div>
               <div className="text-3xl md:text-5xl  font-medium py-5 border-b border-[#1D365A]">
-                <p>Disaster Recovery and Backups</p>
+                <Animate.ScaleIn>
+                  <p>Disaster Recovery and Backups</p>
+                </Animate.ScaleIn>
               </div>
               <div className="text-3xl md:text-5xl  font-medium py-5 border-b border-[#1D365A]">
-                <p>Customized Digital Market place</p>
+                <Animate.ScaleIn>
+                  <p>Customized Digital Market place</p>
+                </Animate.ScaleIn>
               </div>
               <div className="text-3xl md:text-5xl  font-medium py-5 border-b border-[#1D365A]">
-                <p>Banking/Payment Solutions</p>
+                <Animate.ScaleIn>
+                  <p>Banking/Payment Solutions</p>
+                </Animate.ScaleIn>
               </div>
             </div>
           </div>

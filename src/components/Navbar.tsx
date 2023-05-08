@@ -107,8 +107,8 @@ const CustomNavButton2 = ({
     <button
       className={`${
         textColorWhite
-          ? "hover:bg-gray-800/40"
-          : "hover:bg-gray-100 border-transparent"
+          ? "hover:bg-transparent font-bold"
+          : "hover:bg-transparent font-bold"
       } px-2 py-3  ${
         active
           ? "border-[#AB2346] border-b-[4px]"
@@ -190,7 +190,7 @@ const Navbar = ({ pageName }: INavbar) => {
     title: "BSL Home",
     href: "/",
     imgSRC: "/assets/icons/bsl-main.svg",
-    imgSRC2: "/assets/icons/bsl.svg",
+    imgSRC2: "/assets/icons/bsl-main.svg",
   });
 
   useEffect(() => {

@@ -1,6 +1,7 @@
 import React from "react";
 import CustomBackground1 from "../animations/CustomBackground1";
 import CustomInput from "../uiComponents/CustomInput";
+import { Animate } from "../animations/ScrollAnimator";
 
 const WorkWithUs = () => {
   return (
@@ -9,12 +10,15 @@ const WorkWithUs = () => {
       <div className="z-10">
         <div className="custom-container flex flex-col sm:flex-row justify-between gap-10">
           <div className="flex flex-col gap-2 w-full px-5 sm:px-0">
-            <h1 className="headerText1">Work with us</h1>
-            <p className="paragraphText1">
+            {/* <h1 className="headerText1">Work with us</h1> */}
+            <Animate.FadeUp className="headerText1">
+              Work with us
+            </Animate.FadeUp>
+            <Animate.FadeUp className="paragraphText1">
               Our forward-thinking Group believes in the value and talent of its
               people. Browse the available positions or send an open application
               by attaching your CV.
-            </p>
+            </Animate.FadeUp>
           </div>
           <div className="w-full border bg-white h-full rounded-[30px] p-8 z-10">
             <div className="flex flex-col justify-between gap-4 ">

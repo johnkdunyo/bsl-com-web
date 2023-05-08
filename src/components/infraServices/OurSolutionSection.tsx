@@ -1,5 +1,6 @@
 import React from "react";
 import useMeasure from "react-use-measure";
+import { Animate } from "../animations/ScrollAnimator";
 
 // const SingleSection = ({
 //   title,
@@ -52,7 +53,7 @@ const SingleSection = ({
   const [container, { height }] = useMeasure();
   console.log("debug", height);
   return (
-    <>
+    <Animate.FadeUp>
       <div
         className={`relative  border-yellow-500 mb-8 md:hidden  ${className}`}
         style={{ minHeight: `${height + 225}px` }}
@@ -89,7 +90,7 @@ const SingleSection = ({
           />
         </div>
       </div>
-    </>
+    </Animate.FadeUp>
   );
 };
 
@@ -98,13 +99,13 @@ const OurSolutionSection = () => {
     <section className="py-20  bg-white">
       <div className="custom-container">
         <div className=" w-full">
-          <h1 className="text-primary font-bold text-4xl md:hidden">
+          <Animate.FadeUp className="text-primary font-bold text-4xl md:hidden">
             Our <br />
             Solutions
-          </h1>
-          <h1 className="text-primary font-bold text-4xl hidden md:block">
+          </Animate.FadeUp>
+          <Animate.FadeUp className="text-primary font-bold text-4xl hidden md:block">
             Our Solutions
-          </h1>
+          </Animate.FadeUp>
           <p className="text-primary mt-10">Text here</p>
         </div>
 
