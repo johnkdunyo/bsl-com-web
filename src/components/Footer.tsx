@@ -132,7 +132,7 @@ const Footer = () => {
       <div className="hidden md:flex flex-col custom-container pt-20 pb-10 gap-20 text-lg">
         <div className="flex justify-between  gap-[10%]">
           <div className="w-[55%] flex flex-col items-start gap-12 h-full ">
-            <Animate.ScaleIn>
+            <Animate.FadeUp>
               <h1 className="text-5xl font-extralight leading-[4.5rem]">
                 Ready to <span className="font-medium">transform</span> your
                 <span className="font-medium"> business</span> with us with
@@ -145,10 +145,12 @@ const Footer = () => {
                 </span>
                 ?
               </h1>
-            </Animate.ScaleIn>
-            <button className="custom-button1 text-2xl">
-              <Link href="/enquiry">Get in Touch</Link>
-            </button>
+            </Animate.FadeUp>
+            <Animate.FadeUp>
+              <button className="custom-button1 text-2xl">
+                <Link href="/enquiry">Get in Touch</Link>
+              </button>
+            </Animate.FadeUp>
           </div>
 
           <div className="w-[43%] flex flex-col justify-between items-end  gap-16 ">
