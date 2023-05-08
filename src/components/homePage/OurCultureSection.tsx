@@ -1,94 +1,124 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Animate } from "../animations/ScrollAnimator";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Autoplay, Navigation } from "swiper";
 
 const SingleSlide = ({
   title,
   description,
-  id,
-  prevID,
-  nextID,
 }: {
   title: string;
   description: string;
-  id: string;
-  prevID: string;
-  nextID: string;
 }) => {
   return (
-    <div
-      id={id}
-      className="carousel-item relative w-full h-full  flex flex-col -mt-10 sm:mt-0"
-    >
-      <div className=" flex flex-col w-full justify-between h-full items-center text-center py-2 sm:py-0  ">
-        <div className="text-[#0C233E] font-bold text-[2.9rem]  sm:text-[5.3rem] md:text-[6.1rem] lg:text-[7.9rem] xl:text-[10.2rem] 2xl:text-[12rem]  w-full ">
+    <div className="carousel-item relative w-full sm:py-10   flex flex-col sm:h-[20rem] h-[15rem] pb-[5rem]">
+      <div className=" flex flex-col w-full justify-between h-full items-center text-center py-2 sm:py-0  gap-20 sm:gap-0 ">
+        <div className="text-[#0C233E] font-bold text-[3.5rem]  sm:text-[5.3rem] md:text-[6.1rem] lg:text-[7.9rem] xl:text-[10.2rem] 2xl:text-[12rem]  w-full whitespace-nowrap text-center  flex justify-center items-center h-fit">
           {title}
         </div>
         <div className="text-base  container mx-auto  leading-6 max-w-xl px-5  w-full ">
           {description}
         </div>
       </div>
-      <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-[34%] sm:top-[52%]  md:top-[48%]  mx-auto px-5 max-w-6xl">
-        <a href={prevID} className="btn sm:btn-lg btn-circle bg-transparent">
-          <img src="/assets/icons/nav-left.svg" />
-        </a>
-
-        <a href={nextID} className="btn sm:btn-lg  btn-circle bg-transparent">
-          <img src="/assets/icons/nav-right.svg" />
-        </a>
-      </div>
     </div>
   );
 };
 
 const Carousel = () => {
+  const swiperRef = useRef<SwiperCore>();
+  const swiperNavPrevRef = React.useRef<HTMLButtonElement>(null);
+  const swiperNavNextRef = React.useRef<HTMLButtonElement>(null);
+  const onBeforeInit = (Swiper: SwiperCore): void => {
+    swiperRef.current = Swiper;
+  };
   return (
-    <div className="carousel w-full h-[19rem] sm:h-[20rem]  md:h-[26rem] py-10 ">
-      <SingleSlide
-        id="slide1"
-        title="Innovation"
-        description="We adapt to market trends and foster creativity that challenges
+    <div className="carousel w-full   ">
+      <Swiper
+        onBeforeInit={onBeforeInit}
+        spaceBetween={0}
+        cssMode={true}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={1}
+        loop={true}
+        mousewheel={true}
+        autoplay={{
+          delay: 5000,
+        }}
+        navigation={{
+          prevEl: swiperNavPrevRef?.current,
+          nextEl: swiperNavNextRef?.current,
+        }}
+        modules={[Navigation, Autoplay]}
+        keyboard={true}
+        className="w-full relative "
+      >
+        <SwiperSlide>
+          <SingleSlide
+            title="Innovation"
+            description="We adapt to market trends and foster creativity that challenges
           constraints and drives progress"
-        nextID="#slide2"
-        prevID="#slide4"
-      />
-      <SingleSlide
-        id="slide2"
-        title="Agility"
-        description="We see opportunities that adds value by welcoming new perspectives to improve productivity. We don’t stand still!"
-        nextID="#slide3"
-        prevID="#slide1"
-      />
-      <SingleSlide
-        id="slide3"
-        title="Results-Driven"
-        description="We are passionate about achieving results and strive for quality in rendering services"
-        nextID="#slide4"
-        prevID="#slide2"
-      />
-      <SingleSlide
-        id="slide4"
-        title="Integrity"
-        description="We build trust with our clients and partners by upholding ethical standards"
-        nextID="#slide5"
-        prevID="#slide3"
-      />
-      <SingleSlide
-        id="slide5"
-        title="Team Spirit"
-        description="We communicate and work together to offer excellent service to our clients."
-        nextID="#slide1"
-        prevID="#slide4"
-      />
+          />
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <SingleSlide
+            title="Agility"
+            description="We see opportunities that adds value by welcoming new perspectives to improve productivity. We don’t stand still!"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <SingleSlide
+            title="Results-Driven"
+            description="We are passionate about achieving results and strive for quality in rendering services"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <SingleSlide
+            title="Integrity"
+            description="We build trust with our clients and partners by upholding ethical standards"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <SingleSlide
+            title="Team Spirit"
+            description="We communicate and work together to offer excellent service to our clients."
+          />
+        </SwiperSlide>
+
+        <div className=" flex justify-between   absolute top-[20%] sm:top-[50%] bottom-[50%] w-full  px-10 sm:px-[15%]">
+          <button
+            className=" z-10 w-16 h-16 sm:w-16 sm:h-full"
+            ref={swiperNavPrevRef}
+            onClick={() => swiperRef!.current?.slidePrev()}
+          >
+            <img src="/assets/icons/nav-left.svg" className=" w-full " />
+          </button>
+
+          <button
+            className=" z-10 w-16 h-16 sm:w-16 sm:h-full"
+            ref={swiperNavNextRef}
+            onClick={() => swiperRef!.current?.slideNext()}
+          >
+            <img src="/assets/icons/nav-right.svg" className="w-full" />
+          </button>
+        </div>
+      </Swiper>
     </div>
   );
 };
 
 const OurCultureSection = () => {
   return (
-    <section className="bg-[#000026] relative">
+    <section className=" relative h-fit py-10">
       <div className="absolute inset-0   bg-video  top-[30rem] sm:top-[20rem]  ">
-        <video autoPlay loop muted className="w-full h-full object-cover">
-          <source src="/assets/videos/dots.mp4" type="video/mp4" />
+        <video
+          autoPlay
+          loop
+          muted
+          className="w-full h-full  object-cover object-bottom "
+        >
+          <source src="/assets/videos/core-values.webm" type="video/mp4" />
         </video>
       </div>
       <div className="custom-container pt-10 flex justify-center relative   pb-10">
