@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Animate } from "../animations/ScrollAnimator";
 
 const WhyChooseUsComponent = ({
   imageURL,
@@ -28,12 +29,16 @@ const WhyChooseUsComponent = ({
       </div>
 
       <div
-        className={`flex flex-col justify-center gap-6 w-full order-last ${
+        className={`flex flex-col justify-center gap-10 w-full order-last ${
           orderText === "first" ? "sm:order-first" : "sm:order-last"
         } `}
       >
-        <h1 className="text-3xl font-medium">{title}</h1>
-        <p className="text-lg tracking-wide">{description}</p>
+        <Animate.FadeUp>
+          <h1 className="text-3xl font-medium">{title}</h1>
+        </Animate.FadeUp>
+        <Animate.FadeUp>
+          <p className="text-lg tracking-wide">{description}</p>
+        </Animate.FadeUp>
       </div>
     </div>
   );
@@ -54,16 +59,20 @@ const YouCanCountOnUs = () => {
       <div className="z-10">
         <section className="flex w-full flex-col justify-center items-center  container mx-auto px-4 sm:px-0 mt-16 mb-5">
           <div className=" max-w-2xl text-center">
-            <h1 className="uppercase text-[#AB2346] text-xl mb-10 tracking-wider font-medium ">
-              You can count on us
-            </h1>
-            <p className="text-white paragraphText1">
-              Our determination as a business is to offer world class
-              connectivity and digital services to our clients and this has
-              enabled us to build a dynamic 360 solution approach for
-              connectivity, digital payment services, internet service provision
-              value added and messaging services.
-            </p>
+            <Animate.FadeUp>
+              <h1 className="uppercase text-[#AB2346] text-xl mb-10 tracking-wider font-medium ">
+                You can count on us
+              </h1>
+            </Animate.FadeUp>
+            <Animate.FadeUp>
+              <p className="text-white paragraphText1">
+                Our determination as a business is to offer world class
+                connectivity and digital services to our clients and this has
+                enabled us to build a dynamic 360 solution approach for
+                connectivity, digital payment services, internet service
+                provision value added and messaging services.
+              </p>
+            </Animate.FadeUp>
           </div>
         </section>
         <section className="h-16 sm:h-[7rem]  flex items-center text-clip overflow-hidden  ">

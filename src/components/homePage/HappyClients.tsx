@@ -5,6 +5,7 @@ import ProductLottieData from "../../../public/assets/lottie/product.json";
 import SmileLottieData from "../../../public/assets/lottie/smile.json";
 import StaffLottieData from "../../../public/assets/lottie/staff.json";
 import Counter from "../uiComponents/Counter";
+import { Animate } from "../animations/ScrollAnimator";
 
 const SingleMobileCustomCard = ({
   title,
@@ -50,28 +51,30 @@ const HappyClients = () => {
   return (
     <section className=" happyClientSection">
       {/* mobile */}
-      <div className="py-20 sm:hidden custom-container grid grid-cols-2 gap-10">
-        <SingleMobileCustomCard
-          title="Happy Clients"
-          value={15}
-          animationData={"smile"}
-        />
-        <SingleMobileCustomCard
-          title="Projects"
-          value={10}
-          animationData={"product"}
-        />
-        <SingleMobileCustomCard
-          title="Expert People"
-          value={60}
-          animationData={"staff"}
-        />
-        <SingleMobileCustomCard
-          title="Portfolio"
-          value={20}
-          animationData={"folder"}
-        />
-      </div>
+      <Animate.FadeUp>
+        <div className="py-20 sm:hidden custom-container grid grid-cols-2 gap-10">
+          <SingleMobileCustomCard
+            title="Happy Clients"
+            value={15}
+            animationData={"smile"}
+          />
+          <SingleMobileCustomCard
+            title="Projects"
+            value={10}
+            animationData={"product"}
+          />
+          <SingleMobileCustomCard
+            title="Expert People"
+            value={60}
+            animationData={"staff"}
+          />
+          <SingleMobileCustomCard
+            title="Portfolio"
+            value={20}
+            animationData={"folder"}
+          />
+        </div>
+      </Animate.FadeUp>
 
       <div className="hidden sm:flex custom-container h-[40rem]">
         <div className=" flex justify-center w-full h-full">

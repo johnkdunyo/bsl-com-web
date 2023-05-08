@@ -1,4 +1,5 @@
 import React from "react";
+import { Animate } from "../animations/ScrollAnimator";
 
 const ProudlyGhanaian = () => {
   return (
@@ -9,16 +10,21 @@ const ProudlyGhanaian = () => {
         </div>
         <div className="  w-full flex justify-center items-center ">
           <div className="flex flex-col gap-4  sm:-mt-10">
-            <h1 className="text-[#1D365A] headerText1">
-              Proudly <br /> Ghanaian
-            </h1>
-            <p className="text-[#1D365A] paragraphText1">
-              Broadspectrum Limited is a Ghanaian information communication
-              technology company that is active in the technological industry.
-              It has partnered with GCB Bank Limited to launch the first
-              bank-backed mobile money service in Ghana and has over 400,000
-              users. In partnership with the government of Ghana.
-            </p>
+            <Animate.FadeUp>
+              <h1 className="text-[#1D365A] headerText1">
+                Proudly <br /> Ghanaian
+              </h1>
+            </Animate.FadeUp>
+
+            <Animate.FadeUp>
+              <p className="text-[#1D365A] paragraphText1">
+                Broadspectrum Limited is a Ghanaian information communication
+                technology company that is active in the technological industry.
+                It has partnered with GCB Bank Limited to launch the first
+                bank-backed mobile money service in Ghana and has over 400,000
+                users. In partnership with the government of Ghana.
+              </p>
+            </Animate.FadeUp>
           </div>
         </div>
       </div>

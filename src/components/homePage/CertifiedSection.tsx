@@ -1,6 +1,7 @@
 import React from "react";
 import Lottie from "react-lottie";
 import CorrectIsoData from "../../../public/assets/lottie/iso.json";
+import { Animate } from "../animations/ScrollAnimator";
 
 const CertifiedSection = () => {
   const isoLottieOptions = {
@@ -18,12 +19,14 @@ const CertifiedSection = () => {
           {/** */}
           <div className="max-w-3xl">
             <h1 className="font-bold text-4xl sm:text-6xl mb-5 ">
-              We are Certified
+              <Animate.FadeUp>We are Certified</Animate.FadeUp>
             </h1>
             <p className="text-base sm:text-lg">
-              Our certifications reveal our commitment to providing quality
-              products and services to all our existing and prospective
-              customers.
+              <Animate.FadeUp>
+                Our certifications reveal our commitment to providing quality
+                products and services to all our existing and prospective
+                customers.
+              </Animate.FadeUp>
             </p>
           </div>
         </div>
@@ -39,14 +42,18 @@ const CertifiedSection = () => {
           </div>
           <div className="flex flex-col items-center justify-center text-center  gap-2 sm:h-full sm:text-left sm:items-start w-full px-3 sm:px-0  ">
             <h1 className="text-2xl sm:text-3xl font-bold">
-              ISO/IEC 27001:2013
+              <Animate.FadeUp>ISO/IEC 27001:2013</Animate.FadeUp>
             </h1>
             <p className="text-lg  sm:text-xl font-bold max-w-xs ">
-              Information Security management System (ISMS)
+              <Animate.FadeUp>
+                Information Security management System (ISMS)
+              </Animate.FadeUp>
             </p>
             <p className="text-base font-normal max-w-sm">
-              We adhere to data protection standards both Internally and
-              Externally so your data is secured
+              <Animate.FadeUp>
+                We adhere to data protection standards both Internally and
+                Externally so your data is secured
+              </Animate.FadeUp>
             </p>
           </div>
         </div>

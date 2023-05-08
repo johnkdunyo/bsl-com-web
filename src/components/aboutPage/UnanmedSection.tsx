@@ -13,6 +13,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { EffectCoverflow, Pagination, Navigation } from "swiper";
+import { Animate } from "../animations/ScrollAnimator";
 
 const SingleComponent = ({
   imageURL,
@@ -29,7 +30,9 @@ const SingleComponent = ({
           alt={imageURL}
           className="rounded-[20px] object-cover h-[19rem] md:h-[20rem]"
         />
-        <p className="text-[#1D365A] paragraphText1 ">{description}</p>
+        <Animate.FadeUp>
+          <p className="text-[#1D365A] paragraphText1 ">{description}</p>
+        </Animate.FadeUp>
       </div>
     </div>
   );

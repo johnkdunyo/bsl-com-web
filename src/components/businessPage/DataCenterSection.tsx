@@ -1,4 +1,5 @@
 import React from "react";
+import { Animate } from "../animations/ScrollAnimator";
 
 const DataCenterSection = () => {
   return (
@@ -13,12 +14,18 @@ const DataCenterSection = () => {
           </div>
           <div className="w-full flex  justify-center items-center my-10 md:my-24">
             <div className=" flex flex-col gap-6 md:gap-10">
-              <h1 className="headerText1">Data Centre Design and Deployment</h1>
-              <p className="paragraphText1">
-                Data center design serves as they key design phase of data
-                center development, where system architects create a documented
-                and diagrammatic, logical view of a data center.
-              </p>
+              <Animate.FadeUp>
+                <h1 className="headerText1">
+                  Data Centre Design and Deployment
+                </h1>
+              </Animate.FadeUp>
+              <Animate.FadeUp>
+                <p className="paragraphText1">
+                  Data center design serves as they key design phase of data
+                  center development, where system architects create a
+                  documented and diagrammatic, logical view of a data center.
+                </p>
+              </Animate.FadeUp>
             </div>
           </div>
         </div>

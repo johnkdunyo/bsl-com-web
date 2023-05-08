@@ -1,4 +1,5 @@
 import React from "react";
+import { Animate } from "../animations/ScrollAnimator";
 
 const TrustedBy = () => {
   return (
@@ -14,23 +15,34 @@ const TrustedBy = () => {
         {/* mobile */}
         <div className="sm:hidden mt-14 custom-container flex flex-col  w-full gap-10">
           <div className="flex w-full justify-center gap-6">
-            <img src="/assets/icons/partners/gcb.svg" />
-            <img src="/assets/icons/partners/mtn.svg" />
-            <img src="/assets/icons/partners/nhis.svg" />
+            <Animate.ScaleIn>
+              <img src="/assets/icons/partners/gcb.svg" />
+            </Animate.ScaleIn>
+            <Animate.ScaleIn>
+              <img src="/assets/icons/partners/mtn.svg" />
+            </Animate.ScaleIn>
+            <Animate.ScaleIn>
+              <img src="/assets/icons/partners/nhis.svg" />
+            </Animate.ScaleIn>
           </div>
-          <div className="flex w-full justify-center gap-4">
-            <img src="/assets/icons/partners/nedco.svg" />
-          </div>
+
+          <Animate.ScaleIn>
+            <div className="flex w-full justify-center gap-4">
+              <img src="/assets/icons/partners/nedco.svg" />
+            </div>
+          </Animate.ScaleIn>
         </div>
 
         {/* destkop */}
         <div className="hidden mt-14 custom-container sm:flex flex-col  w-full gap-10">
-          <div className="flex w-full justify-center gap-20 ">
-            <img src="/assets/icons/partners/nedco.svg" />
-            <img src="/assets/icons/partners/gcb.svg" className=" p-5" />
-            <img src="/assets/icons/partners/mtn.svg" />
-            <img src="/assets/icons/partners/nhis.svg" />
-          </div>
+          <Animate.ScaleIn>
+            <div className="flex w-full justify-center gap-20 ">
+              <img src="/assets/icons/partners/nedco.svg" />
+              <img src="/assets/icons/partners/gcb.svg" className=" p-5" />
+              <img src="/assets/icons/partners/mtn.svg" />
+              <img src="/assets/icons/partners/nhis.svg" />
+            </div>
+          </Animate.ScaleIn>
         </div>
       </div>
     </section>

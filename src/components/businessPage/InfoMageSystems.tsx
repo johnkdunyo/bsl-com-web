@@ -1,4 +1,5 @@
 import React from "react";
+import { Animate } from "../animations/ScrollAnimator";
 
 const InfoMageSystems = () => {
   return (
@@ -7,12 +8,15 @@ const InfoMageSystems = () => {
         <div className=" w-full  -mt-20 md:-mt-[0rem] md:order-first">
           <img
             src="/assets/img/business/info-mgt.jpeg"
-            className="w-full md:h-full object-cover h-[30rem]"
+            className="w-full md:h-full object-cover   h-[30rem]"
+            style={{ objectPosition: "30% 75%" }}
           />
         </div>
         <div className="  w-full flex justify-center items-center text-[#1D365A]">
           <div className="flex flex-col gap-6  ">
-            <h1 className="headerText1">Information Management System</h1>
+            <h1 className="headerText1">
+              <Animate.FadeUp>Information Management System</Animate.FadeUp>
+            </h1>
             <p className=" paragraphText1">
               Information management systems are the backbone of any
               organization. They help in managing data, information, and

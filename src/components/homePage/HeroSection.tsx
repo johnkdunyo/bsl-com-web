@@ -15,6 +15,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Navigation } from "swiper";
+import { Animate } from "../animations/ScrollAnimator";
 
 const CustomLottieLoader = ({ status }: { status: "active" | "inactive" }) => {
   const defaultLottieOptions = {
@@ -94,16 +95,20 @@ const HeroSection = () => {
                     <CustomLottieLoader status={"active"} />
                     <CustomLottieLoader status={"inactive"} />
                   </div>
-                  <div className="text-4xl sm:text-6xl mr-6 leading-[3rem]  font-extralight ">
-                    <h2 className="">We are Engineering </h2>
-                    <h2 className="font-bold sm:mt-4">
-                      Africa&apos;s Digital Future
-                    </h2>
-                  </div>
-                  <p className="flex  text-2xl sm:text-3xl  ">
-                    We&apos;re offering 360 digital <br />
-                    solutions Globally from African by Africans.
-                  </p>
+                  <Animate.FadeUp>
+                    <div className="text-4xl sm:text-6xl mr-6 leading-[3rem]  font-extralight ">
+                      <h2 className="">We are Engineering </h2>
+                      <h2 className="font-bold sm:mt-4">
+                        Africa&apos;s Digital Future
+                      </h2>
+                    </div>
+                  </Animate.FadeUp>
+                  <Animate.FadeIn>
+                    <p className="flex  text-2xl sm:text-3xl  ">
+                      We&apos;re offering 360 digital <br />
+                      solutions Globally from African by Africans.
+                    </p>
+                  </Animate.FadeIn>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -112,16 +117,20 @@ const HeroSection = () => {
                     <CustomLottieLoader status={"active"} />
                     <CustomLottieLoader status={"inactive"} />
                   </div>
-                  <div className="text-4xl sm:text-6xl mr-6 leading-[3rem]   font-extralight ">
-                    <h2 className="">We are Engineering </h2>
-                    <h2 className="font-bold sm:mt-4">
-                      Africa&apos;s Digital Future
-                    </h2>
-                  </div>
-                  <p className="flex  text-2xl sm:text-3xl  ">
-                    We&apos;re offering 360 digital <br />
-                    solutions Globally from African by Africans.
-                  </p>
+                  <Animate.FadeUp>
+                    <div className="text-4xl sm:text-6xl mr-6 leading-[3rem]   font-extralight ">
+                      <h2 className="">We are Engineering </h2>
+                      <h2 className="font-bold sm:mt-4">
+                        Africa&apos;s Digital Future
+                      </h2>
+                    </div>
+                  </Animate.FadeUp>
+                  <Animate.FadeIn>
+                    <p className="flex  text-2xl sm:text-3xl  ">
+                      We&apos;re offering 360 digital <br />
+                      solutions Globally from African by Africans.
+                    </p>
+                  </Animate.FadeIn>
                 </div>
               </SwiperSlide>
             </Swiper>

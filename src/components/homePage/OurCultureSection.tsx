@@ -1,4 +1,5 @@
 import React from "react";
+import { Animate } from "../animations/ScrollAnimator";
 
 const SingleSlide = ({
   title,
@@ -93,14 +94,16 @@ const OurCultureSection = () => {
       <div className="custom-container pt-10 flex justify-center relative   pb-10">
         <div className="flex flex-col items-center text-center gap-6 max-w-3xl">
           <h1 className="text-[#AB2346] font-medium tracking-widest uppercase">
-            Our Culture
+            <Animate.FadeUp>Our Culture</Animate.FadeUp>
           </h1>
           <p className="text-base tracking-wide leading-7">
-            From our diverse selection of services to our corporate culture and
-            relationships, our goal is for all our services to live up to the
-            tenets of our Core Values. Because we know that what we do everyday
-            determines our reputation, the level of success we achieve, and the
-            positive impact we can make in Africa and beyond.
+            <Animate.FadeUp>
+              From our diverse selection of services to our corporate culture
+              and relationships, our goal is for all our services to live up to
+              the tenets of our Core Values. Because we know that what we do
+              everyday determines our reputation, the level of success we
+              achieve, and the positive impact we can make in Africa and beyond.
+            </Animate.FadeUp>
           </p>
         </div>
       </div>
