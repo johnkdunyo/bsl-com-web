@@ -3,8 +3,8 @@ import { Animate } from "../animations/ScrollAnimator";
 
 const BlueLearnMore = () => {
   return (
-    <section className="bleuLearnMore h-[45rem] sm:h-[40rem]">
-      <div className="custom-container flex flex-col sm:flex-row  justify-center items-center  gap-10 h-full max-w-7xl ">
+    <section className=" h-[50rem] sm:h-[50rem] bleuLearnMore border border-[#01020c] ">
+      <div className="custom-container flex flex-col sm:flex-row  justify-center  items-center  gap-10 h-full w-full max-w-7xl  sm:-mt-32 -mt-16">
         <div className="w-full">
           <Animate.FadeUp>
             <h1 className="headerText1 text-white">
@@ -24,7 +24,9 @@ const BlueLearnMore = () => {
               </p>
             </Animate.FadeUp>
 
-            <button className="custom-button1 my-8">Learn More</button>
+            <Animate.FadeUp>
+              <button className="custom-button1 my-8">Learn More</button>
+            </Animate.FadeUp>
           </div>
         </div>
       </div>

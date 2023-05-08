@@ -4,9 +4,10 @@
 
 
 .bleuLearnMore {
-    @apply  bg-[url("../../public/assets/img/about/aboutbackground2.jpeg")] bg-cover sm:bg-bottom  ;
+    @apply  bg-[url("../../public/assets/img/about/aboutbackground2.jpeg")] sm:bg-[center_bottom_-9rem] sm:bg-cover    bg-cover bg-[center_bottom_-1rem] ;
     /* background-size: cover; */
     /* background-position: bottom */
+    /* object-position: 100% 50%; */
 }
 
 
