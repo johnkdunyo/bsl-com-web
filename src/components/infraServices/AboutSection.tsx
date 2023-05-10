@@ -7,7 +7,7 @@ const AboutSection = () => {
       <div className="custom-container flex flex-col justify-between py-16  md:py-10 w-full  gap-16">
         <div className="w-full">
           <Animate.FadeUp className="text-ruby font-medium text-xl  text-center tracking-widest w-full">
-            A SUBSEDIARY OF BROADSPECTRUM
+            A SUBSIDIARY OF BROADSPECTRUM
           </Animate.FadeUp>
         </div>
 

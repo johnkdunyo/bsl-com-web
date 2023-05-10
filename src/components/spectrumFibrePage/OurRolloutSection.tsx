@@ -12,7 +12,7 @@ const OurRolloutSection = () => {
           <div className="">
             We are exclusively the backbone Fibre infrastructure in the Western
             Region and have 4000+km of Fibre optic cable covering the Western,
-            Eastern and Northern Corridors of the country and Fibre
+            Eastern and Northern Corridors of the country and we also have Fibre
             infrastructure present in all the 16 regions of Ghana.
           </div>
         </Animate.FadeUp>
@@ -41,8 +41,8 @@ const OurRolloutSection = () => {
             <Animate.FadeUp className="text-base">
               We are exclusively the backbone Fibre infrastructure in the
               Western Region and have 4000+km of Fibre optic cable covering the
-              Western, Eastern and Northern Corridors of the country and Fibre
-              infrastructure present in all the 16 regions of Ghana.
+              Western, Eastern and Northern Corridors of the country and we also
+              have Fibre infrastructure present in all the 16 regions of Ghana.
             </Animate.FadeUp>
           </div>
           <Animate.FadeUp className="flex flex-col gap-4">

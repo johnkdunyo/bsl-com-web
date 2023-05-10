@@ -32,8 +32,7 @@ const Footer = () => {
           <Animate.FadeUp>
             <h1 className="text-4xl text-center font-extralight leading-[3rem]">
               Ready to <span className="font-medium">transform</span> your
-              <span className="font-medium"> business</span> with us with
-              <span className="font-medium"> speed</span>?
+              <span className="font-medium"> business</span> with us?
             </h1>
           </Animate.FadeUp>
           <button className="custom-button1">
@@ -135,15 +134,7 @@ const Footer = () => {
             <Animate.FadeUp>
               <h1 className="text-5xl font-extralight leading-[4.5rem]">
                 Ready to <span className="font-medium">transform</span> your
-                <span className="font-medium"> business</span> with us with
-                <span
-                  className="font-medium "
-                  style={{ whiteSpace: "pre-line" }}
-                >
-                  {" "}
-                  speed
-                </span>
-                ?
+                <span className="font-medium"> business</span> with us?
               </h1>
             </Animate.FadeUp>
             <Animate.FadeUp>

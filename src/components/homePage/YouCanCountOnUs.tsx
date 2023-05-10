@@ -70,7 +70,7 @@ const YouCanCountOnUs = () => {
                 connectivity and digital services to our clients and this has
                 enabled us to build a dynamic 360 solution approach for
                 connectivity, digital payment services, internet service
-                provision value added and messaging services.
+                solutions, value added and messaging services.
               </p>
             </Animate.FadeUp>
           </div>
@@ -88,11 +88,10 @@ const YouCanCountOnUs = () => {
         <section className="flex flex-col custom-container gap-10  my-10 ">
           <WhyChooseUsComponent
             imageURL="/assets/img/whyChooseUs/picture1.png"
-            title="We Plan for Success and connect your business to the digital world"
-            description="Our team of experts are comprised of specialists with years of
-          experience that hail from various backgrounds in the technology
-          industry. We identify our clients’ needs through detailed discussions
-          and assessments of their business and provide them with our vast
+            title="We Plan for your Success and also connect your business to the digital world"
+            description="Our team of experts comprise of specialists with years of
+          experience that come from different IT backgrounds. We identify our clients’ needs through detailed discussions
+          and assessments of their business and provide them with our various
           solutions."
             orderText="last"
           />

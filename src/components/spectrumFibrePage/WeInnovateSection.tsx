@@ -31,13 +31,13 @@ const WeInnovateSection = () => {
         <div className="flex flex-col md:flex-row mt-20 gap-14 md:gap-20">
           <SingleComponent
             title="Ghanaian Ownership and expertise"
-            description="We are a proudly Ghanaian, independent company. A demonstration of
+            description="We are a proudly independent Ghanaian company. A demonstration of
         Public Private Partnership (PPP) at work in Ghana to transform the lives
         of Ghanaians."
           />
           <SingleComponent
             title="A Unique network"
-            description="As a single network, we offer more reliability with next generation network design that comes with multiple rings for redundancy, faster speeds, and tighter security than other available networks on the market."
+            description="As a single network, we offer more reliability with next generation network design that comes with multiple rings for redundancy, faster connections, and tighter security than other available networks on the market."
           />
           <SingleComponent
             title="A Rich Solutions Portfolio"

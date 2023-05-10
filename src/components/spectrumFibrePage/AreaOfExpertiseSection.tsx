@@ -99,7 +99,7 @@ const AreaOfExpertiseSection = () => {
             title="Dedicated Internet"
             imgURL="dedicated-internet.jpeg"
             description={[
-              "Suitable for ISPs, schools, research institutions, banks, government organizations, and any other institution that requires high-performance internet offering.",
+              "Suitable for ISPs, schools, research institutions, banks, government organizations, and any other institution that requires high performance internet.",
             ]}
           />
 
@@ -108,7 +108,7 @@ const AreaOfExpertiseSection = () => {
             imgURL="backhaul.jpeg"
             txtPosition={"right"}
             description={[
-              "Suitable for ISPs and telecom services providers such as GLO, Prodata, etc.",
+              "Suitable for ISPs and Telecom service providers such as GLO, Prodata, etc.",
               "Support topologies such as point-to-point, point-to-multipoint, and multipoint-to-multipoint Managed Wide Area Networks (WAN)",
               "Suitable for organizations that want to connect several locations over a large geographic area. E.g., Banks, Government Institutions, Retail chain of Shops, Insurance companies etc",
             ]}

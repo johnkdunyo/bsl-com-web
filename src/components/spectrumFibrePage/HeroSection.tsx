@@ -28,7 +28,7 @@ const HeroSection = () => {
 
         <div className="w-full ">
           <Animate.FadeUp className="text-spectrumGreen font-medium text-xl   text-center tracking-widest w-full">
-            A SUBSEDIARY OF BROADSPECTRUM
+            A SUBSIDIARY OF BROADSPECTRUM
           </Animate.FadeUp>
         </div>
       </div>

@@ -47,7 +47,7 @@ const HeroSection = () => {
               {texts[currentTextIndex]}
             </motion.h2>
             <h1 className="text-xl tracking-widest sm:text-3xl sm:mt-3">
-              payments for everyone.
+              payment for everyone.
             </h1>
           </div>
         </div>
