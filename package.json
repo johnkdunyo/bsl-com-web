@@ -23,6 +23,7 @@
     "react-creative-cursor": "^1.2.7",
     "react-dom": "18.2.0",
     "react-lottie": "^1.2.3",
+    "react-scroll-to-top": "^3.0.0",
     "react-use-measure": "^2.1.1",
     "react-visibility-sensor": "^5.1.1",
     "swiper": "^9.2.0",

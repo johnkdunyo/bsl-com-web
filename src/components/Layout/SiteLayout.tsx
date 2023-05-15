@@ -9,6 +9,8 @@ const inter = Inter({ subsets: ["latin"] });
 import { Cursor } from "react-creative-cursor";
 import "react-creative-cursor/dist/styles.css";
 import Mouse from "@/utils/Mouse";
+import ScrollToTop from "../uiComponents/ScrollToTop";
+import ChatBot from "../uiComponents/ChatBot";
 
 interface ISiteLayoutProps {
   children: ReactNode;
@@ -39,6 +41,8 @@ export default function SiteLayout({ children, pageName }: ISiteLayoutProps) {
         <Navbar pageName={pageName} />
         {children}
         {/* <Mouse /> */}
+        <ScrollToTop />
+        {/* <ChatBot /> */}
         <Footer />
       </main>
     </>
