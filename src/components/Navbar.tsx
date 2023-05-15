@@ -235,15 +235,15 @@ const Navbar = ({ pageName }: INavbar) => {
   }, [pageName]);
 
   return (
-    <div className="  z-30 pt-2 fixed w-full  top-0   md:backdrop-blur-sm md:bg-gray-900/90 opacity-1">
+    <div className="  z-30 pt-2 fixed w-full  top-0     md:bg-gray-800/20 md:bg-opacity-50 md:backdrop-filter md:backdrop-blur-xl">
       <div className="container mx-auto px-3 ">
         {/* mobile */}
         <div className="md:hidden flex justify-between  py-2 items-start  ">
           <div className="flex  gap-1  justify-between">
             <div
               className={` ${
-                openSubsidiaryMenu ? "bg-whitel" : "bg-transparent"
-              }  rounded-[28px]  flex flex-col gap-0.5 w-52`}
+                openSubsidiaryMenu ? "" : "bg-transparent"
+              }  rounded-[28px]  flex flex-col gap-0.5 w-52 `}
             >
               <button
                 className="flex home-custom-navs   items-center justify-center    py-2 gap-1  "

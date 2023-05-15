@@ -68,6 +68,9 @@
     background-position: center;
 }
 
+.navbar-bg {
+    @apply bg-white bg-opacity-50  dark:text-gray-100 backdrop-filter backdrop-blur-lg dark:bg-opacity-50
+}
 
 .custom-button1 {
     @apply  px-6 py-3 uppercase custom-gradient-bg text-white rounded-[24px] tracking-widest hover:bg-gradient-to-r hover:from-white hover:to-white hover:text-[#1D365A]
@@ -84,9 +87,7 @@
     /* background: #F0F0F0 0% 0% no-repeat padding-box; */
     /* border-radius: 48px;
     opacity: 1;*/
-    backdrop-filter: blur(30px); 
-    -webkit-backdrop-filter: blur(40px); 
-    @apply bg-gray-900/80  rounded-[48px] backdrop-blur-sm ;
+    @apply  rounded-[48px] bg-gray-700/20 bg-opacity-50 backdrop-filter backdrop-blur-xl;
 }
 
 
