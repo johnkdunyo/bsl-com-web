@@ -8,7 +8,7 @@ const InfoMageSystems = () => {
         <div className=" w-full  -mt-20 md:-mt-[0rem] md:order-first">
           <img
             src="/assets/img/business/info-mgt.jpeg"
-            className="w-full md:h-full object-cover   h-[30rem]"
+            className="w-full md:h-full object-cover   h-[30rem] z-20"
             style={{ objectPosition: "30% 75%" }}
           />
         </div>

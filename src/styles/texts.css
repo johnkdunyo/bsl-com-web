@@ -11,7 +11,7 @@
 }
 
 .headerText3 {
-    @apply font-bold text-[1.8rem] sm:text-[2.5rem]
+    @apply font-bold text-[1.8rem] sm:text-[2.5rem] leading-[3.4rem]
 }
 
 .paragraphText1 {
