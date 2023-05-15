@@ -17,9 +17,21 @@ const AboutSection = () => {
           </div>
           <div className="w-full md:w-2/5 mt-[10%]">
             <Animate.FadeUp className="text-primary text-base   leading-relaxed px-2 md:px-0">
-              At ISG, we understand the importance of reliable and efficient
-              communication networks and that is why we always strive to provide
-              the best workable solutions.
+              At ISG, we recognize the critical role that reliable and efficient
+              communication networks play in today's interconnected world. We
+              are dedicated to delivering top-notch solutions that empower
+              businesses to thrive in the digital landscape. Our commitment lies
+              in understanding the unique needs of each client and providing
+              tailored, workable solutions that surpass expectations.
+              <br />
+              <br />
+              With our extensive expertise and industry knowledge, we stay at
+              the forefront of technological advancements to offer the most
+              innovative and effective solutions for our clients. Whether it's
+              deploying cutting-edge microwave and radio systems, maintaining
+              fiber infrastructure, or building and managing data centers, we
+              are driven by a passion for excellence in every aspect of our
+              work.
             </Animate.FadeUp>
           </div>
         </div>

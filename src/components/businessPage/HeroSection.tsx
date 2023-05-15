@@ -10,8 +10,8 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="  h-[100vh] sm:h-[130vh]   top-0  relative  ">
-      <div className="absolute inset-0   bg-video   ">
+    <section className="  h-[100vh] sm:h-[130vh]   top-0  relative  z-10 ">
+      <div className="absolute inset-0   bg-video    ">
         <video
           autoPlay
           loop
@@ -20,9 +20,10 @@ const HeroSection = () => {
           playsInline
         >
           <source src="/assets/videos/business.webm" type="video/webm" />
+          <p>browssr does not support</p>
         </video>
       </div>
-      <div className="relative  h-full  flex flex-col   justify-end gap-8 sm:gap-20 ">
+      <div className="relative  h-full  flex flex-col   justify-end gap-8 sm:gap-20  ">
         <div className=" container mx-auto text-white flex h-full px-4 sm:px-0  justify-center sm:items-end items-center  pb-16 sm:pb-0  ">
           {/* mobile */}
           <div className="sm:hidden  w-full    flex  flex-col items-center justify-center text-center   my-4 ">

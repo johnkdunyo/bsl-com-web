@@ -25,10 +25,10 @@ const HeroSection = () => {
   return (
     <section className=" bg-[url('/assets/img/isg/hero-bg.jpeg')] h-[90vh] sm:h-[90vh] md:h-[100vh] bg-cover   bg-[center_left_40rem] md:bg-center top-0 relative">
       <div className="h-full w-full custom-container flex flex-col justify-end md:justify-center  pb-20 md:pb-0     ">
-        <div className=" w-full  flex flex-col justify-center items-center sm:items-start  text-center md:text-left  gap-6 max-w-3xl">
-          <Animate.FadeUp className="font-bold md:font-extralight text-4xl md:text-6xl tracking-wider leading-snug md:leading-[1.2]">
-            Powering <span className="font-bold">network</span> transformation
-            and growth
+        <div className=" w-full  flex flex-col justify-center items-center sm:items-start  text-center md:text-left gap-10  md:gap-6 max-w-3xl">
+          <Animate.FadeUp className="font-light md:font-extralight text-4xl md:text-6xl tracking-wider leading-snug md:leading-[1.2]">
+            Maximizing <span className="font-bold">uptime</span> with expert
+            Fibre Maintenance
           </Animate.FadeUp>
           <Animate.FadeIn className="text-lg md:text-xl tracking-wider   md:mt-6 font-normal">
             Our core focus is on providing fibre optic maintenance and logistics
