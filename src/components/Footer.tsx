@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
 import { Animate } from "./animations/ScrollAnimator";
+import siteMetaData from "@/data/siteMetaData";
 
 const SocialMediaButtons = ({ name, href }: { name: string; href: string }) => {
   return (
@@ -103,11 +104,19 @@ const Footer = () => {
             Follow Us
           </h1>
           <div className="flex gap-3">
-            <SocialMediaButtons href="/" name="instagram" />
-            <SocialMediaButtons href="/" name="linkedin" />
-            <SocialMediaButtons href="/" name="twitter" />
+            <SocialMediaButtons
+              href={siteMetaData["bsl-instagram"]}
+              name="instagram"
+            />
+            <SocialMediaButtons
+              href={siteMetaData["bsl-linkedin"]}
+              name="linkedin"
+            />
+            <SocialMediaButtons
+              href={siteMetaData["bsl-twitter"]}
+              name="twitter"
+            />
             <SocialMediaButtons href="/" name="facebook" />
-            <SocialMediaButtons href="/" name="youtube" />
           </div>
         </div>
 
@@ -218,11 +227,19 @@ const Footer = () => {
                     Follow Us
                   </h1>
                   <div className="flex gap-3 mt-3">
-                    <SocialMediaButtons href="/" name="instagram" />
-                    <SocialMediaButtons href="/" name="linkedin" />
-                    <SocialMediaButtons href="/" name="twitter" />
+                    <SocialMediaButtons
+                      href={siteMetaData["bsl-instagram"]}
+                      name="instagram"
+                    />
+                    <SocialMediaButtons
+                      href={siteMetaData["bsl-linkedin"]}
+                      name="linkedin"
+                    />
+                    <SocialMediaButtons
+                      href={siteMetaData["bsl-twitter"]}
+                      name="twitter"
+                    />
                     <SocialMediaButtons href="/" name="facebook" />
-                    <SocialMediaButtons href="/" name="youtube" />
                   </div>
                 </div>
               </Animate.FadeUp>
