@@ -9,9 +9,10 @@ import OurCultureSection from "@/components/homePage/OurCultureSection";
 import CertifiedSection from "@/components/homePage/CertifiedSection";
 import HeroSection from "@/components/homePage/HeroSection";
 import SiteLayout from "@/components/Layout/SiteLayout";
-import MissionVission from "@/components/homePage/MissionVission";
+import MissionVission from "@/components/homePage/MissionVission2";
 import VideoSection from "@/components/homePage/VideoSection";
 import YouCanCountOnUs from "@/components/homePage/YouCanCountOnUs";
+import MissionVissionMobile from "@/components/homePage/MissionVissionMobile";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function Home() {
         <HeroSection />
         <YouCanCountOnUs />
         <MissionVission />
+        <MissionVissionMobile />
         <CertifiedSection />
         <OurCultureSection />
         <TrustedBy />

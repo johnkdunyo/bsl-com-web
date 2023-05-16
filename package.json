@@ -17,6 +17,7 @@
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "framer-motion": "^10.12.4",
+    "gsap": "^3.11.5",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-countup": "^6.4.2",
@@ -30,6 +31,7 @@
     "typescript": "5.0.2"
   },
   "devDependencies": {
+    "@types/gsap": "^3.0.0",
     "@types/react-lottie": "^1.2.6",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
