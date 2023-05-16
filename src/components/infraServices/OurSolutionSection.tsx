@@ -142,16 +142,12 @@ Experience reliable and high-speed connectivity across your organization, enabli
             title="Data Centre Build and Management"
             imgURL="datacenter.jpeg"
             txtPosition={"right"}
-            description="As a trusted provider of cutting-edge solutions, we specialize in designing, constructing, and managing state-of-the-art data centers tailored to meet your organization&lsquo;s unique needs.
-<br/>
-With our proactive monitoring and maintenance services, you can trust that your data center will operate at peak efficiency, minimizing downtime and ensuring uninterrupted operations. Experience peace of mind knowing that your critical infrastructure is in capable hands with our Data Center Build and Management services.
-<br/>
-Our team of experts ensures a seamless and efficient build process, utilizing industry best practices to maximize performance, reliability, and scalability."
+            description="We specialize in designing, constructing, and managing state-of-the-art data centers tailored to meet your organization&lsquo;s unique needs. With our proactive monitoring and maintenance services, you can trust that your data centre will operate at peak efficiency, minimizing downtime and ensuring uninterrupted operations."
           />
           <SingleSection
             title="Service Maintenance and Support"
             imgURL="service.jpeg"
-            description="Ensure uninterrupted operations and optimal performance with our Service Maintenance and Support solutions. Our expert technicians are available around the clock to address any issues, minimizing downtime and maximizing productivity. With regular maintenance checks and timely updates, we ensure that your systems are running at peak efficiency. Rely on our experienced team to deliver prompt and reliable support, allowing you to focus on your core business activities with peace of mind."
+            description="Our expert technicians are available 24/7 to address any issues, minimize downtime and maximize productivity. We run regular maintenance checks and timely updates, to that your systems are running at peak efficiency. Trust us to deliver prompt and reliable support, allowing you to focus on your core business activities with peace of mind."
           />
         </div>
       </div>
