@@ -134,9 +134,7 @@ const OurSolutionSection = () => {
           <SingleSection
             title="LAN Infrastructure Deployments"
             imgURL="lan.jpeg"
-            description="As a leading provider of fiber maintenance solutions, we specialize in seamless installation and configuration of Local Area Networks (LANs) for businesses. Our team of experts ensures efficient deployment, eliminating the need for in-house resources.
-<br/>
-Experience reliable and high-speed connectivity across your organization, enabling smooth data transfer, collaboration, and enhanced productivity."
+            description="As a leading provider of fiber maintenance solutions, we specialize in the seamless installation and configuration of Local Area Networks (LANs) for businesses. Our team ensures efficient deployment, eliminating the need for in-house resources. Experience reliable and high-speed connectivity, smooth data transfer, collaboration, and enhanced productivity today."
           />
           <SingleSection
             title="Data Centre Build and Management"
