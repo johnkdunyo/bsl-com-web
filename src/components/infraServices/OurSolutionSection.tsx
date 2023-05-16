@@ -142,7 +142,7 @@ Experience reliable and high-speed connectivity across your organization, enabli
             title="Data Centre Build and Management"
             imgURL="datacenter.jpeg"
             txtPosition={"right"}
-            description="As a trusted provider of cutting-edge solutions, we specialize in designing, constructing, and managing state-of-the-art data centers tailored to meet your organization's unique needs.
+            description="As a trusted provider of cutting-edge solutions, we specialize in designing, constructing, and managing state-of-the-art data centers tailored to meet your organization&lsquo;s unique needs.
 <br/>
 With our proactive monitoring and maintenance services, you can trust that your data center will operate at peak efficiency, minimizing downtime and ensuring uninterrupted operations. Experience peace of mind knowing that your critical infrastructure is in capable hands with our Data Center Build and Management services.
 <br/>
