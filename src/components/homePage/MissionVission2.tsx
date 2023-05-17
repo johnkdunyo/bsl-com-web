@@ -41,8 +41,8 @@ const MissionVission = () => {
           duration: stopPanel,
         })
         .to(sectionOneRef.current, {
-          duration: 3,
-          scale: 1.5,
+          duration: 0,
+          scale: 1,
         })
 
         .to(sections, {
@@ -50,8 +50,8 @@ const MissionVission = () => {
           duration: stopPanel2,
         })
         .to(sectionTwoRef.current, {
-          scale: 1.5,
-          duration: 3,
+          scale: 1,
+          duration: 0,
         })
         .to(sections, {
           xPercent: -(100 * (sections.length - 1)),
