@@ -20,7 +20,7 @@ const SingleItem = ({
   description: string;
 }) => {
   return (
-    <Animate.ScaleIn className="bg-white rounded-[45px] p-5 w-full h-[18rem] sm:h-[26rem]">
+    <Animate.FadeUp className="bg-white rounded-[45px] p-5 w-full h-[18rem] sm:h-[26rem]">
       <div className="flex flex-col justify-between items-center  gap-8 w-full h-full ">
         <div className=" h-full flex items-center">
           <motion.img
@@ -41,7 +41,7 @@ const SingleItem = ({
           </p>
         </div>
       </div>
-    </Animate.ScaleIn>
+    </Animate.FadeUp>
   );
 };
 const DiscoverBusinessSection = () => {
