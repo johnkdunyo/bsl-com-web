@@ -19,7 +19,9 @@ const HeroSection = () => {
         <Animate.FadeUp className=" w-full  flex flex-col justify-center items-center md:items-start  gap-10   max-w-4xl">
           <h1 className="font-extralight text-[1.9rem] md:text-7xl md:leading-[5rem] md:tracking-wider ">
             A Telecommunication company with the{" "}
-            <span className="font-bold text-[#35BC56]">Speed of light</span>
+            <span className="font-bold text-[#35BC56]">
+              lightening-fast connectivity
+            </span>
           </h1>
           <p className="text-lg md:text-xl tracking-wider   md:mt-8 font-normal">
             We are committed to meet your business needs at the speed of light.

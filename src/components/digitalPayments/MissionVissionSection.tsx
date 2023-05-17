@@ -79,7 +79,7 @@ const MissionVissionSection = () => {
         >
           <SwiperSlide>
             <SingleSlider
-              title="Mission"
+              title="Mision"
               description="Empowering individuals, businesses and communities with innovative and
           easy-to-use digital solutions that enhance financial inclusion, foster
           economic growth and drive sustainable development."
