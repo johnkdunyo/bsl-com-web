@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { motion, stagger } from "framer-motion";
+import { motion, stagger, useAnimate } from "framer-motion";
 
 import {
   HiChevronDown,
@@ -177,7 +177,8 @@ const staggerMenuItems = stagger(0.1, { startDelay: 0.15 });
 
 const Navbar = ({ pageName }: INavbar) => {
   const [openSubsidiaryMenu, setOpenSubsidiaryMenu] = useState<boolean>(false);
-  const [openSiteMenu, setOpenSiteMenu] = useState<boolean>(false);
+  const [openDesktopSiteMenu, setOpenDesktopSiteMenu] =
+    useState<boolean>(false);
   const [openMediaDropdown, setOpenMediaDropdown] = useState<boolean>(false);
   const [openDesktopSubsidiaryMenu, setOpenDesktopSubsidiaryMenu] =
     useState<boolean>(false);
@@ -281,7 +282,7 @@ const Navbar = ({ pageName }: INavbar) => {
           </div>
           <button
             onClick={() => {
-              setOpenSiteMenu((prev) => !prev);
+              setOpenDesktopSiteMenu((prev) => !prev);
               setOpenSubsidiaryMenu(false);
             }}
           >
@@ -318,7 +319,8 @@ const Navbar = ({ pageName }: INavbar) => {
               <motion.div
                 animate={{ type: "spring", opacity: 1 }}
                 initial={{ opacity: 0 }}
-                transition={{ duration: 0.9 }}
+                transition={{ duration: 2 }}
+                exit={{ opacity: 0 }}
                 className="flex justify-between w-3/4 h-10 pl-3 gap-4"
                 onMouseEnter={() =>
                   openDesktopSubsidiaryMenu &&
@@ -356,7 +358,7 @@ const Navbar = ({ pageName }: INavbar) => {
                 active={pageName === "Career"}
               />
             </div>
-            <button onClick={() => setOpenSiteMenu((prev) => !prev)}>
+            <button onClick={() => setOpenDesktopSiteMenu((prev) => !prev)}>
               <img
                 src="/assets/icons/home-2.svg"
                 className="h-10  fill-primary"
@@ -366,11 +368,15 @@ const Navbar = ({ pageName }: INavbar) => {
           </div>
         </div>
 
-        {/* mobile screen menu nav */}
-        <div
+        {/* mobile and desktop screen menu nav */}
+        <motion.div
+          animate={{ type: "spring", opacity: 1 }}
+          initial={{ opacity: 0 }}
+          transition={{ duration: 2 }}
+          exit={{ opacity: 0 }}
           className={` ${
-            openSiteMenu ? "flex" : "hidden"
-          } bg-white w-full h-[94vh] md:h-[90vh] absolute top-0 left-0 flex  px-3 py-2 rounded-bl-[110px] md:rounded-bl-[200px] z-30 `}
+            openDesktopSiteMenu ? "flex" : "hidden"
+          } bg-white w-full h-[94vh] md:h-[90vh] absolute top-0 left-0 flex  px-3 py-2 rounded-bl-[110px] md:rounded-bl-[200px] z-30 border border-red-600`}
         >
           {/* mobile */}
           <div className="md:hidden container mx-auto flex w-full justify-between flex-col gap-4 h-full  pt-2">
@@ -418,7 +424,7 @@ const Navbar = ({ pageName }: INavbar) => {
 
               <button
                 onClick={() => {
-                  setOpenSiteMenu((prev) => !prev);
+                  setOpenDesktopSiteMenu((prev) => !prev);
                   setOpenSubsidiaryMenu(false);
                 }}
               >
@@ -430,7 +436,7 @@ const Navbar = ({ pageName }: INavbar) => {
               <Link href="/business">
                 <h1
                   className="text-[#1D365A] font-medium text-4xl"
-                  onClick={() => setOpenSiteMenu(false)}
+                  onClick={() => setOpenDesktopSiteMenu(false)}
                 >
                   Business
                 </h1>
@@ -438,7 +444,7 @@ const Navbar = ({ pageName }: INavbar) => {
               <Link href="/about">
                 <h1
                   className="text-[#1D365A] font-medium text-4xl"
-                  onClick={() => setOpenSiteMenu(false)}
+                  onClick={() => setOpenDesktopSiteMenu(false)}
                 >
                   About
                 </h1>
@@ -446,7 +452,7 @@ const Navbar = ({ pageName }: INavbar) => {
               <Link href="/career">
                 <h1
                   className="text-[#1D365A] font-medium text-4xl"
-                  onClick={() => setOpenSiteMenu(false)}
+                  onClick={() => setOpenDesktopSiteMenu(false)}
                 >
                   Career
                 </h1>
@@ -501,7 +507,7 @@ const Navbar = ({ pageName }: INavbar) => {
             <div className="flex justify-center mb-6">
               <button
                 className="custom-button1"
-                onClick={() => setOpenSiteMenu(false)}
+                onClick={() => setOpenDesktopSiteMenu(false)}
               >
                 <Link href="/enquiry">Get in Touch</Link>
               </button>
@@ -509,12 +515,7 @@ const Navbar = ({ pageName }: INavbar) => {
           </div>
 
           {/* desktop */}
-          <motion.div
-            animate={{ type: "spring", opacity: 1 }}
-            initial={{ opacity: 0.1 }}
-            transition={{ duration: 0.9 }}
-            className="hidden md:flex w-full flex-col justify-between h-full  container mx-auto px-3"
-          >
+          <div className="hidden md:flex w-full flex-col justify-between h-full  container mx-auto px-3">
             <div className=" w-full flex justify-between ">
               <div className="w-6/12    flex justify-between   items-center  ">
                 <div
@@ -584,7 +585,7 @@ const Navbar = ({ pageName }: INavbar) => {
                     textColorWhite={false}
                   />
                 </div>
-                <button onClick={() => setOpenSiteMenu((prev) => !prev)}>
+                <button onClick={() => setOpenDesktopSiteMenu((prev) => !prev)}>
                   <img
                     src="/assets/icons/close-red.svg"
                     className="h-10 "
@@ -651,8 +652,8 @@ const Navbar = ({ pageName }: INavbar) => {
                 </div>
               </div>
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
