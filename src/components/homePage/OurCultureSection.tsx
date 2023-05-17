@@ -110,8 +110,8 @@ const Carousel = () => {
 
 const OurCultureSection = () => {
   return (
-    <section className=" relative h-fit py-10">
-      <div className="absolute inset-0   bg-video  top-[30rem] sm:top-[20rem]  ">
+    <section className=" relative h-fit py-10 ">
+      <div className="absolute inset-0       ">
         <video
           autoPlay
           loop
@@ -121,7 +121,7 @@ const OurCultureSection = () => {
           <source src="/assets/videos/core-values.webm" type="video/mp4" />
         </video>
       </div>
-      <div className="custom-container pt-10 flex justify-center relative   pb-10">
+      <div className="custom-container pt-10 flex justify-center relative   pb-10  bg-transparent">
         <div className="flex flex-col items-center text-center gap-6 max-w-3xl">
           <h1 className="text-[#AB2346] font-medium tracking-widest uppercase">
             <Animate.FadeUp>Our Culture</Animate.FadeUp>
