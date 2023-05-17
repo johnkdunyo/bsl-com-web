@@ -20,6 +20,7 @@ const SingleSlide = ({
   portfolio,
   shortDescription,
   imageURL,
+  href,
 }: {
   id: number;
   currentIndex: number;
@@ -27,6 +28,7 @@ const SingleSlide = ({
   portfolio: string;
   shortDescription: string;
   imageURL: string;
+  href: string;
 }) => {
   return (
     <div
@@ -48,7 +50,7 @@ const SingleSlide = ({
           <h1 className="text-[#82AEC9] text-xl sm:text-2xl">{portfolio}</h1>
           <p className="text-base">{shortDescription}</p>
           <button className="custom-button1 my-4 text-sm">
-            <Link href="/about/razak">Learn More</Link>
+            <Link href={href}>Learn More</Link>
           </button>
         </div>
       </div>
@@ -137,9 +139,10 @@ const LeadershipTeam = () => {
                 name="Samuel Osew – Kwatia"
                 portfolio={"Executive Member"}
                 shortDescription={
-                  "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
+                  "Samuel has over 18 years of professional experience in finance, accounting, taxation, and banking..."
                 }
                 imageURL={"/assets/img/board/sam.png"}
+                href="/about/sam"
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -149,9 +152,10 @@ const LeadershipTeam = () => {
                 name="Razak Awudalai"
                 portfolio={"Group CE0"}
                 shortDescription={
-                  "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
+                  "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding..."
                 }
                 imageURL={"/assets/img/board/razak.png"}
+                href="/about/razak"
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -161,9 +165,10 @@ const LeadershipTeam = () => {
                 name="Nana Dwemoh Benneh"
                 portfolio={"Chairman"}
                 shortDescription={
-                  "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
+                  "Dwemoh Benneh has considerable local and international expertise in banking..."
                 }
                 imageURL={"/assets/img/board/nana.png"}
+                href="/about/nana"
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -173,9 +178,10 @@ const LeadershipTeam = () => {
                 name="Kris Senanu"
                 portfolio={"Executive Member"}
                 shortDescription={
-                  "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding…"
+                  "Kris Senanu – Member Kris is an accomplished business leader with 20+ years of experience..."
                 }
                 imageURL={"/assets/img/board/kris.png"}
+                href="/about/kris"
               />
             </SwiperSlide>
             <div className=" flex justify-between   absolute top-[50%] bottom-[50%] w-full ">
