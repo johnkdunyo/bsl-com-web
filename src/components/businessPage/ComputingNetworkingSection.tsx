@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const SingleComponent = ({
   title,
@@ -19,7 +20,11 @@ const SingleComponent = ({
         onMouseLeave={() => setHovered(false)}
       >
         {hovered ? (
-          <div
+          <motion.div
+            animate={{ type: "spring", opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            exit={{ opacity: 0 }}
             className={`border border-[#82AEC9] w-full rounded-[40px] p-10 h-full ${imageURL} border-transparent `}
           >
             <div className="flex flex-col   h-full justify-end gap-5">
@@ -47,7 +52,7 @@ const SingleComponent = ({
                 </ul>
               )}
             </div>
-          </div>
+          </motion.div>
         ) : (
           <div className="border border-[#82AEC9] w-full rounded-[40px] p-10 h-full  ">
             <div className="flex flex-col   h-full">
