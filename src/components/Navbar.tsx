@@ -376,7 +376,7 @@ const Navbar = ({ pageName }: INavbar) => {
           exit={{ opacity: 0 }}
           className={` ${
             openDesktopSiteMenu ? "flex" : "hidden"
-          } bg-white w-full h-[94vh] md:h-[90vh] absolute top-0 left-0 flex  px-3 py-2 rounded-bl-[110px] md:rounded-bl-[200px] z-30 border border-red-600`}
+          } bg-white w-full h-[94vh] md:h-[90vh] absolute top-0 left-0 flex  px-3 py-2 rounded-bl-[110px] md:rounded-bl-[200px] z-30  `}
         >
           {/* mobile */}
           <div className="md:hidden container mx-auto flex w-full justify-between flex-col gap-4 h-full  pt-2">
@@ -645,7 +645,13 @@ const Navbar = ({ pageName }: INavbar) => {
                         alt="get directions"
                       />
                       <h1 className="uppercase tracking-widest text-xl ">
-                        GET DIRECTIONS{" "}
+                        <Link
+                          href="https://goo.gl/maps/Gvi18DjW6eczcyaF8?coh=178571&entry=tt"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          GET DIRECTIONS
+                        </Link>
                       </h1>
                     </motion.div>
                   </div>

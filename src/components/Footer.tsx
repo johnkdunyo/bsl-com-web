@@ -12,7 +12,7 @@ const SocialMediaButtons = ({ name, href }: { name: string; href: string }) => {
         onHoverStart={(e) => {}}
         onHoverEnd={(e) => {}}
       >
-        <Link href={href}>
+        <Link href={href} target="_blank" rel="noreferrer">
           <img
             src={`/assets/icons/social-media/${name}.svg`}
             alt={name}
@@ -96,7 +96,15 @@ const Footer = () => {
           onHoverEnd={(e) => {}}
         >
           <img src="/assets/icons/directions-right.svg" alt="get directions" />
-          <h1 className="uppercase tracking-widest text-lg">GET DIRECTIONS </h1>
+          <h1 className="uppercase tracking-widest text-lg">
+            <Link
+              href="https://goo.gl/maps/Gvi18DjW6eczcyaF8?coh=178571&entry=tt"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GET DIRECTIONS
+            </Link>
+          </h1>
         </motion.div>
 
         <div className="flex flex-col justify-center items-center gap-3">
@@ -203,7 +211,13 @@ const Footer = () => {
                     alt="get directions"
                   />
                   <h1 className="uppercase tracking-widest text-lg">
-                    GET DIRECTIONS{" "}
+                    <Link
+                      href="https://goo.gl/maps/Gvi18DjW6eczcyaF8?coh=178571&entry=tt"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      GET DIRECTIONS
+                    </Link>
                   </h1>
                 </motion.div>
                 <div className="mt-4  flex flex-col gap-6">
