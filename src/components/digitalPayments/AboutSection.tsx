@@ -11,7 +11,7 @@ const AboutSection = () => {
       exit={{ opacity: 0 }}
       // whileFocus={}
     >
-      <div className="text-center custom-container2 flex flex-col justify-between gap-10 sm:gap-20 max-w-4xl">
+      <div className="text-center custom-container2 flex flex-col justify-between gap-10 sm:gap-20 max-w-5xl">
         <h1 className="text-purple font-medium text-xl  tracking-widest">
           A SUBSIDIARY OF BROADSPECTRUM
         </h1>
