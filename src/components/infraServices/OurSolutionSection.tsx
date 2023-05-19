@@ -67,7 +67,10 @@ const SingleSection = ({
           ref={container}
         >
           <div className=" text-white px-4 flex flex-col gap-6">
-            <h1 className="font-bold text-4xl leading-normal">{title}</h1>
+            <h1
+              className="font-bold text-4xl leading-normal"
+              dangerouslySetInnerHTML={{ __html: String(title) }}
+            ></h1>
             <div
               className="text-base leading-normal"
               dangerouslySetInnerHTML={{ __html: String(description) }}
@@ -82,7 +85,10 @@ const SingleSection = ({
           } `}
         >
           <div className="flex flex-col gap-4 justify-center  h-full  px-16 ">
-            <h1 className="font-bold text-6xl  leading-[4.5rem]">{title}</h1>
+            <h1
+              className="font-bold text-6xl  leading-[4.5rem]"
+              dangerouslySetInnerHTML={{ __html: String(title) }}
+            ></h1>
             <div
               className="text-xl leading-normal"
               dangerouslySetInnerHTML={{ __html: String(description) }}
@@ -126,7 +132,7 @@ const OurSolutionSection = () => {
           />
 
           <SingleSection
-            title="Microwave Radio Deployment"
+            title="Microwave <br/> Radio Deployment"
             imgURL="microwave.jpg"
             txtPosition={"right"}
             description="As a trusted fiber maintenance company, we offer expert installation and configuration of microwave radio links. Our streamlined approach eliminates the need for costly infrastructure investments, allowing expansion of network coverage quickly and efficiently."
@@ -137,13 +143,13 @@ const OurSolutionSection = () => {
             description="As a leading provider of fiber maintenance solutions, we specialize in the seamless installation and configuration of Local Area Networks (LANs) for businesses. Our team ensures efficient deployment, eliminating the need for in-house resources. Experience reliable and high-speed connectivity, smooth data transfer, collaboration, and enhanced productivity today."
           />
           <SingleSection
-            title="Data Centre Build and Management"
+            title="Data Centre <br/> Build and Management"
             imgURL="datacenter.jpeg"
             txtPosition={"right"}
             description="We specialize in designing, constructing, and managing state-of-the-art data centers tailored to meet your organization&lsquo;s unique needs. With our proactive monitoring and maintenance services, you can trust that your data centre will operate at peak efficiency, minimizing downtime and ensuring uninterrupted operations."
           />
           <SingleSection
-            title="Service Maintenance and Support"
+            title="Service Maintenance <br/>and Support"
             imgURL="service.jpeg"
             description="Our expert technicians are available 24/7 to address any issues, minimize downtime and maximize productivity. We run regular maintenance checks and timely updates, to that your systems are running at peak efficiency. Trust us to deliver prompt and reliable support, allowing you to focus on your core business activities with peace of mind."
           />
