@@ -184,7 +184,7 @@ const LeadershipTeam = () => {
                 href="/about/kris"
               />
             </SwiperSlide>
-            <div className=" flex justify-between   absolute top-[50%] bottom-[50%] w-full ">
+            <div className=" flex justify-between   absolute top-[50%] bottom-[50%] w-full sm:px-10 px-2">
               <button
                 className=" z-10 w-16 h-16 sm:w-20 sm:h-full"
                 ref={swiperNavPrevRef}
