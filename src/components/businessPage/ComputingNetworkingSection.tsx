@@ -20,7 +20,7 @@ const SingleComponent = ({
       >
         {hovered ? (
           <div
-            className={`border border-[#82AEC9] w-full rounded-[40px] p-10 h-full ${imageURL} border-transparent bg-cover`}
+            className={`border border-[#82AEC9] w-full rounded-[40px] p-10 h-full ${imageURL} border-transparent `}
           >
             <div className="flex flex-col   h-full justify-end gap-5">
               <div className="h-full  flex items-end">
@@ -122,15 +122,15 @@ const ComputingNetworkingSection = () => {
           <SingleComponent
             title="Supply of IT equipment"
             list={["Server", "Routers", "Switches, etc"]}
-            imageURL="bg-[url('/assets/img/business/computingSection/image3.png')]"
+            imageURL="bg-[url('/assets/img/business/computingSection/image3.jpeg')] bg-cover  bg-bottom"
           />
           <SingleComponent
             title="SD – WAN Design and Deployment"
-            imageURL="bg-[url('/assets/img/business/computingSection/image2.png')]"
+            imageURL="bg-[url('/assets/img/business/computingSection/image2.jpeg')] bg-cover bg-center"
           />
           <SingleComponent
             title="Network Design and Deployment"
-            imageURL="bg-[url('/assets/img/business/computingSection/image1.png')]"
+            imageURL="bg-[url('/assets/img/business/computingSection/image1.jpeg')] bg-cover bg-right"
           />
         </div>
       </div>
