@@ -22,8 +22,8 @@ const CustomLottieLoader = ({ status }: { status: "active" | "inactive" }) => {
 
 const HeroSection = () => {
   return (
-    <section className="  h-[90vh] sm:h-[95vh]  relative  top-0">
-      <div className="absolute inset-0   bg-video   ">
+    <section className="  h-[90vh] sm:h-[95vh]  relative  top-0 bg-[url('/assets/img/about/bg.jpeg')] bg-cover bg-center">
+      {/* <div className="absolute inset-0   bg-video   ">
         <video
           autoPlay
           loop
@@ -33,7 +33,7 @@ const HeroSection = () => {
         >
           <source src="/assets/videos/homepage.webm" type="video/webm" />
         </video>
-      </div>
+      </div> */}
 
       <div className="relative  h-full  flex flex-col   justify-end gap-8 sm:gap-20">
         <div className=" container mx-auto text-white flex h-full px-4 sm:px-0  justify-center sm:items-end  pb-10  relative ">
