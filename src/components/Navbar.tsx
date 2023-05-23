@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { MouseEvent, useEffect, useRef, useState } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 
 import {
@@ -176,6 +176,8 @@ const CustomNavList = ({ title, href }: { title: string; href: string }) => {
 const staggerMenuItems = stagger(0.1, { startDelay: 0.15 });
 
 const Navbar = ({ pageName }: INavbar) => {
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+
   const [openSubsidiaryMenu, setOpenSubsidiaryMenu] = useState<boolean>(false);
   const [openDesktopSiteMenu, setOpenDesktopSiteMenu] =
     useState<boolean>(false);
@@ -192,6 +194,20 @@ const Navbar = ({ pageName }: INavbar) => {
     href: "/",
     imgSRC: "/assets/icons/bsl-main.svg",
     imgSRC2: "/assets/icons/bsl-main.svg",
+  });
+
+  useEffect(() => {
+    let clickHandler = (e: any) => {
+      if (!mobileMenuRef.current?.contains(e.target)) {
+        setOpenSubsidiaryMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", clickHandler);
+
+    return () => {
+      document.removeEventListener("mousedown", clickHandler);
+    };
   });
 
   useEffect(() => {
@@ -240,7 +256,7 @@ const Navbar = ({ pageName }: INavbar) => {
       <div className="container mx-auto px-3 ">
         {/* mobile */}
         <div className="md:hidden flex justify-between  py-2 items-start  ">
-          <div className="flex  gap-1  justify-between">
+          <div className="flex  gap-1  justify-between " ref={mobileMenuRef}>
             <div
               className={` ${
                 openSubsidiaryMenu ? "" : "bg-transparent"
