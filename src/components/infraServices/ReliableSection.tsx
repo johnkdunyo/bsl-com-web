@@ -13,7 +13,8 @@ const ReliableSection = () => {
         </div>
         <Animate.FadeUp className="w-full h-full flex flex-col  justify-center gap-8  mb-16 custom-container  md:px-16  py-10">
           <h1 className="text-[#82AEC9] text-4xl md:text-[3.6rem] leading-normal md:leading-[1.2] font-bold">
-            Reliable and efficient communication networks our priority
+            Our top priority is creating reliable and effective communications
+            networks.
           </h1>
           <div className="text-xl leading-[1.5] ">
             Our team of highly trained and experienced professionals are
