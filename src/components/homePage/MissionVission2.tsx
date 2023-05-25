@@ -73,8 +73,8 @@ const MissionVission = () => {
         data-pin="true"
       >
         <div ref={sectionOneRef} className=" sm:-ml-[30%] ">
-          <h1 className="font-bold  md:text-[9rem] text-[#AB2346]">Mission</h1>
-          <p className="paragraphText1">
+          <h1 className="font-bold  md:text-[14rem] text-[#AB2346]">Mission</h1>
+          <p className="paragraphText1 text-2xl">
             To be Africa{"'"}s communication and <br /> digital partner of
             choice.
           </p>
@@ -85,8 +85,8 @@ const MissionVission = () => {
         data-pin2="true"
       >
         <div ref={sectionTwoRef} className="sm:-ml-[30%]">
-          <h1 className="font-bold  md:text-[9rem]  text-[#AB2346]">Vision</h1>
-          <p className="paragraphText1 px-4 sm:px-0">
+          <h1 className="font-bold  md:text-[14rem]  text-[#AB2346]">Vision</h1>
+          <p className="paragraphText1 px-4 sm:px-0 text-2xl">
             To be a world class communication and Digital <br />
             partner of choice from Africa by Africans.
           </p>
