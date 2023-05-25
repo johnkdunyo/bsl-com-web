@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Animate } from "../animations/ScrollAnimator";
+import { Parallax } from "../animations/Parallax";
 
 const WhyChooseUsComponent = ({
   imageURL,
@@ -15,17 +16,18 @@ const WhyChooseUsComponent = ({
 }) => {
   return (
     <div className="flex flex-col sm:flex-row justify-center gap-10 sm:gap-24  ">
-      <div className="w-full  flex justify-center">
-        {/* <img src={imageURL} className="w-full sm:p-3 md:p-6" /> */}
-        <motion.img
-          src={imageURL}
-          className="w-full sm:p-3 md:p-6"
-          whileHover={{ scale: 1.1, rotate: 5 }}
-          whileTap={{ scale: 0.9 }}
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-        />
+      <div className="w-full  flex justify-center ">
+        <Parallax offset={100}>
+          <motion.img
+            src={imageURL}
+            className="w-full sm:p-3 md:p-6"
+            // whileHover={{ scale: 1.1, rotate: 5 }}
+            // whileTap={{ scale: 0.9 }}
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            // transition={{ delay: 0.2, duration: 0.5 }}
+          />
+        </Parallax>
       </div>
 
       <div
@@ -60,7 +62,7 @@ const YouCanCountOnUs = () => {
         <section className="flex w-full flex-col justify-center items-center  container mx-auto px-4 sm:px-0 mt-16 mb-5">
           <div className=" max-w-2xl text-center">
             <Animate.FadeUp>
-              <h1 className="uppercase text-[#AB2346] text-xl mb-10 tracking-wider font-medium ">
+              <h1 className="uppercase text-[#AB2346] text-xl mb-10 tracking-wider font-medium  ">
                 You can count on us
               </h1>
             </Animate.FadeUp>
@@ -75,7 +77,7 @@ const YouCanCountOnUs = () => {
             </Animate.FadeUp>
           </div>
         </section>
-        <section className="h-16 sm:h-[7rem]  flex items-center text-clip overflow-hidden  ">
+        <section className="h-16 sm:h-[10rem]  flex items-center    ">
           <h1
             className={`text-[5rem] hover:text-[2.4rem] sm:text-[8rem]  hover:sm:text-[10rem]  w-full text-[#AB2346]  text-center tracking-wider text-clip  items-center flex justify-center`}
           >

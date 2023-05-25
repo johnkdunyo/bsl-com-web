@@ -58,7 +58,7 @@ export const Parallax = ({
   }
 
   return (
-    <motion.div ref={ref} style={{ y }}>
+    <motion.div ref={ref} style={{ y }} initial={{ y: 0 }}>
       {children}
     </motion.div>
   );
