@@ -11,7 +11,7 @@ const HeroSection = () => {
             {/* <div className="sm:hidden   w-full    flex  flex-col items-center justify-evenly text-center mt-20 "> */}
             <h2 className="headerText1 ">Careers</h2>
             <h1 className="text-xl tracking-widest">
-              We are always looking for new friends
+              We are always looking for new talents
             </h1>
             {/* </div> */}
           </Animate.FadeUp>
@@ -22,7 +22,7 @@ const HeroSection = () => {
             <div className=" max-w-4xl flex flex-col items-center gap-10 mt-20">
               <h2 className="headerText1 text-center">Careers</h2>
               <p className="flex text-[1.7rem] text-center   ">
-                We are always looking for new friends
+                We are always looking for new talents
               </p>
             </div>
             {/* </div> */}
