@@ -113,6 +113,7 @@ const CustomNavButton2 = ({
     <button
       onClick={onClickHandler}
       onMouseEnter={onMouseEnterHandler}
+      onMouseLeave={onMouseLeaveHandler}
       className={`${
         textColorWhite
           ? "hover:bg-transparent font-bold"
@@ -422,13 +423,11 @@ const Navbar = ({ pageName }: INavbar) => {
               />
             </button>
             {showOurPortfolioDropdown && (
-              <motion.div
-                animate={{ type: "spring", opacity: 1 }}
-                initial={{ opacity: 0 }}
-                transition={{ duration: 2 }}
-                exit={{ opacity: 0 }}
+              <div
                 className="absolute w-[90%]  -left-10 h-20 border bg-white top-16 rounded-[17px] flex justify-center flex-col shadow"
                 ref={ourPortfolioDropdownRef}
+                onMouseEnter={() => setShowOurPortfolioDropdown(true)}
+                onMouseLeave={() => setShowOurPortfolioDropdown(false)}
               >
                 <div
                   className=" flex justify-center -mt-5 absolute top-0 left-[47%] z-2"
@@ -460,7 +459,7 @@ const Navbar = ({ pageName }: INavbar) => {
                     />
                   ))}
                 </div>
-              </motion.div>
+              </div>
             )}
           </div>
         </div>
@@ -705,13 +704,11 @@ const Navbar = ({ pageName }: INavbar) => {
                 </button>
 
                 {showOurPortfolioDropdown && (
-                  <motion.div
-                    animate={{ type: "spring", opacity: 1 }}
-                    initial={{ opacity: 0 }}
-                    transition={{ duration: 2 }}
-                    exit={{ opacity: 0 }}
+                  <div
                     className="absolute w-[90%] -left-10 h-20 border bg-white top-16 rounded-[17px] flex justify-center flex-col shadow"
                     ref={ourPortfolioDropdownRef}
+                    onMouseEnter={() => setShowOurPortfolioDropdown(true)}
+                    onMouseLeave={() => setShowOurPortfolioDropdown(false)}
                   >
                     <div
                       className=" flex justify-center -mt-5 absolute top-0 left-[47%] z-2"
@@ -743,7 +740,7 @@ const Navbar = ({ pageName }: INavbar) => {
                         />
                       ))}
                     </div>
-                  </motion.div>
+                  </div>
                 )}
               </div>
             </div>
