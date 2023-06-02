@@ -97,14 +97,22 @@ const CustomNavButton2 = ({
   title,
   active,
   textColorWhite = true,
+  onClickHandler,
+  onMouseEnterHandler,
+  onMouseLeaveHandler,
 }: {
-  href: string;
+  href?: string;
   title: string;
   active: boolean;
   textColorWhite?: boolean;
+  onClickHandler?: React.MouseEventHandler<HTMLButtonElement>;
+  onMouseEnterHandler?: React.MouseEventHandler<HTMLButtonElement>;
+  onMouseLeaveHandler?: React.MouseEventHandler<HTMLButtonElement>;
 }) => {
   return (
     <button
+      onClick={onClickHandler}
+      onMouseEnter={onMouseEnterHandler}
       className={`${
         textColorWhite
           ? "hover:bg-transparent font-bold"
@@ -115,15 +123,25 @@ const CustomNavButton2 = ({
           : "border-b-[4px] border-transparent"
       } `}
     >
-      <Link href={href}>
+      {href ? (
+        <Link href={href}>
+          <h1
+            className={`${
+              textColorWhite ? "text-white" : "text-primary"
+            } font-medium text-md whitespace-nowrap `}
+          >
+            {title}
+          </h1>
+        </Link>
+      ) : (
         <h1
           className={`${
             textColorWhite ? "text-white" : "text-primary"
-          } font-medium text-md `}
+          } font-medium text-md whitespace-nowrap `}
         >
           {title}
         </h1>
-      </Link>
+      )}
     </button>
   );
 };
@@ -185,9 +203,18 @@ const Navbar = ({ pageName }: INavbar) => {
   const [openDesktopSubsidiaryMenu, setOpenDesktopSubsidiaryMenu] =
     useState<boolean>(false);
 
+  const ourPortfolioDropdownRef = useRef<HTMLDivElement>(null);
+  const [showOurPortfolioDropdown, setShowOurPortfolioDropdown] =
+    useState(false);
+
   const [restOfNavs, setRestOfNavs] = useState(
     WebSubsidiaryNavs.filter((nav) => nav.title !== "BSL Home")
   );
+
+  const ourportfolioItems = WebSubsidiaryNavs.filter(
+    (nav) => nav.title !== "BSL Home"
+  );
+
   const [currentNav, setCurrentNav] = useState<ISubsidiaryNavs>({
     id: 1,
     title: "BSL Home",
@@ -200,6 +227,9 @@ const Navbar = ({ pageName }: INavbar) => {
     let clickHandler = (e: any) => {
       if (!mobileMenuRef.current?.contains(e.target)) {
         setOpenSubsidiaryMenu(false);
+      }
+      if (!ourPortfolioDropdownRef.current?.contains(e.target)) {
+        setShowOurPortfolioDropdown(false);
       }
     };
 
@@ -255,7 +285,7 @@ const Navbar = ({ pageName }: INavbar) => {
     <div className="  z-30 pt-2 fixed w-full  top-0     md:bg-gray-800/20 md:bg-opacity-50 md:backdrop-filter md:backdrop-blur-xl">
       <div className="container mx-auto px-3 ">
         {/* mobile */}
-        <div className="md:hidden flex justify-between  py-2 items-start  ">
+        <div className="lg:hidden flex justify-between  py-2 items-start  ">
           <div className="flex  gap-1  justify-between " ref={mobileMenuRef}>
             <div
               className={` ${
@@ -307,7 +337,7 @@ const Navbar = ({ pageName }: INavbar) => {
         </div>
 
         {/* desktop */}
-        <div className="hidden md:flex justify-between w-full    ">
+        <div className="hidden lg:flex justify-between w-full    ">
           <div className="w-6/12    flex justify-between   items-center   ">
             <div
               className="w-1/4 flex items-center gap-1"
@@ -356,12 +386,22 @@ const Navbar = ({ pageName }: INavbar) => {
             )}
           </div>
 
-          <div className="flex gap-8  w-4/12 items-center justify-end  ">
+          <div className="flex gap-16  w-5/12 items-center justify-end  border-red-500 relative">
             <div className="flex gap-12  ">
               <CustomNavButton2
                 href="/business"
                 title="Business"
                 active={pageName === "Business"}
+              />
+
+              <CustomNavButton2
+                title="Our Portfolio"
+                active={false}
+                onClickHandler={() =>
+                  setShowOurPortfolioDropdown((prev) => !prev)
+                }
+                onMouseEnterHandler={() => setShowOurPortfolioDropdown(true)}
+                onMouseLeaveHandler={() => setShowOurPortfolioDropdown(false)}
               />
               <CustomNavButton2
                 href="/about"
@@ -381,6 +421,47 @@ const Navbar = ({ pageName }: INavbar) => {
                 alt="menu icon"
               />
             </button>
+            {showOurPortfolioDropdown && (
+              <motion.div
+                animate={{ type: "spring", opacity: 1 }}
+                initial={{ opacity: 0 }}
+                transition={{ duration: 2 }}
+                exit={{ opacity: 0 }}
+                className="absolute w-[90%]  -left-10 h-20 border bg-white top-16 rounded-[17px] flex justify-center flex-col shadow"
+                ref={ourPortfolioDropdownRef}
+              >
+                <div
+                  className=" flex justify-center -mt-5 absolute top-0 left-[47%] z-2"
+                  data-popper-arrow
+                >
+                  <svg
+                    width="92"
+                    height="70"
+                    viewBox="0 0 92 70"
+                    fill="none"
+                    className="h-10 w-10  "
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M45 0C59.5 0 90 67 90 67H0C0 67 30.5 0 45 0Z"
+                      fill="white"
+                      stroke="#E4E7EA"
+                      // strokeWidth={2}
+                    />
+                  </svg>
+                </div>
+                <div className="flex   w-full z-10 bg-white rounded-[17px]  h-full justify-center items-center">
+                  {ourportfolioItems.map((nav, _x) => (
+                    <NavButton
+                      key={nav.id}
+                      href={nav.href}
+                      title={nav.title}
+                      imgSRC={nav.imgSRC2}
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            )}
           </div>
         </div>
 
@@ -395,7 +476,7 @@ const Navbar = ({ pageName }: INavbar) => {
           } bg-white w-full h-[94vh] md:h-[90vh] absolute top-0 left-0 flex  px-3 py-2 rounded-bl-[110px] md:rounded-bl-[200px] z-30  `}
         >
           {/* mobile */}
-          <div className="md:hidden container mx-auto flex w-full justify-between flex-col gap-4 h-full  pt-2">
+          <div className="lg:hidden container mx-auto flex w-full justify-between flex-col gap-4 h-full  pt-2">
             <div className="flex justify-between  items-start  w-full">
               <div className="flex  gap-1  justify-between ">
                 <div
@@ -531,7 +612,7 @@ const Navbar = ({ pageName }: INavbar) => {
           </div>
 
           {/* desktop */}
-          <div className="hidden md:flex w-full flex-col justify-between h-full  container mx-auto px-3">
+          <div className="hidden lg:flex w-full flex-col justify-between h-full  container mx-auto px-3">
             <div className=" w-full flex justify-between ">
               <div className="w-6/12    flex justify-between   items-center  ">
                 <div
@@ -580,13 +661,27 @@ const Navbar = ({ pageName }: INavbar) => {
                 )}
               </div>
 
-              <div className="flex gap-8  w-4/12 items-center justify-end   text-primary">
+              <div className="flex gap-16  w-5/12 items-center justify-end   text-primary relative">
                 <div className="flex gap-12  ">
                   <CustomNavButton2
                     href="/business"
                     title="Business"
                     active={pageName === "Business"}
                     textColorWhite={false}
+                  />
+                  <CustomNavButton2
+                    title="Our Portfolio"
+                    active={false}
+                    textColorWhite={false}
+                    onClickHandler={() =>
+                      setShowOurPortfolioDropdown((prev) => !prev)
+                    }
+                    onMouseEnterHandler={() =>
+                      setShowOurPortfolioDropdown(true)
+                    }
+                    onMouseLeaveHandler={() =>
+                      setShowOurPortfolioDropdown(false)
+                    }
                   />
                   <CustomNavButton2
                     href="/about"
@@ -608,6 +703,48 @@ const Navbar = ({ pageName }: INavbar) => {
                     alt="menu icon"
                   />
                 </button>
+
+                {showOurPortfolioDropdown && (
+                  <motion.div
+                    animate={{ type: "spring", opacity: 1 }}
+                    initial={{ opacity: 0 }}
+                    transition={{ duration: 2 }}
+                    exit={{ opacity: 0 }}
+                    className="absolute w-[90%] -left-10 h-20 border bg-white top-16 rounded-[17px] flex justify-center flex-col shadow"
+                    ref={ourPortfolioDropdownRef}
+                  >
+                    <div
+                      className=" flex justify-center -mt-5 absolute top-0 left-[47%] z-2"
+                      data-popper-arrow
+                    >
+                      <svg
+                        width="92"
+                        height="70"
+                        viewBox="0 0 92 70"
+                        fill="none"
+                        className="h-10 w-10  "
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M45 0C59.5 0 90 67 90 67H0C0 67 30.5 0 45 0Z"
+                          fill="#FFFF"
+                          stroke="#E4E7EA"
+                          // strokeWidth={1}
+                        />
+                      </svg>
+                    </div>
+                    <div className="flex   w-full z-10 bg-white rounded-[17px]  h-full justify-center items-center">
+                      {ourportfolioItems.map((nav, _x) => (
+                        <NavButton
+                          key={nav.id}
+                          href={nav.href}
+                          title={nav.title}
+                          imgSRC={nav.imgSRC2}
+                        />
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
               </div>
             </div>
 
