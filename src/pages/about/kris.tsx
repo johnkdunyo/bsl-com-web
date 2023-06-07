@@ -1,6 +1,7 @@
 import SiteLayout from "@/components/Layout/SiteLayout";
 import CustomBackground1 from "@/components/animations/CustomBackground1";
 import React from "react";
+import Image from "next/image";
 
 const Razak = () => {
   return (
@@ -9,9 +10,17 @@ const Razak = () => {
         <div className=" py-36 sm:py-48  relative ">
           <CustomBackground1 />
           <div className="custom-container  z-10  ">
-            <div className="flex flex-col sm:flex-row gap-10 mx-3 sm:mx-28">
+            <div className="flex flex-col sm:flex-row gap-10 mx-3 sm:mx-28 ">
               <div className="w-full sm:w-[40%] flex flex-col items-end">
-                <img src="/assets/img/board/kris-main.png" className="" />
+                <Image
+                  src="https://res.cloudinary.com/diek2uivi/image/upload/v1686065715/bsl-website/bsl/board/kris-main_emy7v4.png"
+                  height={952}
+                  width={621}
+                  alt="kris"
+                  className=""
+                  placeholder="blur"
+                  blurDataURL="https://res.cloudinary.com/diek2uivi/image/upload/v1686065715/bsl-website/bsl/board/kris-main_emy7v4.png"
+                />
               </div>
 
               <div className="flex flex-col gap-4 w-full sm:w-[60%] sm:mt-4">
