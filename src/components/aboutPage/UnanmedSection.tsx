@@ -14,6 +14,7 @@ import "swiper/css/navigation";
 // import required modules
 import { EffectCoverflow, Pagination, Navigation } from "swiper";
 import { Animate } from "../animations/ScrollAnimator";
+import Image from "next/image";
 
 const SingleComponent = ({
   imageURL,
@@ -25,10 +26,14 @@ const SingleComponent = ({
   return (
     <div className=" border-l border-[#82AEC9]  w-full px-6  h-[35rem] md:h-[36rem] ">
       <div className="flex flex-col  gap-6 ">
-        <img
-          src={`/assets/img/about/${imageURL}`}
+        <Image
+          src={imageURL}
           alt={imageURL}
+          width={1800}
+          height={1800}
           className="rounded-[20px] object-cover h-[19rem] md:h-[20rem]"
+          blurDataURL={imageURL}
+          placeholder="blur"
         />
         <Animate.FadeUp>
           <p className="text-[#1D365A] paragraphText1 ">{description}</p>
@@ -79,7 +84,7 @@ const UnanmedSection = () => {
           >
             <SwiperSlide>
               <SingleComponent
-                imageURL="gcb1.jpeg"
+                imageURL="https://res.cloudinary.com/diek2uivi/image/upload/v1686065681/bsl-website/bsl/about/gcb1_urswup.jpg"
                 description="Broadspectrum designed and implemented a Software-Defined Wide Area
           Network as an overlay network to provide intelligent traffic steering
           over GCB Bank’s MPLS and LTE WAN links."
@@ -88,21 +93,21 @@ const UnanmedSection = () => {
 
             <SwiperSlide>
               <SingleComponent
-                imageURL="gcb2.jpeg"
+                imageURL="https://res.cloudinary.com/diek2uivi/image/upload/v1686065681/bsl-website/bsl/about/gcb2_psgjdw.jpg"
                 description="Broadspectrum designed and implemented a Network Access Control (NAC) solution to enhance the security of GCB Bank’s network."
               />
             </SwiperSlide>
 
             <SwiperSlide>
               <SingleComponent
-                imageURL="eagric.jpeg"
+                imageURL="https://res.cloudinary.com/diek2uivi/image/upload/v1686065681/bsl-website/bsl/about/eagric_fuqruq.jpg"
                 description="Broadspectrum designed, built and operates an Agriculture Marketplace Platform (E-Agric) for the ministry of Food and Agriculture (MOFA). This has led to the registration of over 1 million farmers and agricultural value chain actors ."
               />
             </SwiperSlide>
 
             <SwiperSlide>
               <SingleComponent
-                imageURL="nedco.jpeg"
+                imageURL="https://res.cloudinary.com/diek2uivi/image/upload/v1686065682/bsl-website/bsl/about/nedco_umdl1i.jpg"
                 description="Broadspectrum designed, built and operates the electronic power payment system for the Nothern Electricty Distribution Company Limited (NEDCo) for the purchase of power by its customers "
               />
             </SwiperSlide>
