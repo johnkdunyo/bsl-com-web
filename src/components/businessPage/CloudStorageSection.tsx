@@ -1,13 +1,19 @@
 import React from "react";
 import { Animate } from "../animations/ScrollAnimator";
+import Image from "next/image";
 
 const CloudStorageSection = () => {
   return (
     <section className=" bg-white pb-40 ">
       <div className="custom-container2 h-full flex flex-col md:flex-row justify-between py-10 md:py-20 gap-16  ">
         <div className=" w-full  -mt-24 md:-mt-[0rem] md:order-last border">
-          <img
-            src="/assets/img/business/datacenter2.jpeg"
+          <Image
+            src="https://res.cloudinary.com/diek2uivi/image/upload/v1686141784/bsl-website/bsl/business/datacenter2_dnkm3j.jpg"
+            blurDataURL="https://res.cloudinary.com/diek2uivi/image/upload/v1686141784/bsl-website/bsl/business/datacenter2_dnkm3j.jpg"
+            width={1920}
+            height={1080}
+            alt="data center"
+            placeholder="blur"
             className="w-full md:h-full object-cover h-[30rem]"
           />
         </div>

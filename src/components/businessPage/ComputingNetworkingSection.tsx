@@ -127,15 +127,15 @@ const ComputingNetworkingSection = () => {
           <SingleComponent
             title="Supply of IT equipment"
             list={["Server", "Routers", "Switches, etc"]}
-            imageURL="bg-[url('/assets/img/business/computingSection/image3.jpeg')] bg-cover  bg-bottom"
+            imageURL="bg-[url('https://res.cloudinary.com/diek2uivi/image/upload/v1686141807/bsl-website/bsl/business/computing-section/image3_kqlfx3.jpg')] bg-cover  bg-bottom"
           />
           <SingleComponent
             title="SD – WAN Design and Deployment"
-            imageURL="bg-[url('/assets/img/business/computingSection/image2.jpeg')] bg-cover bg-center"
+            imageURL="bg-[url('https://res.cloudinary.com/diek2uivi/image/upload/v1686141807/bsl-website/bsl/business/computing-section/image2_bk5vdv.jpg')] bg-cover bg-center"
           />
           <SingleComponent
             title="Network Design and Deployment"
-            imageURL="bg-[url('/assets/img/business/computingSection/image1.jpeg')] bg-cover bg-right"
+            imageURL="bg-[url('https://res.cloudinary.com/diek2uivi/image/upload/v1686141807/bsl-website/bsl/business/computing-section/image1_yr1y6d.jpg')] bg-cover bg-right"
           />
         </div>
       </div>

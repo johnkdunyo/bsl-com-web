@@ -1,15 +1,22 @@
 import React from "react";
 import { Animate } from "../animations/ScrollAnimator";
+import Image from "next/image";
 
 const InfoMageSystems = () => {
   return (
     <section className=" bg-white pb-40 ">
       <div className="custom-container2 h-full flex flex-col md:flex-row justify-between py-10 md:py-20 gap-10  ">
         <div className=" w-full  -mt-20 md:-mt-[0rem] md:order-first">
-          <img
-            src="/assets/img/business/info-mgt.jpeg"
+          <Image
+            src="https://res.cloudinary.com/diek2uivi/image/upload/v1686141784/bsl-website/bsl/business/info-mgt_l5n7ac.jpg"
+            blurDataURL="https://res.cloudinary.com/diek2uivi/image/upload/v1686141784/bsl-website/bsl/business/info-mgt_l5n7ac.jpg"
+            placeholder="blur"
             className="w-full md:h-full object-cover   h-[30rem] z-20  "
+            alt="info mgt"
             style={{ objectPosition: "30% 75%" }}
+            width={805}
+            height={1204}
+            unoptimized
           />
         </div>
         <div className="  w-full flex justify-center items-center text-[#1D365A]">
