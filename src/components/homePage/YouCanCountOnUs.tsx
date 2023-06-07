@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Animate } from "../animations/ScrollAnimator";
 import { Parallax } from "../animations/Parallax";
+import Image from "next/image";
 
 const WhyChooseUsComponent = ({
   imageURL,
@@ -17,15 +18,15 @@ const WhyChooseUsComponent = ({
   return (
     <div className="flex flex-col sm:flex-row justify-center gap-10 sm:gap-24  ">
       <div className="w-full  flex justify-center ">
-        <Parallax offset={100}>
-          <motion.img
+        <Parallax offset={60}>
+          <Image
             src={imageURL}
-            className="w-full sm:p-3 md:p-6"
-            // whileHover={{ scale: 1.1, rotate: 5 }}
-            // whileTap={{ scale: 0.9 }}
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            // transition={{ delay: 0.2, duration: 0.5 }}
+            className="w-full p-0 sm:p-3 md:p-6 "
+            height={750}
+            width={747}
+            blurDataURL={imageURL}
+            placeholder="blur"
+            alt="sample image"
           />
         </Parallax>
       </div>
@@ -89,7 +90,7 @@ const YouCanCountOnUs = () => {
 
         <section className="flex flex-col custom-container gap-10  my-10 ">
           <WhyChooseUsComponent
-            imageURL="/assets/img/whyChooseUs/picture1.png"
+            imageURL="https://res.cloudinary.com/diek2uivi/image/upload/v1686065605/bsl-website/bsl/picture1_r7bdnp.png"
             title="We Plan for your Success and also connect your business to the digital world"
             description="Our team of experts comprise of specialists with years of
           experience that come from different IT backgrounds. We identify our clients’ needs through detailed discussions
@@ -98,7 +99,7 @@ const YouCanCountOnUs = () => {
             orderText="last"
           />
           <WhyChooseUsComponent
-            imageURL="/assets/img/whyChooseUs/picture2.png"
+            imageURL="https://res.cloudinary.com/diek2uivi/image/upload/v1686065605/bsl-website/bsl/picture2_jbf6ka.png"
             title="We Transform"
             description="We assist businesses to have a seamless workflow across all units through our subsidiaries and multiple digital services and solutions."
             orderText="first"
