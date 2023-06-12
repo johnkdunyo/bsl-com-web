@@ -1,5 +1,6 @@
 import SiteLayout from "@/components/Layout/SiteLayout";
 import CustomBackground1 from "@/components/animations/CustomBackground1";
+import Image from "next/image";
 import React from "react";
 
 const Razak = () => {
@@ -11,7 +12,14 @@ const Razak = () => {
           <div className="custom-container  z-10  ">
             <div className="flex flex-col sm:flex-row gap-10 mx-3 sm:mx-28">
               <div className="w-full sm:w-[40%] flex flex-col items-end">
-                <img src="/assets/img/board/sam-main.png" className="" />
+                <Image
+                  src="https://res.cloudinary.com/diek2uivi/image/upload/v1686065716/bsl-website/bsl/board/sam-main_kjirzf.jpg"
+                  blurDataURL="https://res.cloudinary.com/diek2uivi/image/upload/v1686065716/bsl-website/bsl/board/sam-main_kjirzf.jpg"
+                  alt="sam's picture"
+                  width={928}
+                  height={1024}
+                  className=""
+                />
               </div>
 
               <div className="flex flex-col gap-4 w-full sm:w-[60%] sm:mt-4">

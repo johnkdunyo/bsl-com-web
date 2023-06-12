@@ -1,5 +1,6 @@
 import React from "react";
 import { Animate } from "../animations/ScrollAnimator";
+import Image from "next/image";
 
 const DataCenterSection = () => {
   return (
@@ -7,9 +8,14 @@ const DataCenterSection = () => {
       <div className="custom-container2 ">
         <div className="flex flex-col md:flex-row gap-10 justify-between ">
           <div className=" -mt-28 md:-my-16 w-full md:order-last   md:w-[95%]  ">
-            <img
-              src="/assets/img/business/datacenter.jpeg"
+            <Image
+              src="https://res.cloudinary.com/diek2uivi/image/upload/v1686141784/bsl-website/bsl/business/datacenter_jynmtj.jpg"
+              blurDataURL="https://res.cloudinary.com/diek2uivi/image/upload/v1686141784/bsl-website/bsl/business/datacenter_jynmtj.jpg"
+              width={1920}
+              height={1080}
+              alt="data center img"
               className="w-full  object-cover h-[30rem] md:h-full"
+              unoptimized
             />
           </div>
           <div className="w-full flex  justify-center items-center my-10 md:my-24">

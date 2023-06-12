@@ -12,6 +12,7 @@ import "swiper/css/navigation";
 import { EffectCoverflow, Pagination, Navigation } from "swiper";
 import CustomBackground1 from "../animations/CustomBackground1";
 import Link from "next/link";
+import Image from "next/image";
 
 const SingleSlide = ({
   id,
@@ -21,6 +22,8 @@ const SingleSlide = ({
   shortDescription,
   imageURL,
   href,
+  imgHeight,
+  imgWidth,
 }: {
   id: number;
   currentIndex: number;
@@ -28,6 +31,8 @@ const SingleSlide = ({
   portfolio: string;
   shortDescription: string;
   imageURL: string;
+  imgHeight: number;
+  imgWidth: number;
   href: string;
 }) => {
   return (
@@ -36,7 +41,15 @@ const SingleSlide = ({
         currentIndex !== id && " border-green-500 opacity-40"
       } `}
     >
-      <img src={imageURL} className="sm:h-4/5  " />
+      <Image
+        src={imageURL}
+        placeholder="blur"
+        blurDataURL={imageURL}
+        className="sm:h-4/5  "
+        height={imgHeight}
+        width={imgWidth}
+        alt={name}
+      />
 
       <div
         className={` ${currentIndex !== id && "hidden"}
@@ -141,7 +154,11 @@ const LeadershipTeam = () => {
                 shortDescription={
                   "Samuel has over 18 years of professional experience in finance, accounting, taxation, and banking..."
                 }
-                imageURL={"/assets/img/board/sam.png"}
+                imageURL={
+                  "https://res.cloudinary.com/diek2uivi/image/upload/v1686065717/bsl-website/bsl/board/sam_igimba.png"
+                }
+                imgHeight={882}
+                imgWidth={706}
                 href="/about/sam"
               />
             </SwiperSlide>
@@ -154,7 +171,9 @@ const LeadershipTeam = () => {
                 shortDescription={
                   "Razak is the Chief Executive Officer (CEO) of Broadspectrum Limited. He is a Founding..."
                 }
-                imageURL={"/assets/img/board/razak.png"}
+                imageURL="https://res.cloudinary.com/diek2uivi/image/upload/v1686065716/bsl-website/bsl/board/razak_sbkf2x.png"
+                imgHeight={1026}
+                imgWidth={732}
                 href="/about/razak"
               />
             </SwiperSlide>
@@ -167,7 +186,9 @@ const LeadershipTeam = () => {
                 shortDescription={
                   "Dwemoh Benneh has considerable local and international expertise in banking..."
                 }
-                imageURL={"/assets/img/board/nana.png"}
+                imageURL="https://res.cloudinary.com/diek2uivi/image/upload/v1686065715/bsl-website/bsl/board/nana_lwkean.png"
+                imgHeight={994}
+                imgWidth={650}
                 href="/about/nana"
               />
             </SwiperSlide>
@@ -180,7 +201,9 @@ const LeadershipTeam = () => {
                 shortDescription={
                   "Kris Senanu – Member Kris is an accomplished business leader with 20+ years of experience..."
                 }
-                imageURL={"/assets/img/board/kris.png"}
+                imageURL="https://res.cloudinary.com/diek2uivi/image/upload/v1686065715/bsl-website/bsl/board/kris_nfhaym.png"
+                imgHeight={448}
+                imgWidth={334}
                 href="/about/kris"
               />
             </SwiperSlide>
