@@ -84,9 +84,9 @@ const MissionVission = () => {
       >
         <div className=" sm:-ml-[30%] ">
           <h1 className="font-bold  md:text-[14rem] text-[#AB2346]">Mission</h1>
-          <p className="paragraphText1 text-2xl">
-            To be the leading communication and <br /> digital partner of
-            choice.
+          <p className="paragraphText1 text-2xl px-4 sm:px-0">
+            To empower excellence through innovative <br /> communication and
+            digital solutions.
           </p>
         </div>
       </section>
@@ -98,7 +98,7 @@ const MissionVission = () => {
         <div className="sm:-ml-[30%]">
           <h1 className="font-bold  md:text-[14rem]  text-[#AB2346]">Vision</h1>
           <p className="paragraphText1 px-4 sm:px-0 text-2xl">
-            To be a world class communication and Digital <br />
+            To be the leading communication and digital <br />
             partner of choice.
           </p>
         </div>

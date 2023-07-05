@@ -11,7 +11,8 @@ const MissionVissionMobile = () => {
               Mission
             </h1>
             <p className="paragraphText1">
-              To be Africa’s communication and digital partner of choice.
+              To empower excellence through innovative communication and digital
+              solutions.
             </p>
           </Animate.FadeUp>
         </div>
@@ -22,8 +23,7 @@ const MissionVissionMobile = () => {
               Vision
             </h1>
             <p className="paragraphText1 px-4 sm:px-0">
-              To be a world class communication and Digital partner of choice
-              from Africa by Africans.
+              To be the leading communication and digital partner of choice
             </p>
           </Animate.FadeUp>
         </div>
